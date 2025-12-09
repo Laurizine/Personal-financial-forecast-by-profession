@@ -1,151 +1,1000 @@
 ﻿id,job,income_monthly,expense_monthly,debt_amount,late_payments_12m,credit_history_length_years,new_credit_accounts,credit_mix,income_expense_ratio,debt_ratio,credit_score,credit_score_class
-1,Nurse,14658574,11473816,2317785,0,4,0,fair,1.28,0.16,680,fair
-2,IT Engineer,19675766,9272310,16138551,3,7,0,good,2.12,0.82,410,bad
-3,Teacher,14401007,9048536,3109020,0,2,3,fair,1.59,0.22,635,bad
-4,Data Analyst,12892777,7295755,9267671,0,9,1,good,1.77,0.72,515,bad
-5,IT Engineer,22118674,18635062,2871147,1,3,1,poor,1.19,0.13,605,bad
-6,Accountant,22785907,19153218,7566810,1,11,1,poor,1.19,0.33,595,bad
-7,Salesperson,8497373,6170038,2918669,1,7,2,fair,1.38,0.34,560,bad
-8,Accountant,17906078,11857045,7596248,2,14,2,fair,1.51,0.42,560,bad
-9,Freelancer,4060612,2339955,491157,1,7,3,good,1.74,0.12,645,bad
-10,Salesperson,10576915,6169036,814263,1,4,2,poor,1.71,0.08,590,bad
-11,Nurse,7154040,4942565,6082746,0,11,1,good,1.45,0.85,555,bad
-12,Teacher,7535725,4397241,3288665,2,3,3,good,1.71,0.44,495,bad
-13,Student,7765296,4039273,816259,0,0,3,poor,1.92,0.11,615,bad
-14,Mechanic,13623846,8517472,2843042,0,10,0,poor,1.6,0.21,730,fair
-15,Accountant,28919712,25602104,16171282,2,10,2,good,1.13,0.56,580,bad
-16,IT Engineer,23708106,13643706,24953168,3,3,3,fair,1.74,1.05,315,bad
-17,Accountant,29117402,19637242,31059877,4,10,0,fair,1.48,1.07,390,bad
-18,Nurse,7444651,6189070,586329,0,3,1,good,1.2,0.08,685,fair
-19,Salesperson,9776572,8726855,6975904,0,8,0,fair,1.12,0.71,510,bad
-20,Mechanic,13630191,6518416,3357083,2,10,0,fair,2.09,0.25,670,fair
-21,Teacher,12894648,12058274,2598118,1,7,2,good,1.07,0.2,660,fair
-22,Salesperson,11737140,7485608,7279135,2,2,0,poor,1.57,0.62,380,bad
-23,Teacher,10587191,7829788,1332721,0,8,1,good,1.35,0.13,715,fair
-24,IT Engineer,17915920,15812578,14838677,4,7,1,poor,1.13,0.83,315,bad
-25,Data Analyst,23336039,19367933,5501181,1,7,3,poor,1.2,0.24,605,bad
-26,Salesperson,9763066,7953054,2396365,1,10,0,poor,1.23,0.25,690,fair
-27,Student,8054984,7047326,1414438,0,2,3,good,1.14,0.18,655,fair
-28,Designer,27682246,18055712,26207233,3,8,3,good,1.53,0.95,365,bad
-29,Salesperson,13019434,9640904,3092170,1,7,3,fair,1.35,0.24,625,bad
-30,Teacher,13737187,6198561,1273517,0,8,1,fair,2.22,0.09,695,fair
-31,Freelancer,5290726,3013866,972957,1,6,2,fair,1.76,0.18,640,bad
-32,Data Analyst,15579584,8981004,1829035,0,14,2,fair,1.73,0.12,720,fair
-33,Designer,18711513,9918354,3633652,1,9,0,fair,1.89,0.19,670,fair
-34,Mechanic,10498603,6746530,11155934,3,14,1,fair,1.56,1.06,415,bad
-35,Data Analyst,23173385,19078071,3678653,1,9,3,poor,1.21,0.16,605,bad
-36,Teacher,6730560,5821184,3983899,0,4,1,fair,1.16,0.59,585,bad
-37,IT Engineer,19419093,13372784,14109331,2,6,0,good,1.45,0.73,450,bad
-38,IT Engineer,20921289,11159226,11999164,2,2,1,poor,1.87,0.57,485,bad
-39,Nurse,9820372,5854726,751964,1,10,0,good,1.68,0.08,730,fair
-40,Mechanic,14757332,7225321,11600128,2,4,1,good,2.04,0.79,405,bad
-41,Freelancer,4719715,3847689,597458,1,1,1,fair,1.23,0.13,625,bad
-42,IT Engineer,12910008,6831164,11393311,3,1,1,poor,1.89,0.88,325,bad
-43,Teacher,12116154,7515773,14408986,2,4,2,fair,1.61,1.19,370,bad
-44,Teacher,14575749,6616617,12251596,2,2,1,fair,2.2,0.84,385,bad
-45,Mechanic,7925448,5062039,6117629,2,13,2,good,1.57,0.77,460,bad
-46,Freelancer,9732387,6762750,2261967,0,11,1,poor,1.44,0.23,715,fair
-47,Teacher,14062272,8872929,3326396,0,13,2,good,1.58,0.24,740,fair
-48,Teacher,6227957,3380386,215524,1,8,1,poor,1.84,0.03,635,bad
-49,Teacher,10752430,7267886,1824807,1,11,1,poor,1.48,0.17,675,fair
-50,Nurse,14683789,9786928,3451152,1,9,2,poor,1.5,0.24,620,bad
-51,Teacher,10732630,7014994,5078319,0,6,3,good,1.53,0.47,605,bad
-52,Student,9268092,7088955,5259193,2,2,1,good,1.31,0.57,525,bad
-53,Data Analyst,25352493,14309598,4529328,0,10,0,poor,1.77,0.18,730,fair
-54,Data Analyst,21126283,17960830,5278180,0,2,2,poor,1.18,0.25,630,bad
-55,Freelancer,6953676,3417144,3800695,2,8,2,fair,2.03,0.55,520,bad
-56,Teacher,7857762,4538991,8228632,2,7,1,poor,1.73,1.05,395,bad
-57,IT Engineer,22510706,18560576,1083357,1,9,3,fair,1.21,0.05,625,bad
-58,Student,9106181,6775665,4675588,2,1,2,poor,1.34,0.51,470,bad
-59,Student,3434284,1921301,2393907,1,2,3,poor,1.79,0.7,375,bad
-60,Freelancer,7038153,4925432,757530,1,3,0,fair,1.43,0.11,640,bad
-61,Designer,12546638,6112290,1838217,1,13,3,good,2.05,0.15,685,fair
-62,IT Engineer,15674670,11096059,569719,0,5,2,good,1.41,0.04,700,fair
-63,Data Analyst,12213992,9895345,5015080,2,7,1,fair,1.23,0.41,535,bad
-64,Mechanic,14363981,6602630,3024144,0,6,1,poor,2.18,0.21,675,fair
-65,Mechanic,12017599,9237994,13339128,2,13,2,good,1.3,1.11,460,bad
-66,Mechanic,12476879,6365269,1059073,0,10,0,fair,1.96,0.08,750,good
-67,Mechanic,7716098,3985202,2053064,0,9,0,fair,1.94,0.27,710,fair
-68,Student,8370074,7094112,5313562,1,0,3,fair,1.18,0.63,395,bad
-69,Designer,21985595,17419925,10084469,1,12,3,poor,1.26,0.46,565,bad
-70,Accountant,25409404,19822417,5820074,0,9,3,good,1.28,0.23,685,fair
-71,Mechanic,14521095,7307517,17378238,2,1,2,good,1.99,1.2,390,bad
-72,Nurse,9550733,5232987,8441672,1,6,0,fair,1.83,0.88,470,bad
-73,Designer,13323575,12585528,1777740,0,6,3,good,1.06,0.13,685,fair
-74,Data Analyst,28962963,14788347,27246945,1,2,2,good,1.96,0.94,430,bad
-75,Nurse,11713383,9165687,11263800,2,3,0,poor,1.28,0.96,380,bad
-76,Student,3254033,2895995,87157,0,2,0,poor,1.12,0.03,660,fair
-77,Data Analyst,24878918,13956721,15039666,4,5,3,fair,1.78,0.6,305,bad
-78,Student,4120790,2895049,4051443,0,0,3,good,1.42,0.98,455,bad
-79,Teacher,14140099,10760275,1044125,1,14,3,good,1.31,0.07,685,fair
-80,Student,9692894,7955686,8544722,0,2,0,poor,1.22,0.88,460,bad
-81,Student,9878290,8198653,2241679,0,0,1,fair,1.2,0.23,665,fair
-82,Accountant,15200041,12117979,1776391,1,4,3,fair,1.25,0.12,595,bad
-83,Data Analyst,29864924,21559135,6027300,0,4,0,poor,1.39,0.2,660,fair
-84,Student,11326197,5395998,1825014,1,0,2,poor,2.1,0.16,590,bad
-85,Data Analyst,26623519,17888413,15281448,2,8,0,poor,1.49,0.57,530,bad
-86,Freelancer,11032108,5551670,2596215,1,8,3,poor,1.99,0.24,605,bad
-87,Freelancer,8411680,4293630,1139184,1,2,3,good,1.96,0.14,615,bad
-88,Nurse,14801624,9405755,11973340,2,14,1,poor,1.57,0.81,435,bad
-89,Data Analyst,13944159,10769151,8774663,2,1,2,fair,1.29,0.63,370,bad
-90,Freelancer,7543869,6631060,187859,1,7,2,poor,1.14,0.02,620,bad
-91,Mechanic,8316827,4345872,525301,1,8,1,poor,1.91,0.06,635,bad
-92,Student,7733170,3680676,8319949,1,2,3,fair,2.1,1.08,395,bad
-93,Accountant,23155293,12421695,2273188,1,7,1,good,1.86,0.1,675,fair
-94,Data Analyst,19589106,14021006,8091981,2,7,2,good,1.4,0.41,540,bad
-95,Designer,23553986,17881520,1315598,1,10,2,fair,1.32,0.06,680,fair
-96,Mechanic,11400363,10022004,796228,0,10,2,good,1.14,0.07,740,fair
-97,Nurse,13266813,9705217,2056253,0,4,1,fair,1.37,0.15,665,fair
-98,Nurse,9145421,6745510,742865,0,14,0,good,1.36,0.08,770,good
-99,Mechanic,6047467,4533069,1998380,0,6,0,good,1.33,0.33,650,fair
-100,Nurse,9625713,7117592,3611117,0,2,3,good,1.35,0.38,575,bad
-101,Accountant,21883889,16613186,16523403,3,1,3,fair,1.32,0.76,315,bad
-102,Designer,12163882,10610865,3990113,0,6,2,good,1.15,0.33,620,bad
-103,Accountant,16934621,9556982,4126531,2,4,1,good,1.77,0.24,605,bad
-104,IT Engineer,26482960,24852517,5984027,1,2,0,good,1.07,0.23,660,fair
-105,Freelancer,3342571,2983150,673848,1,12,2,fair,1.12,0.2,680,fair
-106,Nurse,13924991,10933179,560555,0,12,2,good,1.27,0.04,740,fair
-107,Teacher,14765137,13137886,2030398,0,14,3,good,1.12,0.14,725,fair
-108,Student,7476996,3853514,3678766,0,0,3,good,1.94,0.49,575,bad
-109,Mechanic,7699967,5794213,3540917,0,4,2,good,1.33,0.46,590,bad
-110,Student,8970532,7318207,3614176,0,1,1,poor,1.23,0.4,565,bad
-111,Student,6688284,5745259,3652554,1,1,2,good,1.16,0.55,550,bad
-112,Data Analyst,28788159,18700748,13282779,4,14,1,good,1.54,0.46,515,bad
-113,Student,7381558,4150355,220572,1,0,2,poor,1.78,0.03,590,bad
-114,Salesperson,11305864,7648114,1280109,0,8,2,poor,1.48,0.11,660,fair
-115,Designer,16774419,9900751,4386678,2,14,1,poor,1.69,0.26,635,bad
-116,Data Analyst,14761410,7163870,4276007,1,6,3,fair,2.06,0.29,625,bad
-117,Designer,22218371,18497439,16029427,3,7,3,fair,1.2,0.72,345,bad
-118,Student,5301335,3970723,709878,1,1,3,poor,1.34,0.13,575,bad
-119,Teacher,13994626,12473851,2342816,0,4,3,poor,1.12,0.17,615,bad
-120,Data Analyst,17826054,11344617,1103121,1,7,3,poor,1.57,0.06,605,bad
-121,Salesperson,13374937,9050616,8104287,1,11,2,poor,1.48,0.61,460,bad
-122,Freelancer,8370960,5687217,5223602,2,10,3,poor,1.47,0.62,405,bad
-123,Data Analyst,17340198,13781615,10365556,3,7,0,poor,1.26,0.6,490,bad
-124,Data Analyst,28498565,18120674,4904313,1,8,3,fair,1.57,0.17,625,bad
-125,IT Engineer,15806167,7558996,569577,1,14,1,poor,2.09,0.04,675,fair
-126,Freelancer,8011497,5214179,2132341,1,14,3,poor,1.54,0.27,645,bad
-127,Accountant,15357472,9215052,6498677,2,1,3,poor,1.67,0.42,455,bad
-128,IT Engineer,25232851,14596697,3801679,0,1,3,fair,1.73,0.15,635,bad
-129,IT Engineer,25055776,16867400,24805842,2,2,1,fair,1.49,0.99,385,bad
-130,Mechanic,9006568,6660434,3454168,0,11,1,good,1.35,0.38,675,fair
-131,Salesperson,14445955,8921619,526076,0,4,0,fair,1.62,0.04,680,fair
-132,Salesperson,9095756,6848280,6098505,0,3,0,good,1.33,0.67,500,bad
-133,Student,7546873,6952283,3077300,1,0,1,poor,1.09,0.41,525,bad
-134,Mechanic,13689575,9817204,10854409,2,14,2,fair,1.39,0.79,440,bad
-135,Nurse,13517688,6502038,10700068,4,5,1,poor,2.08,0.79,315,bad
-136,IT Engineer,22174057,10706710,3572445,2,10,2,fair,2.07,0.16,640,bad
-137,Designer,18235955,10651284,17398704,1,1,0,poor,1.71,0.95,420,bad
-138,Salesperson,6471203,4480770,1689455,0,5,0,good,1.44,0.26,730,fair
-139,Mechanic,13963960,12663696,6070824,1,6,1,good,1.1,0.43,595,bad
-140,IT Engineer,21254065,18126999,6829123,2,3,2,poor,1.17,0.32,470,bad
-141,Mechanic,13038667,6813866,187112,0,8,2,good,1.91,0.01,700,fair
-142,Accountant,23414802,19412256,888160,1,12,2,fair,1.21,0.04,680,fair
-143,Student,6338117,4291927,3722746,1,0,0,poor,1.48,0.59,540,bad
-144,Mechanic,10457237,7742536,2871580,1,2,1,good,1.35,0.27,645,bad
-145,Nurse,14657367,9785358,607463,1,2,0,good,1.5,0.04,660,fair
-146,Mechanic,9729339,6477521,3256433,2,5,2,fair,1.5,0.33,520,bad
-147,Accountant,25441728,12587758,7081401,0,9,1,fair,2.02,0.28,695,fair
-148,IT Engineer,17294974,14095757,4450941,1,6,2,fair,1.23,0.26,640,bad
-149,Designer,13131110,11345969,3046231,0,2,1,fair,1.16,0.23,665,fair
-150,Mechanic,8123115,5939660,2041671,1,6,1,good,1.37,0.25,675,fair
+<built-in function id>,Freelancer,6471062,3292927,1908906,1,4,3,poor,1.97,0.29,575,bad
+<built-in function id>,Teacher,8807090,4067239,728836,1,7,3,fair,2.17,0.08,625,bad
+<built-in function id>,Salesperson,14049860,10677951,1632990,0,8,3,fair,1.32,0.12,665,fair
+<built-in function id>,Salesperson,13560267,11457749,7767538,0,14,3,good,1.18,0.57,645,bad
+<built-in function id>,Freelancer,3521508,1738140,584140,0,11,3,fair,2.03,0.17,705,fair
+<built-in function id>,Salesperson,14742523,13029494,1550701,1,11,3,fair,1.13,0.11,665,fair
+<built-in function id>,Salesperson,10997766,9663849,8568078,2,14,1,fair,1.14,0.78,455,bad
+<built-in function id>,Designer,17607995,8185784,371141,0,4,2,poor,2.15,0.02,630,bad
+<built-in function id>,Mechanic,12666186,7022791,5708394,1,6,2,fair,1.8,0.45,560,bad
+<built-in function id>,Mechanic,8633223,5037776,303319,0,3,1,poor,1.71,0.04,645,bad
+<built-in function id>,Nurse,9741535,8837431,648487,0,6,3,poor,1.1,0.07,645,bad
+<built-in function id>,Designer,23901476,16411544,13672020,1,5,3,poor,1.46,0.57,525,bad
+<built-in function id>,Teacher,14676255,9630370,8437221,2,1,2,good,1.52,0.57,510,bad
+<built-in function id>,Designer,27910402,14668070,10803476,3,10,3,fair,1.9,0.39,505,bad
+<built-in function id>,Teacher,14442572,13578454,9093794,1,6,0,fair,1.06,0.63,470,bad
+<built-in function id>,Salesperson,12114626,9872779,552124,1,8,1,fair,1.23,0.05,655,fair
+<built-in function id>,Salesperson,8498619,4414548,7532923,0,2,3,poor,1.93,0.89,415,bad
+<built-in function id>,Accountant,22978824,13958448,6316196,1,14,0,poor,1.65,0.27,690,fair
+<built-in function id>,Mechanic,8173608,5696198,9121682,2,7,2,poor,1.43,1.12,380,bad
+<built-in function id>,Teacher,8051308,5325868,5807356,1,14,2,poor,1.51,0.72,460,bad
+<built-in function id>,Student,5050063,4398745,1153778,1,2,1,fair,1.15,0.23,625,bad
+<built-in function id>,Salesperson,13207965,10569483,1143367,1,2,1,fair,1.25,0.09,625,bad
+<built-in function id>,Designer,25993267,14441282,2570581,0,2,1,fair,1.8,0.1,665,fair
+<built-in function id>,Mechanic,9110779,6325606,2301510,0,8,3,fair,1.44,0.25,665,fair
+<built-in function id>,Mechanic,13424965,10052386,3704175,1,12,0,fair,1.34,0.28,710,fair
+<built-in function id>,Freelancer,3234474,1717778,1923446,1,11,0,good,1.88,0.59,650,fair
+<built-in function id>,Freelancer,3968510,3258465,753396,0,11,3,poor,1.22,0.19,685,fair
+<built-in function id>,Nurse,14868060,13049256,4053978,0,6,3,good,1.14,0.27,685,fair
+<built-in function id>,Data Analyst,23116634,14714557,4128396,1,8,3,poor,1.57,0.18,605,bad
+<built-in function id>,Freelancer,11990946,9861649,3178108,2,7,3,good,1.22,0.27,605,bad
+<built-in function id>,Designer,22072424,17751094,21399777,2,13,0,good,1.24,0.97,490,bad
+<built-in function id>,Freelancer,10587419,5281575,1055618,0,12,2,good,2.0,0.1,740,fair
+<built-in function id>,Mechanic,9809525,7531533,1986248,1,4,2,poor,1.3,0.2,590,bad
+<built-in function id>,Accountant,28646547,17574867,16252493,3,9,2,good,1.63,0.57,500,bad
+<built-in function id>,Nurse,13449357,10263462,10247707,3,14,2,poor,1.31,0.76,380,bad
+<built-in function id>,Student,11093331,5466188,917408,0,2,3,fair,2.03,0.08,635,bad
+<built-in function id>,Freelancer,6951839,4065214,4216429,0,5,0,poor,1.71,0.61,490,bad
+<built-in function id>,Mechanic,8808987,5821069,410534,1,9,2,poor,1.51,0.05,620,bad
+<built-in function id>,Nurse,13781630,9673187,9908670,1,14,0,fair,1.42,0.72,510,bad
+<built-in function id>,Salesperson,14330694,7372438,3867869,0,14,3,fair,1.94,0.27,705,fair
+<built-in function id>,Freelancer,6243379,4420104,377055,0,10,1,good,1.41,0.06,755,good
+<built-in function id>,Designer,22485197,14482585,17382956,2,11,2,good,1.55,0.77,460,bad
+<built-in function id>,Freelancer,11062502,7693368,9741930,1,2,0,good,1.44,0.88,460,bad
+<built-in function id>,Designer,21118126,16904067,24725972,1,11,3,good,1.25,1.17,485,bad
+<built-in function id>,IT Engineer,17324186,10478979,17525762,3,4,2,good,1.65,1.01,350,bad
+<built-in function id>,Freelancer,9216077,7786455,3299678,1,6,3,poor,1.18,0.36,525,bad
+<built-in function id>,Mechanic,13204299,8456904,3656698,1,12,1,good,1.56,0.28,715,fair
+<built-in function id>,Designer,25321683,21572486,16761581,1,5,0,fair,1.17,0.66,470,bad
+<built-in function id>,Data Analyst,24699799,15972730,20610604,4,1,0,poor,1.55,0.83,300,bad
+<built-in function id>,Data Analyst,22552343,15630154,501190,0,7,0,poor,1.44,0.02,690,fair
+<built-in function id>,Mechanic,9662127,6842232,1975408,1,14,0,poor,1.41,0.2,690,fair
+<built-in function id>,Data Analyst,25892687,16154644,1820406,1,14,1,fair,1.6,0.07,695,fair
+<built-in function id>,Mechanic,13603495,10877686,113272,0,8,0,good,1.25,0.01,730,fair
+<built-in function id>,Designer,26383864,14655618,12964513,3,6,2,fair,1.8,0.49,480,bad
+<built-in function id>,Teacher,13707774,10134799,2347329,0,7,1,fair,1.35,0.17,695,fair
+<built-in function id>,Freelancer,8928640,6575420,839105,1,1,2,poor,1.36,0.09,590,bad
+<built-in function id>,Student,10834397,7818051,365955,1,0,0,good,1.39,0.03,660,fair
+<built-in function id>,Mechanic,7448263,6430426,2746390,1,14,3,good,1.16,0.37,605,bad
+<built-in function id>,Teacher,11599517,8895399,10783243,4,2,2,poor,1.3,0.93,300,bad
+<built-in function id>,Data Analyst,15484963,12342363,8091136,2,8,3,poor,1.25,0.52,485,bad
+<built-in function id>,Nurse,13144117,7316971,12176679,4,12,0,good,1.8,0.93,410,bad
+<built-in function id>,Designer,23188930,21066536,12366475,2,2,1,poor,1.1,0.53,485,bad
+<built-in function id>,Nurse,14727968,13153876,17514040,1,6,2,good,1.12,1.19,460,bad
+<built-in function id>,Student,5606562,4648124,1327692,1,0,2,poor,1.21,0.24,590,bad
+<built-in function id>,Freelancer,11808171,8272744,8798648,1,12,1,poor,1.43,0.75,475,bad
+<built-in function id>,Nurse,8704989,5334602,234194,1,5,1,good,1.63,0.03,675,fair
+<built-in function id>,Designer,17040660,11857544,2448502,0,11,2,fair,1.44,0.14,720,fair
+<built-in function id>,Freelancer,9805963,6881657,7815970,1,8,0,good,1.42,0.8,490,bad
+<built-in function id>,Designer,28165286,16638084,22514329,3,10,0,fair,1.69,0.8,430,bad
+<built-in function id>,Salesperson,7193200,5734091,3561095,0,13,1,poor,1.25,0.5,635,bad
+<built-in function id>,Salesperson,12377648,7181040,9600242,1,7,3,good,1.72,0.78,445,bad
+<built-in function id>,Salesperson,10995071,5634079,496948,0,11,2,poor,1.95,0.05,700,fair
+<built-in function id>,Salesperson,9822346,6370326,8395612,1,8,2,poor,1.54,0.85,420,bad
+<built-in function id>,Freelancer,9608723,4449480,2323663,1,6,2,poor,2.16,0.24,620,bad
+<built-in function id>,Teacher,13058365,8979174,3087978,2,12,0,good,1.45,0.24,690,fair
+<built-in function id>,Student,6922360,3451222,5237472,1,2,3,good,2.01,0.76,415,bad
+<built-in function id>,Data Analyst,24486467,16502096,1139497,0,14,0,good,1.48,0.05,770,good
+<built-in function id>,Data Analyst,22613909,18485893,1196965,0,12,0,poor,1.22,0.05,730,fair
+<built-in function id>,Nurse,10785189,5371970,1867918,0,6,1,good,2.01,0.17,715,fair
+<built-in function id>,Designer,15427247,13319843,3733920,1,1,1,poor,1.16,0.24,605,bad
+<built-in function id>,Mechanic,9607248,7837476,361546,0,2,3,good,1.23,0.04,655,fair
+<built-in function id>,Designer,29383396,16625583,8626155,1,11,2,fair,1.77,0.29,680,fair
+<built-in function id>,Mechanic,12470547,11766607,8635732,1,12,3,good,1.06,0.69,485,bad
+<built-in function id>,Salesperson,6266158,3862310,1129681,0,1,1,poor,1.62,0.18,645,bad
+<built-in function id>,Nurse,6447768,2943731,288853,0,2,0,poor,2.19,0.04,660,fair
+<built-in function id>,Salesperson,14154866,11826504,4434744,0,10,1,good,1.2,0.31,675,fair
+<built-in function id>,Nurse,11067053,7798786,6754435,1,3,3,fair,1.42,0.61,395,bad
+<built-in function id>,Accountant,15549547,10138433,17145639,4,2,0,good,1.53,1.1,340,bad
+<built-in function id>,Accountant,18508939,9100135,16663044,3,3,3,fair,2.03,0.9,315,bad
+<built-in function id>,Freelancer,6351887,3213814,62562,1,11,2,poor,1.98,0.01,660,fair
+<built-in function id>,IT Engineer,25311714,12100485,7137135,1,8,2,poor,2.09,0.28,620,bad
+<built-in function id>,Designer,29882100,21223052,8622779,0,8,2,good,1.41,0.29,700,fair
+<built-in function id>,Salesperson,13058807,9594612,5321312,1,8,3,fair,1.36,0.41,545,bad
+<built-in function id>,Student,11277944,5300960,11431856,1,1,3,good,2.13,1.01,415,bad
+<built-in function id>,Accountant,14349333,7725930,15261494,2,1,1,good,1.86,1.06,405,bad
+<built-in function id>,Designer,27386100,20368306,7312815,1,7,0,poor,1.34,0.27,650,fair
+<built-in function id>,IT Engineer,16911323,16027850,1318563,0,2,2,poor,1.06,0.08,630,bad
+<built-in function id>,Freelancer,4775119,4533514,3621722,0,12,3,poor,1.05,0.76,485,bad
+<built-in function id>,Data Analyst,20035692,10714084,4381783,0,8,3,good,1.87,0.22,685,fair
+<built-in function id>,Salesperson,10532263,7463908,3227467,1,14,2,poor,1.41,0.31,580,bad
+<built-in function id>,Freelancer,8518521,7903474,1869183,1,8,1,fair,1.08,0.22,655,fair
+<built-in function id>,Accountant,20421268,11947827,6023837,2,13,0,fair,1.71,0.29,670,fair
+<built-in function id>,Mechanic,13090055,7826971,15676500,1,5,1,good,1.67,1.2,475,bad
+<built-in function id>,Freelancer,10744657,8303137,9456524,0,9,0,good,1.29,0.88,530,bad
+<built-in function id>,Salesperson,8696385,6970044,5969275,0,11,2,poor,1.25,0.69,500,bad
+<built-in function id>,Freelancer,10421824,5852581,297364,0,8,0,fair,1.78,0.03,710,fair
+<built-in function id>,Freelancer,5222472,4508061,2615727,0,9,1,good,1.16,0.5,635,bad
+<built-in function id>,Data Analyst,13903646,6545133,3662300,0,12,2,fair,2.12,0.26,720,fair
+<built-in function id>,Student,5121550,2820785,1660781,1,2,2,good,1.82,0.32,550,bad
+<built-in function id>,Data Analyst,21351941,18275911,6175388,1,5,2,fair,1.17,0.29,640,bad
+<built-in function id>,Mechanic,9447475,7111270,11147975,1,1,3,poor,1.33,1.18,375,bad
+<built-in function id>,IT Engineer,27060551,16846358,687746,1,8,2,fair,1.61,0.03,640,bad
+<built-in function id>,Student,7662773,3646174,1156325,1,2,2,poor,2.1,0.15,590,bad
+<built-in function id>,IT Engineer,17836553,9191808,2578110,0,11,0,fair,1.94,0.14,750,good
+<built-in function id>,Freelancer,8770297,5934627,7864575,2,9,1,good,1.48,0.9,435,bad
+<built-in function id>,Student,9173173,8447794,10936910,3,1,2,poor,1.09,1.19,310,bad
+<built-in function id>,Nurse,7017672,3260892,277721,0,6,3,good,2.15,0.04,685,fair
+<built-in function id>,Student,11648314,7811963,10769258,1,1,0,fair,1.49,0.92,440,bad
+<built-in function id>,Designer,12694734,6932876,12409574,2,14,3,fair,1.83,0.98,425,bad
+<built-in function id>,Nurse,9874402,6575556,1567017,0,8,0,poor,1.5,0.16,690,fair
+<built-in function id>,Mechanic,14135567,6884365,15116054,3,7,1,poor,2.05,1.07,355,bad
+<built-in function id>,Data Analyst,26964108,12196574,2971124,0,13,0,poor,2.21,0.11,730,fair
+<built-in function id>,Nurse,10927785,8443195,1639890,1,9,1,good,1.29,0.15,675,fair
+<built-in function id>,Freelancer,7740999,4193439,3492186,2,14,0,fair,1.85,0.45,590,bad
+<built-in function id>,Mechanic,11986811,10233759,1684777,1,10,2,poor,1.17,0.14,660,fair
+<built-in function id>,Salesperson,10349286,7476963,5531417,0,11,0,poor,1.38,0.53,650,fair
+<built-in function id>,Designer,27649072,18653648,11249476,2,9,2,fair,1.48,0.41,520,bad
+<built-in function id>,Nurse,8690550,6689721,61150,0,6,2,fair,1.3,0.01,680,fair
+<built-in function id>,Nurse,13275774,12305956,6926820,1,11,1,poor,1.08,0.52,595,bad
+<built-in function id>,Nurse,14689771,7131097,1877517,1,7,2,good,2.06,0.13,660,fair
+<built-in function id>,Accountant,20629222,12716100,7399318,1,12,3,fair,1.62,0.36,585,bad
+<built-in function id>,Mechanic,11093979,8946961,2506563,0,4,0,poor,1.24,0.23,660,fair
+<built-in function id>,Accountant,14179902,8219962,354393,0,8,3,good,1.73,0.02,685,fair
+<built-in function id>,Student,4805135,4560167,3478711,0,2,0,good,1.05,0.72,500,bad
+<built-in function id>,Freelancer,6261645,3038802,1562271,1,5,3,good,2.06,0.25,645,bad
+<built-in function id>,Teacher,9789820,6664457,5399564,1,11,3,good,1.47,0.55,605,bad
+<built-in function id>,Salesperson,11758842,8581496,2091008,0,11,3,poor,1.37,0.18,685,fair
+<built-in function id>,Accountant,24657172,21951605,75682,1,13,2,poor,1.12,0.0,660,fair
+<built-in function id>,Mechanic,9773120,7899479,693803,0,8,3,good,1.24,0.07,685,fair
+<built-in function id>,Accountant,24797016,22360397,456447,1,1,2,fair,1.11,0.02,610,bad
+<built-in function id>,Data Analyst,25987493,21181400,15429914,3,10,1,good,1.23,0.59,555,bad
+<built-in function id>,Designer,19872883,10510468,6964414,2,8,3,poor,1.89,0.35,485,bad
+<built-in function id>,Student,7530159,4948852,1976922,0,0,3,poor,1.52,0.26,615,bad
+<built-in function id>,Mechanic,8356443,6512018,6776835,1,2,2,poor,1.28,0.81,390,bad
+<built-in function id>,IT Engineer,23844190,16965945,28119801,2,1,2,fair,1.41,1.18,370,bad
+<built-in function id>,Teacher,13219008,9243095,11750471,3,4,0,fair,1.43,0.89,360,bad
+<built-in function id>,Mechanic,12538486,5812938,1992876,1,2,2,poor,2.16,0.16,590,bad
+<built-in function id>,Data Analyst,14819238,13114106,2200028,0,8,1,good,1.13,0.15,715,fair
+<built-in function id>,Freelancer,7654923,4096888,1346019,0,10,3,poor,1.87,0.18,685,fair
+<built-in function id>,Student,11651034,5612784,485402,0,2,2,poor,2.08,0.04,630,bad
+<built-in function id>,Freelancer,3979975,2956306,148820,0,9,0,good,1.35,0.04,730,fair
+<built-in function id>,Accountant,12616360,10259634,149752,1,4,3,good,1.23,0.01,615,bad
+<built-in function id>,Student,11883089,7366312,1504114,0,2,3,fair,1.61,0.13,635,bad
+<built-in function id>,Data Analyst,15508387,10165083,8874108,1,10,2,poor,1.53,0.57,580,bad
+<built-in function id>,Student,10179536,5605666,1834263,1,2,2,good,1.82,0.18,630,bad
+<built-in function id>,Nurse,14389829,10310261,13920550,3,14,2,poor,1.4,0.97,380,bad
+<built-in function id>,Teacher,8231979,6179041,2127589,0,5,1,poor,1.33,0.26,675,fair
+<built-in function id>,Mechanic,10609923,4921560,3155598,2,10,3,poor,2.16,0.3,605,bad
+<built-in function id>,Teacher,7552905,3949701,9009313,2,3,1,fair,1.91,1.19,385,bad
+<built-in function id>,Data Analyst,28172800,16839758,1219516,1,11,1,fair,1.67,0.04,695,fair
+<built-in function id>,Freelancer,4263728,3568712,4225330,0,8,0,poor,1.19,0.99,490,bad
+<built-in function id>,Accountant,18229461,13396905,4278797,0,9,2,fair,1.36,0.23,680,fair
+<built-in function id>,Designer,22297307,10384746,14890550,3,12,0,fair,2.15,0.67,430,bad
+<built-in function id>,Mechanic,10442453,7033284,9638750,2,14,3,poor,1.48,0.92,405,bad
+<built-in function id>,Data Analyst,28377537,20908298,4379483,1,13,2,poor,1.36,0.15,660,fair
+<built-in function id>,Nurse,8282850,6278097,1028107,1,6,2,good,1.32,0.12,660,fair
+<built-in function id>,Accountant,18255256,11305062,5235157,1,4,1,good,1.61,0.29,645,bad
+<built-in function id>,Freelancer,6439143,5853247,1107026,0,8,0,fair,1.1,0.17,710,fair
+<built-in function id>,Designer,28953941,21351958,31690792,3,8,0,good,1.36,1.09,410,bad
+<built-in function id>,Freelancer,4002383,3733820,1088958,1,13,1,poor,1.07,0.27,675,fair
+<built-in function id>,Salesperson,9449941,4368841,9632704,1,2,3,fair,2.16,1.02,395,bad
+<built-in function id>,Data Analyst,27646253,14859468,7570432,0,4,0,poor,1.86,0.27,660,fair
+<built-in function id>,Designer,22351688,10160553,1250840,1,4,2,poor,2.2,0.06,590,bad
+<built-in function id>,IT Engineer,24584686,18843438,18876243,3,10,1,fair,1.3,0.77,415,bad
+<built-in function id>,Student,7252766,6633782,3411475,2,0,1,good,1.09,0.47,525,bad
+<built-in function id>,Teacher,9013546,6922480,3431278,0,14,1,good,1.3,0.38,675,fair
+<built-in function id>,Student,8799312,6139195,2418313,1,2,2,good,1.43,0.27,630,bad
+<built-in function id>,Nurse,14697534,7271041,7605938,0,3,0,poor,2.02,0.52,580,bad
+<built-in function id>,Data Analyst,13555321,8246526,16205740,3,14,0,good,1.64,1.2,450,bad
+<built-in function id>,Nurse,14417226,10708551,8920971,2,11,3,fair,1.35,0.62,425,bad
+<built-in function id>,Accountant,21111822,17639331,6116409,0,12,0,good,1.2,0.29,770,good
+<built-in function id>,Accountant,24536747,16051832,3727129,1,1,2,poor,1.53,0.15,590,bad
+<built-in function id>,Student,4879961,4290243,1176126,0,1,2,good,1.14,0.24,670,fair
+<built-in function id>,Data Analyst,23534112,11390172,953703,1,9,2,poor,2.07,0.04,620,bad
+<built-in function id>,Mechanic,7281340,5821669,5493973,2,3,2,poor,1.25,0.75,350,bad
+<built-in function id>,Data Analyst,16617790,13358463,15457153,4,3,3,good,1.24,0.93,300,bad
+<built-in function id>,IT Engineer,20742080,13793608,2802239,1,3,0,good,1.5,0.14,660,fair
+<built-in function id>,Salesperson,6258672,5257131,1359993,1,4,0,fair,1.19,0.22,640,bad
+<built-in function id>,Nurse,10143924,6816429,1067616,1,4,0,poor,1.49,0.11,620,bad
+<built-in function id>,Nurse,11657427,10407769,2478003,0,3,1,good,1.12,0.21,685,fair
+<built-in function id>,Accountant,13713146,9698530,6851553,2,10,3,fair,1.41,0.5,545,bad
+<built-in function id>,Accountant,28541329,19901334,7996182,1,14,3,fair,1.43,0.28,665,fair
+<built-in function id>,Nurse,7179363,3623870,943669,0,2,1,fair,1.98,0.13,665,fair
+<built-in function id>,Accountant,14797160,13740534,8329426,1,11,1,fair,1.08,0.56,615,bad
+<built-in function id>,Salesperson,12716843,6346218,722627,0,12,2,good,2.0,0.06,740,fair
+<built-in function id>,Designer,20145548,14271275,14667984,4,10,2,fair,1.41,0.73,360,bad
+<built-in function id>,Teacher,13964578,8973622,5674466,2,8,2,good,1.56,0.41,540,bad
+<built-in function id>,Designer,23126974,16937685,9823076,0,1,1,good,1.37,0.42,605,bad
+<built-in function id>,Designer,22873946,10479201,23069426,3,7,1,fair,2.18,1.01,375,bad
+<built-in function id>,IT Engineer,19339829,10584785,2978090,0,8,2,poor,1.83,0.15,660,fair
+<built-in function id>,Data Analyst,17801851,8979609,1527960,1,5,0,good,1.98,0.09,690,fair
+<built-in function id>,Data Analyst,18336634,12905282,7290971,1,8,1,good,1.42,0.4,595,bad
+<built-in function id>,Teacher,7077850,6633138,7432717,0,11,0,fair,1.07,1.05,550,bad
+<built-in function id>,Teacher,14546354,7041315,2386061,1,8,3,fair,2.07,0.16,625,bad
+<built-in function id>,Student,4596510,2586109,1504529,1,1,3,poor,1.78,0.33,495,bad
+<built-in function id>,Student,4975387,3928326,5420353,1,1,3,good,1.27,1.09,415,bad
+<built-in function id>,Nurse,11261538,8658270,3266244,0,6,1,poor,1.3,0.29,675,fair
+<built-in function id>,Nurse,11849443,6662081,12690044,3,5,2,fair,1.78,1.07,360,bad
+<built-in function id>,IT Engineer,21495130,12771734,5269321,2,14,1,poor,1.68,0.25,635,bad
+<built-in function id>,Designer,29533958,23920643,8770170,2,4,0,good,1.23,0.3,620,bad
+<built-in function id>,Freelancer,6143987,3859699,78348,1,3,1,poor,1.59,0.01,605,bad
+<built-in function id>,Accountant,12911506,6747326,2608847,0,7,3,good,1.91,0.2,685,fair
+<built-in function id>,Student,5288045,3727040,3866050,1,2,1,fair,1.42,0.73,425,bad
+<built-in function id>,Salesperson,12018956,7737592,2322388,0,4,0,good,1.55,0.19,700,fair
+<built-in function id>,Nurse,14926419,12424030,75081,0,11,1,fair,1.2,0.01,735,fair
+<built-in function id>,IT Engineer,19563732,15788036,8745559,1,3,1,poor,1.24,0.45,525,bad
+<built-in function id>,Teacher,6727336,6275748,4833889,1,2,2,poor,1.07,0.72,390,bad
+<built-in function id>,IT Engineer,22986443,17827164,130140,0,4,1,good,1.29,0.01,685,fair
+<built-in function id>,IT Engineer,29072316,21097841,6328397,0,1,1,poor,1.38,0.22,645,bad
+<built-in function id>,Data Analyst,17862909,11310064,20811346,2,4,3,fair,1.58,1.17,355,bad
+<built-in function id>,Data Analyst,19198409,16387461,19249444,4,4,1,fair,1.17,1.0,305,bad
+<built-in function id>,Freelancer,9275580,5477704,6336606,2,7,2,poor,1.69,0.68,380,bad
+<built-in function id>,Mechanic,13313276,10704677,300363,0,11,1,fair,1.24,0.02,735,fair
+<built-in function id>,Nurse,10962846,5993262,9112895,2,12,1,fair,1.83,0.83,455,bad
+<built-in function id>,Student,3371500,1695642,944884,0,0,3,poor,1.99,0.28,615,bad
+<built-in function id>,Student,8539237,7299415,1279213,0,2,3,fair,1.17,0.15,635,bad
+<built-in function id>,IT Engineer,26580404,24322736,19896704,3,11,1,good,1.09,0.75,435,bad
+<built-in function id>,Designer,25153614,13652269,1647453,1,13,0,poor,1.84,0.07,690,fair
+<built-in function id>,Freelancer,4809330,3519276,2880879,0,14,3,good,1.37,0.6,645,bad
+<built-in function id>,Nurse,9839746,5025619,4303359,2,7,2,poor,1.96,0.44,500,bad
+<built-in function id>,IT Engineer,29347633,23309453,14137379,1,14,1,good,1.26,0.48,635,bad
+<built-in function id>,Accountant,20913438,16813740,22187871,3,8,1,fair,1.24,1.06,375,bad
+<built-in function id>,Mechanic,10995843,8271620,3051804,2,3,2,fair,1.33,0.28,570,bad
+<built-in function id>,Accountant,25385456,22942027,7339096,1,3,1,fair,1.11,0.29,625,bad
+<built-in function id>,Teacher,11520102,5903687,2492345,0,4,0,good,1.95,0.22,700,fair
+<built-in function id>,Salesperson,10289580,7236519,2559534,0,8,2,fair,1.42,0.25,680,fair
+<built-in function id>,Nurse,14076607,7717223,6640952,2,10,1,good,1.82,0.47,595,bad
+<built-in function id>,Teacher,6854186,3745082,320933,1,3,0,poor,1.83,0.05,620,bad
+<built-in function id>,Student,3604906,1656696,3508894,2,2,0,poor,2.18,0.97,380,bad
+<built-in function id>,Data Analyst,18519505,17245263,13933125,4,6,0,fair,1.07,0.75,350,bad
+<built-in function id>,Freelancer,6222653,5875615,3042389,2,4,1,good,1.06,0.49,525,bad
+<built-in function id>,Nurse,14309466,11457123,855306,1,5,3,good,1.25,0.06,645,bad
+<built-in function id>,Teacher,8314006,5068089,3070655,0,5,2,fair,1.64,0.37,600,bad
+<built-in function id>,Freelancer,5748950,3976615,1270038,1,10,2,good,1.45,0.22,700,fair
+<built-in function id>,Salesperson,6061747,3309145,1272815,1,6,2,good,1.83,0.21,660,fair
+<built-in function id>,Nurse,11741621,8121612,7328944,1,14,3,poor,1.45,0.62,445,bad
+<built-in function id>,Teacher,10146067,6507253,8615892,1,4,1,poor,1.56,0.85,405,bad
+<built-in function id>,Student,6736749,4728242,7376157,1,0,1,fair,1.42,1.09,425,bad
+<built-in function id>,Accountant,28480914,13602681,6528639,1,8,2,fair,2.09,0.23,640,bad
+<built-in function id>,IT Engineer,17028453,11572550,10943293,3,10,2,good,1.47,0.64,420,bad
+<built-in function id>,Designer,17221017,8166941,12661220,1,6,1,poor,2.11,0.74,435,bad
+<built-in function id>,Accountant,24474084,20356377,3720870,0,1,2,fair,1.2,0.15,650,fair
+<built-in function id>,Freelancer,5424781,4456838,3789184,0,14,2,good,1.22,0.7,540,bad
+<built-in function id>,Data Analyst,27469252,14418302,5998687,0,11,0,fair,1.91,0.22,750,good
+<built-in function id>,Salesperson,13154195,8041949,5757896,1,3,2,good,1.64,0.44,550,bad
+<built-in function id>,Designer,17015702,10771091,15242264,4,1,0,poor,1.58,0.9,300,bad
+<built-in function id>,Designer,12270775,10902103,7507872,0,7,0,poor,1.13,0.61,490,bad
+<built-in function id>,Mechanic,7625743,6271126,7117736,1,11,3,poor,1.22,0.93,445,bad
+<built-in function id>,IT Engineer,24743675,21393078,6183711,2,3,3,good,1.16,0.25,575,bad
+<built-in function id>,Data Analyst,24863658,20399123,11783355,1,12,0,fair,1.22,0.47,630,bad
+<built-in function id>,Student,11911707,10810465,2196475,0,1,1,fair,1.1,0.18,665,fair
+<built-in function id>,Nurse,7932774,7342332,8854966,0,7,2,good,1.08,1.12,500,bad
+<built-in function id>,Data Analyst,27300083,14808975,3719924,2,7,3,good,1.84,0.14,605,bad
+<built-in function id>,Mechanic,7047409,5483897,4749239,1,13,1,good,1.29,0.67,515,bad
+<built-in function id>,Data Analyst,17219010,11105818,11107994,3,9,2,fair,1.55,0.65,360,bad
+<built-in function id>,Designer,22349429,15325240,4647776,1,12,2,good,1.46,0.21,700,fair
+<built-in function id>,Accountant,20309464,16966704,5868859,1,1,3,poor,1.2,0.29,575,bad
+<built-in function id>,Freelancer,5823280,5270897,4863349,1,9,2,good,1.1,0.84,460,bad
+<built-in function id>,Teacher,11273609,8206374,2814727,0,2,1,poor,1.37,0.25,645,bad
+<built-in function id>,Salesperson,8642306,5295792,7257485,0,5,1,poor,1.63,0.84,475,bad
+<built-in function id>,Mechanic,6775940,4758632,4091026,0,2,3,good,1.42,0.6,455,bad
+<built-in function id>,Teacher,11252641,9496026,1614873,0,9,1,good,1.18,0.14,715,fair
+<built-in function id>,Designer,13535279,12514704,1699941,0,4,2,good,1.08,0.13,670,fair
+<built-in function id>,Data Analyst,20733701,10389659,13914625,1,1,2,poor,2.0,0.67,390,bad
+<built-in function id>,Mechanic,13451797,6559891,9665561,2,9,3,good,2.05,0.72,405,bad
+<built-in function id>,Nurse,6104436,5693235,2394813,0,6,3,fair,1.07,0.39,585,bad
+<built-in function id>,Student,11162241,8080122,4903231,2,0,0,good,1.38,0.44,540,bad
+<built-in function id>,IT Engineer,25577466,19356537,6653653,2,9,0,good,1.32,0.26,650,fair
+<built-in function id>,Mechanic,6113227,3081317,7170402,2,5,1,fair,1.98,1.17,415,bad
+<built-in function id>,IT Engineer,27609105,22708374,12337234,3,11,0,good,1.22,0.45,570,bad
+<built-in function id>,Freelancer,5492896,3312452,633607,0,8,0,poor,1.66,0.12,690,fair
+<built-in function id>,Salesperson,12195361,8207897,1120956,0,2,1,good,1.49,0.09,685,fair
+<built-in function id>,IT Engineer,18902078,8989733,15295597,2,11,2,good,2.1,0.81,460,bad
+<built-in function id>,Salesperson,14437976,8836939,7207595,1,1,3,fair,1.63,0.5,515,bad
+<built-in function id>,Designer,15931573,9666347,2091167,1,2,3,good,1.65,0.13,615,bad
+<built-in function id>,Mechanic,12445192,10037110,965683,0,2,1,poor,1.24,0.08,645,bad
+<built-in function id>,Teacher,9793924,8229057,2471697,0,1,2,good,1.19,0.25,670,fair
+<built-in function id>,Freelancer,11914714,9336582,2866836,0,4,3,good,1.28,0.24,655,fair
+<built-in function id>,Data Analyst,19057394,16809500,130011,0,1,1,good,1.13,0.01,685,fair
+<built-in function id>,Designer,14510860,8943839,2984374,1,14,3,poor,1.62,0.21,645,bad
+<built-in function id>,Accountant,17721556,10653630,1877358,0,13,0,good,1.66,0.11,770,good
+<built-in function id>,Data Analyst,14131238,9128492,7712154,2,8,0,fair,1.55,0.55,550,bad
+<built-in function id>,Salesperson,14069102,12410092,3700807,2,3,1,poor,1.13,0.26,565,bad
+<built-in function id>,IT Engineer,14059541,6821972,5976596,1,6,3,fair,2.06,0.43,545,bad
+<built-in function id>,Data Analyst,29716772,14158448,19596595,2,5,0,poor,2.1,0.66,410,bad
+<built-in function id>,Salesperson,13710954,12569866,15077149,4,6,0,fair,1.09,1.1,350,bad
+<built-in function id>,Accountant,21576091,14859409,14837380,4,13,0,good,1.45,0.69,410,bad
+<built-in function id>,IT Engineer,19136199,11806835,20199738,1,14,3,poor,1.62,1.06,445,bad
+<built-in function id>,Designer,23544972,18158331,16287119,3,1,0,poor,1.3,0.69,340,bad
+<built-in function id>,Salesperson,13547131,11461339,15284779,3,6,0,poor,1.18,1.13,370,bad
+<built-in function id>,Mechanic,14099840,12724257,11402938,3,2,1,good,1.11,0.81,365,bad
+<built-in function id>,Accountant,22323901,11635843,380173,0,3,3,poor,1.92,0.02,615,bad
+<built-in function id>,Accountant,28523446,22251404,21415815,1,9,0,fair,1.28,0.75,470,bad
+<built-in function id>,Student,5068634,2505080,862252,0,2,3,poor,2.02,0.17,615,bad
+<built-in function id>,Accountant,22755820,19105358,4380213,2,7,0,poor,1.19,0.19,610,bad
+<built-in function id>,Nurse,7013865,4122449,565453,1,2,3,fair,1.7,0.08,595,bad
+<built-in function id>,Data Analyst,17930266,12531914,18459167,1,6,0,good,1.43,1.03,490,bad
+<built-in function id>,Nurse,9739208,7407874,1923927,0,14,1,good,1.31,0.2,755,good
+<built-in function id>,Accountant,25503904,19050606,4433025,2,2,0,fair,1.34,0.17,600,bad
+<built-in function id>,Salesperson,7471029,6390955,5789669,1,4,3,poor,1.17,0.77,375,bad
+<built-in function id>,IT Engineer,19724894,12219111,19036219,2,11,2,poor,1.61,0.97,420,bad
+<built-in function id>,Mechanic,12557518,10348627,769141,1,4,2,fair,1.21,0.06,610,bad
+<built-in function id>,Student,7201670,6626846,7575947,0,1,2,fair,1.09,1.05,450,bad
+<built-in function id>,IT Engineer,24594742,22297864,1586671,1,4,3,good,1.1,0.06,615,bad
+<built-in function id>,Accountant,29776443,18336522,10241471,4,13,1,poor,1.62,0.34,475,bad
+<built-in function id>,Teacher,14937635,8901824,2098692,0,6,1,good,1.68,0.14,715,fair
+<built-in function id>,Salesperson,13431180,7307611,9617897,2,4,3,fair,1.84,0.72,355,bad
+<built-in function id>,Student,5216010,3461850,552231,0,2,0,good,1.51,0.11,700,fair
+<built-in function id>,Student,6004334,3758868,2992079,1,1,3,fair,1.6,0.5,515,bad
+<built-in function id>,Mechanic,11855967,6292408,613126,0,13,2,poor,1.88,0.05,700,fair
+<built-in function id>,Mechanic,10608682,9215185,10885637,1,7,2,fair,1.15,1.03,440,bad
+<built-in function id>,Freelancer,5120949,2622034,4839632,2,4,0,good,1.95,0.95,420,bad
+<built-in function id>,Nurse,8551535,5926504,1561255,0,10,1,fair,1.44,0.18,735,fair
+<built-in function id>,Student,3059862,2013550,3147644,2,1,2,fair,1.52,1.03,370,bad
+<built-in function id>,Teacher,11049137,6444493,1979976,1,11,3,fair,1.71,0.18,665,fair
+<built-in function id>,Data Analyst,21312885,10257954,23767416,3,13,0,good,2.08,1.12,450,bad
+<built-in function id>,Designer,28945208,17145832,28869677,1,2,1,fair,1.69,1.0,425,bad
+<built-in function id>,Teacher,9667844,4382053,2233714,0,10,3,good,2.21,0.23,725,fair
+<built-in function id>,Mechanic,12827810,8687868,7503601,0,1,3,good,1.48,0.58,575,bad
+<built-in function id>,Designer,16543285,8060620,2429645,0,13,2,good,2.05,0.15,740,fair
+<built-in function id>,Freelancer,6265182,4396765,612856,1,5,3,poor,1.42,0.1,605,bad
+<built-in function id>,Data Analyst,12815874,8331087,9974063,0,6,1,fair,1.54,0.78,495,bad
+<built-in function id>,Accountant,15679206,9832766,7161791,1,3,3,good,1.59,0.46,535,bad
+<built-in function id>,Salesperson,10964085,7019698,231421,1,12,1,fair,1.56,0.02,695,fair
+<built-in function id>,Data Analyst,26496457,21512441,16899736,3,11,0,poor,1.23,0.64,410,bad
+<built-in function id>,IT Engineer,12010143,10845931,2747235,0,14,3,fair,1.11,0.23,705,fair
+<built-in function id>,Mechanic,7220521,6302539,179946,0,9,0,poor,1.15,0.02,690,fair
+<built-in function id>,Student,7281162,5582820,1915949,1,1,3,fair,1.3,0.26,595,bad
+<built-in function id>,Student,11018122,7068263,3055324,2,1,1,fair,1.56,0.28,585,bad
+<built-in function id>,Freelancer,6482811,4925799,2596273,0,11,2,good,1.32,0.4,660,fair
+<built-in function id>,Data Analyst,23737173,17920703,21105583,1,12,2,good,1.32,0.89,500,bad
+<built-in function id>,Designer,25033954,17820152,3761297,1,10,0,poor,1.4,0.15,690,fair
+<built-in function id>,IT Engineer,16757426,13797090,12905101,3,11,2,poor,1.21,0.77,380,bad
+<built-in function id>,Mechanic,13418095,11496736,12664061,4,13,2,fair,1.17,0.94,360,bad
+<built-in function id>,Salesperson,13884681,10893755,5196744,2,6,1,good,1.27,0.37,555,bad
+<built-in function id>,IT Engineer,17410193,10797429,17647440,3,10,1,fair,1.61,1.01,415,bad
+<built-in function id>,Freelancer,3121155,1939373,960651,1,10,1,fair,1.61,0.31,615,bad
+<built-in function id>,Accountant,16159161,11041712,11139572,2,9,3,good,1.46,0.69,405,bad
+<built-in function id>,Data Analyst,14453726,11469129,5864428,1,1,2,good,1.26,0.41,550,bad
+<built-in function id>,Mechanic,6183097,5871304,286786,0,11,3,fair,1.05,0.05,705,fair
+<built-in function id>,Designer,26367645,13845585,23793785,3,6,1,poor,1.9,0.9,355,bad
+<built-in function id>,IT Engineer,28594264,23229059,12995476,3,12,0,good,1.23,0.45,570,bad
+<built-in function id>,Designer,16375213,8047621,5599483,2,3,0,poor,2.03,0.34,500,bad
+<built-in function id>,Nurse,11632865,9301548,6083273,0,1,1,fair,1.25,0.52,585,bad
+<built-in function id>,Data Analyst,26434565,18321980,6042619,1,3,1,fair,1.44,0.23,625,bad
+<built-in function id>,Student,6780714,4000441,5288758,2,2,0,good,1.69,0.78,420,bad
+<built-in function id>,Designer,26559912,15725162,23400865,2,6,1,poor,1.69,0.88,395,bad
+<built-in function id>,IT Engineer,23546985,15674834,15425262,4,8,3,good,1.5,0.66,325,bad
+<built-in function id>,Student,6141171,3876903,2200568,1,0,2,fair,1.58,0.36,530,bad
+<built-in function id>,Mechanic,10963706,7324812,7509857,1,14,1,fair,1.5,0.68,495,bad
+<built-in function id>,Salesperson,13602740,8763949,2156412,0,5,0,good,1.55,0.16,730,fair
+<built-in function id>,Accountant,17994881,9017047,14604795,2,6,0,poor,2.0,0.81,410,bad
+<built-in function id>,Salesperson,13736538,9816473,5956238,1,5,2,good,1.4,0.43,580,bad
+<built-in function id>,Accountant,28862326,13598816,29108100,4,13,1,poor,2.12,1.01,355,bad
+<built-in function id>,Designer,20688910,14575127,1763506,1,8,3,poor,1.42,0.09,605,bad
+<built-in function id>,Teacher,14478328,9040823,9189628,1,7,3,poor,1.6,0.63,405,bad
+<built-in function id>,Freelancer,10717112,5391572,3358892,2,8,0,good,1.99,0.31,570,bad
+<built-in function id>,IT Engineer,12894825,6601327,2032203,0,6,0,fair,1.95,0.16,710,fair
+<built-in function id>,Designer,15969322,7360302,16035439,2,14,0,poor,2.17,1.0,450,bad
+<built-in function id>,Freelancer,3222052,2620748,2920831,1,9,2,fair,1.23,0.91,440,bad
+<built-in function id>,Data Analyst,28234502,16419765,6229212,2,5,1,poor,1.72,0.22,595,bad
+<built-in function id>,Nurse,8464498,4310132,603509,0,3,1,fair,1.96,0.07,665,fair
+<built-in function id>,Salesperson,7467863,4620496,2547924,0,8,1,fair,1.62,0.34,615,bad
+<built-in function id>,Accountant,29445017,14686313,13321724,3,14,3,poor,2.0,0.45,485,bad
+<built-in function id>,IT Engineer,22808722,15790121,6639725,2,13,1,poor,1.44,0.29,635,bad
+<built-in function id>,Teacher,14330885,10840625,13863771,2,11,1,poor,1.32,0.97,435,bad
+<built-in function id>,Student,7962062,4089821,1846060,1,0,2,good,1.95,0.23,630,bad
+<built-in function id>,Teacher,13734711,12155530,2887283,1,11,3,good,1.13,0.21,685,fair
+<built-in function id>,Accountant,26009999,16694575,2961654,0,4,0,good,1.56,0.11,700,fair
+<built-in function id>,IT Engineer,19958382,18260986,4882156,0,9,0,good,1.09,0.24,730,fair
+<built-in function id>,Teacher,6141081,3045454,4825691,2,1,2,good,2.02,0.79,390,bad
+<built-in function id>,Designer,27789455,14762229,201604,1,1,0,fair,1.88,0.01,640,bad
+<built-in function id>,IT Engineer,13024255,6321694,8519814,1,1,1,good,2.06,0.65,445,bad
+<built-in function id>,IT Engineer,28714638,20421620,5392735,2,11,1,good,1.41,0.19,675,fair
+<built-in function id>,Mechanic,11798570,10060836,671012,1,3,3,poor,1.17,0.06,575,bad
+<built-in function id>,Freelancer,8134143,7068012,6623060,1,5,1,poor,1.15,0.81,435,bad
+<built-in function id>,Nurse,14429238,12637733,9149155,1,2,3,good,1.14,0.63,415,bad
+<built-in function id>,Nurse,8759441,4765891,2531408,1,8,3,fair,1.84,0.29,625,bad
+<built-in function id>,Freelancer,10770651,6327738,198389,1,1,1,fair,1.7,0.02,625,bad
+<built-in function id>,IT Engineer,25605711,18751203,29153321,1,9,0,poor,1.37,1.14,450,bad
+<built-in function id>,Salesperson,8629971,6573007,9960500,2,14,1,good,1.31,1.15,475,bad
+<built-in function id>,Student,10278148,8703901,3026573,2,1,1,fair,1.18,0.29,585,bad
+<built-in function id>,Salesperson,10770708,6986891,9011412,0,14,1,poor,1.54,0.84,515,bad
+<built-in function id>,Designer,29544953,14669123,17888391,4,12,0,good,2.01,0.61,410,bad
+<built-in function id>,Accountant,17871747,10194632,2713049,1,2,0,poor,1.75,0.15,620,bad
+<built-in function id>,Freelancer,10076076,4956590,196171,0,9,2,good,2.03,0.02,700,fair
+<built-in function id>,Freelancer,9042162,4720745,6025582,2,8,2,good,1.92,0.67,420,bad
+<built-in function id>,Nurse,11433337,6902801,1932234,1,8,1,good,1.66,0.17,675,fair
+<built-in function id>,Data Analyst,23502321,15528137,6284212,0,3,2,poor,1.51,0.27,630,bad
+<built-in function id>,Data Analyst,18693993,13360814,2435675,0,7,1,fair,1.4,0.13,695,fair
+<built-in function id>,Nurse,8017931,7574425,1918740,0,12,0,good,1.06,0.24,770,good
+<built-in function id>,Salesperson,13283509,6060790,1265027,0,8,0,good,2.19,0.1,730,fair
+<built-in function id>,Mechanic,12374498,9743291,4716544,0,3,2,good,1.27,0.38,590,bad
+<built-in function id>,Student,7503269,5801301,3156378,1,1,0,poor,1.29,0.42,540,bad
+<built-in function id>,Salesperson,14108057,8958206,16291177,2,10,3,fair,1.57,1.15,425,bad
+<built-in function id>,Nurse,8045821,7558085,6163894,1,11,3,poor,1.06,0.77,445,bad
+<built-in function id>,Student,3439216,2753089,2779456,1,1,0,poor,1.25,0.81,420,bad
+<built-in function id>,Student,9889161,8679935,6026927,2,1,1,good,1.14,0.61,405,bad
+<built-in function id>,Freelancer,5272281,2573971,3437222,2,1,0,fair,2.05,0.65,400,bad
+<built-in function id>,Nurse,6451298,3419923,2500884,1,12,0,fair,1.89,0.39,630,bad
+<built-in function id>,Student,5032631,3811300,955687,0,2,0,fair,1.32,0.19,680,fair
+<built-in function id>,Accountant,24484799,21136384,1280034,0,4,1,poor,1.16,0.05,645,bad
+<built-in function id>,Student,3405679,2547937,86809,1,0,0,poor,1.34,0.03,620,bad
+<built-in function id>,Mechanic,9734299,4924832,5713967,1,5,2,poor,1.98,0.59,540,bad
+<built-in function id>,Teacher,7518166,4234426,467351,0,2,1,fair,1.78,0.06,665,fair
+<built-in function id>,Teacher,7781356,4036875,1313378,0,3,3,fair,1.93,0.17,635,bad
+<built-in function id>,IT Engineer,19945578,15184332,268220,0,12,3,good,1.31,0.01,725,fair
+<built-in function id>,Teacher,6598554,3025774,289082,0,5,3,good,2.18,0.04,685,fair
+<built-in function id>,Teacher,6939258,6065513,2748588,0,7,1,good,1.14,0.4,635,bad
+<built-in function id>,Salesperson,13067802,7711163,977087,0,6,1,good,1.69,0.07,715,fair
+<built-in function id>,Nurse,9695249,5386008,8776407,2,8,2,good,1.8,0.91,420,bad
+<built-in function id>,Accountant,16510547,15629271,7912266,1,1,1,good,1.06,0.48,565,bad
+<built-in function id>,Student,10192374,6442539,8714641,1,1,2,fair,1.58,0.86,410,bad
+<built-in function id>,Teacher,12085758,5447192,6491843,1,3,1,fair,2.22,0.54,545,bad
+<built-in function id>,Designer,17052508,14025382,9423616,2,10,0,poor,1.22,0.55,570,bad
+<built-in function id>,Mechanic,8525940,5713760,2217316,1,5,2,good,1.49,0.26,660,fair
+<built-in function id>,Teacher,8467706,5775857,783279,1,5,1,fair,1.47,0.09,655,fair
+<built-in function id>,Freelancer,11146862,9361207,13091906,4,4,0,fair,1.19,1.17,320,bad
+<built-in function id>,Data Analyst,17225593,10296177,7029885,1,2,3,poor,1.67,0.41,495,bad
+<built-in function id>,Nurse,10876308,9153831,2487336,0,8,1,good,1.19,0.23,715,fair
+<built-in function id>,Salesperson,7923895,5149138,6666086,0,10,2,poor,1.54,0.84,500,bad
+<built-in function id>,Mechanic,9454647,4360633,386156,0,12,2,fair,2.17,0.04,720,fair
+<built-in function id>,Designer,27246798,12437292,1760742,1,6,3,good,2.19,0.06,645,bad
+<built-in function id>,Accountant,14082280,11498541,2237579,0,6,1,poor,1.22,0.16,675,fair
+<built-in function id>,Student,8824695,8197947,1988389,0,2,1,good,1.08,0.23,685,fair
+<built-in function id>,Student,9100114,4338117,733258,1,0,0,good,2.1,0.08,660,fair
+<built-in function id>,Nurse,8584724,7341336,8784084,0,11,2,good,1.17,1.02,540,bad
+<built-in function id>,Student,11511657,7792710,1455263,1,0,2,poor,1.48,0.13,590,bad
+<built-in function id>,Teacher,13077501,6242507,647158,1,7,2,poor,2.09,0.05,620,bad
+<built-in function id>,Nurse,11738882,8290158,7305043,0,11,2,poor,1.42,0.62,500,bad
+<built-in function id>,Nurse,14105686,8578749,12976337,2,4,2,good,1.64,0.92,390,bad
+<built-in function id>,Data Analyst,19421006,13309368,3141845,2,4,3,good,1.46,0.16,575,bad
+<built-in function id>,Salesperson,7377439,4042309,8454235,0,8,2,poor,1.83,1.15,460,bad
+<built-in function id>,Teacher,6094276,4744786,2705401,0,4,1,fair,1.28,0.44,585,bad
+<built-in function id>,Student,5187507,3111738,1415815,1,2,1,good,1.67,0.27,645,bad
+<built-in function id>,Salesperson,14880506,10832509,6898964,1,9,0,poor,1.37,0.46,570,bad
+<built-in function id>,Student,5222738,4204522,5516576,0,2,2,fair,1.24,1.06,450,bad
+<built-in function id>,Teacher,10111867,6027437,998691,1,2,3,fair,1.68,0.1,595,bad
+<built-in function id>,Teacher,7734347,5435989,3885536,0,10,1,fair,1.42,0.5,655,fair
+<built-in function id>,Designer,24991074,23001488,7345310,0,11,1,poor,1.09,0.29,715,fair
+<built-in function id>,Designer,23340143,11170086,10822905,4,2,1,poor,2.09,0.46,405,bad
+<built-in function id>,Teacher,8953053,6993656,1877761,0,2,1,fair,1.28,0.21,665,fair
+<built-in function id>,Data Analyst,14076006,12754143,3606412,2,6,0,poor,1.1,0.26,610,bad
+<built-in function id>,IT Engineer,25603566,22627817,27671306,1,7,2,good,1.13,1.08,460,bad
+<built-in function id>,Student,7245086,3452177,993021,0,2,2,poor,2.1,0.14,630,bad
+<built-in function id>,Designer,16003269,13226337,5206635,2,10,0,poor,1.21,0.33,570,bad
+<built-in function id>,Accountant,24183287,16011832,5358899,0,9,0,good,1.51,0.22,730,fair
+<built-in function id>,Nurse,13885831,9504017,319045,1,10,2,good,1.46,0.02,700,fair
+<built-in function id>,Designer,14118785,7480793,3802014,0,6,2,poor,1.89,0.27,660,fair
+<built-in function id>,Data Analyst,17598606,9313802,3603914,1,1,1,fair,1.89,0.2,625,bad
+<built-in function id>,Teacher,11614785,8867485,951639,0,8,1,poor,1.31,0.08,675,fair
+<built-in function id>,Designer,27194214,17673157,9772599,2,7,3,good,1.54,0.36,525,bad
+<built-in function id>,Freelancer,4256726,3451874,480824,0,13,3,good,1.23,0.11,725,fair
+<built-in function id>,Salesperson,8765195,4741339,2513574,1,9,0,poor,1.85,0.29,650,fair
+<built-in function id>,Data Analyst,28922562,17745928,22958463,1,8,1,fair,1.63,0.79,455,bad
+<built-in function id>,Student,8200329,4697665,82144,1,0,2,good,1.75,0.01,630,bad
+<built-in function id>,IT Engineer,14096954,8230337,15866250,1,7,1,poor,1.71,1.13,435,bad
+<built-in function id>,Accountant,28632162,20790225,19945559,4,7,1,poor,1.38,0.7,315,bad
+<built-in function id>,Data Analyst,15591377,11912055,9800205,1,8,1,good,1.31,0.63,475,bad
+<built-in function id>,Teacher,8100816,7657353,2003233,0,8,0,good,1.06,0.25,730,fair
+<built-in function id>,Nurse,9694265,7894062,11611779,4,1,3,fair,1.23,1.2,300,bad
+<built-in function id>,Student,7580766,6595092,830126,1,1,3,fair,1.15,0.11,595,bad
+<built-in function id>,Designer,27960460,26235217,32876358,2,11,2,fair,1.07,1.18,440,bad
+<built-in function id>,Designer,21381727,11549859,11615202,2,4,3,fair,1.85,0.54,475,bad
+<built-in function id>,Designer,13915961,9234354,3409023,1,13,3,good,1.51,0.24,685,fair
+<built-in function id>,Designer,24371185,13625562,24054464,3,5,1,good,1.79,0.99,395,bad
+<built-in function id>,IT Engineer,19055856,9402473,17053741,1,10,3,good,2.03,0.89,485,bad
+<built-in function id>,Student,11922958,8331856,1520030,1,2,3,poor,1.43,0.13,575,bad
+<built-in function id>,Salesperson,13923104,8834632,15067820,3,13,0,good,1.58,1.08,450,bad
+<built-in function id>,Accountant,25537745,17669090,19659641,4,3,2,fair,1.45,0.77,300,bad
+<built-in function id>,IT Engineer,26397233,20924751,8408742,1,4,3,good,1.26,0.32,535,bad
+<built-in function id>,IT Engineer,20817726,9939267,3760903,1,3,0,fair,2.09,0.18,640,bad
+<built-in function id>,Data Analyst,14226557,11062813,3411441,0,11,0,good,1.29,0.24,770,good
+<built-in function id>,Data Analyst,22879172,17822092,20446131,2,5,2,good,1.28,0.89,420,bad
+<built-in function id>,Mechanic,10776688,10133756,5517753,2,8,3,poor,1.06,0.51,485,bad
+<built-in function id>,Salesperson,6716945,4492763,2539967,0,10,2,poor,1.5,0.38,620,bad
+<built-in function id>,Accountant,19829054,9128517,2387890,0,14,3,good,2.17,0.12,725,fair
+<built-in function id>,Salesperson,10503416,5951084,1951829,1,8,3,good,1.76,0.19,645,bad
+<built-in function id>,Freelancer,10016349,7329243,2619508,1,2,1,fair,1.37,0.26,625,bad
+<built-in function id>,Data Analyst,22698889,19876062,10403979,2,12,3,poor,1.14,0.46,525,bad
+<built-in function id>,Student,8334880,6141468,260306,1,0,2,fair,1.36,0.03,610,bad
+<built-in function id>,Student,4556433,3079467,1413379,1,2,2,fair,1.48,0.31,530,bad
+<built-in function id>,Mechanic,8012277,4000358,2148766,0,9,3,good,2.0,0.27,685,fair
+<built-in function id>,IT Engineer,28617910,20908219,1526822,1,10,0,fair,1.37,0.05,710,fair
+<built-in function id>,Accountant,16974361,11845412,19837829,2,3,2,good,1.43,1.17,390,bad
+<built-in function id>,Nurse,6159224,3110406,1254150,1,5,1,poor,1.98,0.2,635,bad
+<built-in function id>,Mechanic,9895809,9294704,8117811,2,9,1,fair,1.06,0.82,415,bad
+<built-in function id>,Freelancer,5322709,2895140,1101183,0,11,1,good,1.84,0.21,755,good
+<built-in function id>,Designer,23244672,20444898,1087966,1,10,3,good,1.14,0.05,685,fair
+<built-in function id>,Mechanic,11882656,10068975,2942872,0,10,1,poor,1.18,0.25,715,fair
+<built-in function id>,Data Analyst,14834596,7299022,3976681,0,10,2,poor,2.03,0.27,700,fair
+<built-in function id>,Teacher,14889770,9914352,14575555,4,6,3,good,1.5,0.98,325,bad
+<built-in function id>,Designer,15887294,8246554,1938540,1,12,0,fair,1.93,0.12,710,fair
+<built-in function id>,Mechanic,8859724,7621348,1519853,1,13,0,poor,1.16,0.17,690,fair
+<built-in function id>,Salesperson,8141181,7466061,5170821,2,2,2,fair,1.09,0.64,370,bad
+<built-in function id>,Accountant,20974452,12852900,127140,1,3,3,fair,1.63,0.01,595,bad
+<built-in function id>,Student,8661892,5166208,5541585,2,0,3,fair,1.68,0.64,355,bad
+<built-in function id>,Accountant,27031870,12641870,26173378,1,4,1,poor,2.14,0.97,405,bad
+<built-in function id>,Data Analyst,29586544,20616860,16736473,4,5,3,poor,1.44,0.57,405,bad
+<built-in function id>,Freelancer,7440667,5161919,5008081,0,8,0,poor,1.44,0.67,490,bad
+<built-in function id>,Designer,28605755,18586714,22546203,4,14,3,poor,1.54,0.79,325,bad
+<built-in function id>,Nurse,11719652,6360647,533516,1,9,0,fair,1.84,0.05,670,fair
+<built-in function id>,Designer,18178972,15581590,11107499,2,6,2,poor,1.17,0.61,380,bad
+<built-in function id>,IT Engineer,23784290,17007925,8047445,0,11,0,fair,1.4,0.34,670,fair
+<built-in function id>,Accountant,18256850,9945042,2470557,1,9,3,fair,1.84,0.14,625,bad
+<built-in function id>,Nurse,12037294,10134829,4458558,0,14,0,fair,1.19,0.37,670,fair
+<built-in function id>,Nurse,8061689,5145690,1799450,1,5,3,fair,1.57,0.22,625,bad
+<built-in function id>,Student,5803674,4458115,1606801,0,1,3,good,1.3,0.28,655,fair
+<built-in function id>,Teacher,6070174,3635825,798685,0,12,0,good,1.67,0.13,770,good
+<built-in function id>,Salesperson,14415511,10407152,16790793,4,2,0,fair,1.39,1.16,320,bad
+<built-in function id>,Nurse,9713586,4655347,1468742,1,5,2,poor,2.09,0.15,620,bad
+<built-in function id>,Nurse,7468369,3393504,785445,0,12,0,good,2.2,0.11,770,good
+<built-in function id>,Freelancer,5985830,5644112,1052699,1,8,3,fair,1.06,0.18,625,bad
+<built-in function id>,Salesperson,9079541,8238487,6803712,0,2,2,fair,1.1,0.75,450,bad
+<built-in function id>,Designer,24416381,11073916,847857,1,12,1,good,2.2,0.03,715,fair
+<built-in function id>,Mechanic,10545475,6939016,9581328,0,11,2,poor,1.52,0.91,500,bad
+<built-in function id>,Teacher,12640888,9170627,2511692,1,1,1,fair,1.38,0.2,625,bad
+<built-in function id>,Data Analyst,20073477,15054985,22117655,3,1,0,good,1.33,1.1,380,bad
+<built-in function id>,Nurse,6560132,3133938,250709,0,13,2,fair,2.09,0.04,720,fair
+<built-in function id>,Accountant,18777441,13128925,15049339,3,6,1,poor,1.43,0.8,355,bad
+<built-in function id>,Freelancer,7112330,3946413,2077747,1,12,1,fair,1.8,0.29,695,fair
+<built-in function id>,IT Engineer,16645861,7745526,1691581,1,11,0,good,2.15,0.1,730,fair
+<built-in function id>,Teacher,12691712,10568976,14227868,1,3,2,good,1.2,1.12,430,bad
+<built-in function id>,Accountant,13618004,8514446,7472267,1,10,1,fair,1.6,0.55,615,bad
+<built-in function id>,Accountant,18135483,11298595,7757572,2,9,2,fair,1.61,0.43,520,bad
+<built-in function id>,Student,4850202,4324109,3977375,2,1,2,poor,1.12,0.82,350,bad
+<built-in function id>,Data Analyst,23005423,18646638,7086409,0,7,3,fair,1.23,0.31,585,bad
+<built-in function id>,Accountant,17534663,15968717,19441458,3,13,1,good,1.1,1.11,435,bad
+<built-in function id>,Mechanic,12529658,8358476,8500945,0,12,3,fair,1.5,0.68,505,bad
+<built-in function id>,Nurse,8334340,4863916,1924156,1,11,2,good,1.71,0.23,700,fair
+<built-in function id>,Mechanic,10260989,5316404,1116313,1,10,3,fair,1.93,0.11,665,fair
+<built-in function id>,Freelancer,10907730,6400852,216215,1,9,0,poor,1.7,0.02,650,fair
+<built-in function id>,Designer,27522023,25085405,740327,1,11,1,good,1.1,0.03,715,fair
+<built-in function id>,Designer,19009198,10290101,8545342,1,5,0,fair,1.85,0.45,590,bad
+<built-in function id>,Student,8300784,3744343,6256232,0,0,3,poor,2.22,0.75,415,bad
+<built-in function id>,Freelancer,9677200,7918033,1786904,1,14,1,good,1.22,0.18,715,fair
+<built-in function id>,Accountant,14746660,12664449,9900266,1,2,1,fair,1.16,0.67,425,bad
+<built-in function id>,Nurse,14921050,9830668,4330186,1,3,0,poor,1.52,0.29,620,bad
+<built-in function id>,Data Analyst,29896700,22315524,19700248,3,14,1,good,1.34,0.66,435,bad
+<built-in function id>,Data Analyst,20329361,11075995,11289647,3,13,1,poor,1.84,0.56,515,bad
+<built-in function id>,Accountant,18990348,15596226,19314237,4,3,0,good,1.22,1.02,340,bad
+<built-in function id>,Nurse,11882228,7327278,13786994,3,1,0,good,1.62,1.16,380,bad
+<built-in function id>,Designer,18642657,10923270,701049,0,11,1,fair,1.71,0.04,735,fair
+<built-in function id>,Freelancer,5895488,5519278,948318,0,10,0,poor,1.07,0.16,730,fair
+<built-in function id>,Student,9431596,8901488,10148074,2,0,0,good,1.06,1.08,420,bad
+<built-in function id>,Student,11168146,9170343,1139467,1,0,2,fair,1.22,0.1,610,bad
+<built-in function id>,IT Engineer,16294367,15213626,17331468,3,10,1,poor,1.07,1.06,395,bad
+<built-in function id>,Salesperson,14714923,9917373,11267456,2,4,2,poor,1.48,0.77,350,bad
+<built-in function id>,Data Analyst,20332331,14540097,5128237,0,2,1,poor,1.4,0.25,645,bad
+<built-in function id>,Designer,19927362,13747163,2517889,0,14,0,poor,1.45,0.13,730,fair
+<built-in function id>,Designer,27379557,13585771,20765654,3,2,0,good,2.02,0.76,380,bad
+<built-in function id>,Freelancer,8332648,5386657,3540937,2,10,0,good,1.55,0.42,610,bad
+<built-in function id>,Mechanic,9068290,8220440,5922435,2,10,3,fair,1.1,0.65,425,bad
+<built-in function id>,Accountant,24625553,21370354,6982257,2,14,3,poor,1.15,0.28,605,bad
+<built-in function id>,Designer,25804837,17682589,26653196,4,5,2,poor,1.46,1.03,300,bad
+<built-in function id>,Salesperson,9635051,6148490,257263,1,6,3,poor,1.57,0.03,605,bad
+<built-in function id>,Designer,14655376,10158664,7255197,0,3,3,poor,1.44,0.5,535,bad
+<built-in function id>,IT Engineer,16286599,15071509,591084,1,14,3,poor,1.08,0.04,645,bad
+<built-in function id>,Freelancer,11336771,9367602,9097728,0,14,0,poor,1.21,0.8,530,bad
+<built-in function id>,Freelancer,10627533,6219894,12517609,4,13,1,good,1.71,1.18,395,bad
+<built-in function id>,Accountant,19798079,16148535,5521447,2,2,3,poor,1.23,0.28,535,bad
+<built-in function id>,Freelancer,8666576,7200675,2175610,0,6,0,poor,1.2,0.25,690,fair
+<built-in function id>,IT Engineer,13707027,12030920,14153833,1,1,0,fair,1.14,1.03,440,bad
+<built-in function id>,Designer,12688065,11828407,11349361,4,6,2,fair,1.07,0.89,320,bad
+<built-in function id>,Mechanic,11386264,9676442,13283871,4,1,3,fair,1.18,1.17,300,bad
+<built-in function id>,Designer,24756997,21199508,4099691,2,2,1,poor,1.17,0.17,565,bad
+<built-in function id>,Freelancer,8575095,4917521,8542587,2,9,0,poor,1.74,1.0,410,bad
+<built-in function id>,Student,10405902,6310669,5945983,1,2,0,poor,1.65,0.57,540,bad
+<built-in function id>,Teacher,6841129,5699732,1591232,1,13,2,poor,1.2,0.23,660,fair
+<built-in function id>,Teacher,7022752,4378007,1687868,0,9,0,poor,1.6,0.24,690,fair
+<built-in function id>,Student,8362340,6260152,458394,1,1,3,fair,1.34,0.05,595,bad
+<built-in function id>,IT Engineer,25933283,14735092,30256329,3,9,2,fair,1.76,1.17,360,bad
+<built-in function id>,Student,8844596,7535043,2889538,0,0,2,poor,1.17,0.33,550,bad
+<built-in function id>,Teacher,6457730,3302825,1479634,0,4,0,fair,1.96,0.23,680,fair
+<built-in function id>,IT Engineer,19412399,17381214,2034967,1,2,1,good,1.12,0.1,645,bad
+<built-in function id>,Data Analyst,27667012,14048313,7462108,0,11,1,fair,1.97,0.27,735,fair
+<built-in function id>,Accountant,19162764,16860894,3208030,0,6,2,poor,1.14,0.17,660,fair
+<built-in function id>,Nurse,11797055,9296797,2777976,1,7,0,good,1.27,0.24,690,fair
+<built-in function id>,Mechanic,11333534,8555446,1224028,1,9,1,fair,1.32,0.11,655,fair
+<built-in function id>,Nurse,9379952,4329197,7737353,1,14,3,fair,2.17,0.82,465,bad
+<built-in function id>,Student,7338711,5063408,1501118,0,1,3,good,1.45,0.2,655,fair
+<built-in function id>,Accountant,22160696,10823590,14645397,2,10,3,good,2.05,0.66,445,bad
+<built-in function id>,Student,9414283,7844862,6363640,2,2,3,fair,1.2,0.68,355,bad
+<built-in function id>,IT Engineer,12112705,9249233,13063524,1,4,3,poor,1.31,1.08,375,bad
+<built-in function id>,Freelancer,11311849,7923001,1688792,0,3,2,good,1.43,0.15,670,fair
+<built-in function id>,Data Analyst,26863163,17558027,31641393,2,8,0,fair,1.53,1.18,430,bad
+<built-in function id>,IT Engineer,27303785,15848911,25081835,3,12,1,fair,1.72,0.92,415,bad
+<built-in function id>,Designer,14591137,10531831,9204724,2,12,3,fair,1.39,0.63,425,bad
+<built-in function id>,Designer,26731695,14771457,2124149,1,14,0,good,1.81,0.08,730,fair
+<built-in function id>,Accountant,20723371,13960178,2682385,1,6,1,poor,1.48,0.13,635,bad
+<built-in function id>,Designer,22040544,17206978,14691991,3,5,3,poor,1.28,0.67,325,bad
+<built-in function id>,Accountant,27386613,22588233,161835,1,6,1,poor,1.21,0.01,635,bad
+<built-in function id>,Teacher,14222903,13124893,3261831,0,3,0,poor,1.08,0.23,660,fair
+<built-in function id>,Designer,24551638,16575608,24818591,1,9,3,poor,1.48,1.01,405,bad
+<built-in function id>,Freelancer,4091670,2645149,497786,1,7,2,poor,1.55,0.12,620,bad
+<built-in function id>,Data Analyst,14449580,12595435,3460651,2,7,0,poor,1.15,0.24,610,bad
+<built-in function id>,Data Analyst,21658804,14981828,5891038,0,3,1,poor,1.45,0.27,645,bad
+<built-in function id>,Teacher,9289575,6563039,2156885,0,3,2,good,1.42,0.23,670,fair
+<built-in function id>,Teacher,7424920,4923093,770140,1,8,3,fair,1.51,0.1,625,bad
+<built-in function id>,Teacher,6090535,5253135,142223,1,11,1,good,1.16,0.02,715,fair
+<built-in function id>,Freelancer,9948499,7787424,5233999,0,9,1,fair,1.28,0.53,615,bad
+<built-in function id>,Mechanic,12441295,11454073,170337,0,5,3,good,1.09,0.01,685,fair
+<built-in function id>,Student,8578956,6542749,8393002,2,1,0,good,1.31,0.98,420,bad
+<built-in function id>,Nurse,13831682,9350862,12033396,1,3,2,poor,1.48,0.87,390,bad
+<built-in function id>,Teacher,7556243,5017108,5484734,1,14,1,poor,1.51,0.73,475,bad
+<built-in function id>,Student,10886224,6048059,8828927,0,0,2,good,1.8,0.81,470,bad
+<built-in function id>,Accountant,14870902,11758644,378848,1,8,2,good,1.26,0.03,660,fair
+<built-in function id>,Accountant,28617488,23533059,6517265,1,7,2,good,1.22,0.23,660,fair
+<built-in function id>,Mechanic,13258902,9779159,2468283,0,10,3,good,1.36,0.19,725,fair
+<built-in function id>,Teacher,11976225,6440513,10324473,1,1,3,good,1.86,0.86,415,bad
+<built-in function id>,Designer,29579471,19957042,17099283,3,12,3,fair,1.48,0.58,505,bad
+<built-in function id>,Data Analyst,20163612,11143315,4119353,0,13,3,poor,1.81,0.2,685,fair
+<built-in function id>,IT Engineer,28475404,23177735,16724274,2,4,1,poor,1.23,0.59,485,bad
+<built-in function id>,Teacher,9326916,6767792,3440182,1,14,0,good,1.38,0.37,650,fair
+<built-in function id>,Salesperson,6709251,3722188,1554862,0,6,0,good,1.8,0.23,730,fair
+<built-in function id>,Accountant,23814160,12183517,3794070,2,5,0,poor,1.95,0.16,610,bad
+<built-in function id>,Freelancer,11817927,5474355,1462181,0,14,0,poor,2.16,0.12,730,fair
+<built-in function id>,Nurse,7742727,3994334,4415411,0,3,2,fair,1.94,0.57,570,bad
+<built-in function id>,IT Engineer,25793725,21013070,831481,0,3,2,fair,1.23,0.03,650,fair
+<built-in function id>,Freelancer,4650871,2655336,758728,1,13,3,fair,1.75,0.16,665,fair
+<built-in function id>,Nurse,13827415,11333215,10902948,3,13,0,poor,1.22,0.79,410,bad
+<built-in function id>,Student,11627876,9634171,2382950,1,1,3,good,1.21,0.2,615,bad
+<built-in function id>,Teacher,9580998,5534171,652971,0,9,3,good,1.73,0.07,685,fair
+<built-in function id>,Student,10827146,6877610,7515926,1,0,3,fair,1.57,0.69,395,bad
+<built-in function id>,Salesperson,11167220,7849831,3118287,0,6,2,good,1.42,0.28,700,fair
+<built-in function id>,Nurse,10725455,6227032,6321957,0,7,3,fair,1.72,0.59,585,bad
+<built-in function id>,Data Analyst,24882993,23353648,4663896,0,10,0,fair,1.07,0.19,750,good
+<built-in function id>,Designer,12669754,6880123,131498,0,13,0,poor,1.84,0.01,730,fair
+<built-in function id>,Mechanic,7968250,6556168,1411517,1,8,3,fair,1.22,0.18,625,bad
+<built-in function id>,IT Engineer,26153104,22974748,132259,1,6,0,poor,1.14,0.01,650,fair
+<built-in function id>,Freelancer,8874497,8062788,435662,1,4,1,fair,1.1,0.05,625,bad
+<built-in function id>,Salesperson,13763723,9903356,1132686,1,6,3,fair,1.39,0.08,625,bad
+<built-in function id>,Teacher,9168623,5744674,2945052,0,9,1,poor,1.6,0.32,595,bad
+<built-in function id>,Teacher,11953253,10585873,14249319,3,3,0,fair,1.13,1.19,360,bad
+<built-in function id>,Freelancer,6069444,3395051,688147,1,10,2,poor,1.79,0.11,660,fair
+<built-in function id>,Teacher,14692870,11267054,8330592,1,10,0,poor,1.3,0.57,610,bad
+<built-in function id>,Data Analyst,29690045,24605294,8594078,2,11,1,fair,1.21,0.29,655,fair
+<built-in function id>,Data Analyst,25475033,11743640,7324552,2,9,3,poor,2.17,0.29,565,bad
+<built-in function id>,Data Analyst,16922891,16075388,1856934,1,11,0,good,1.05,0.11,730,fair
+<built-in function id>,Designer,28466450,14494480,3834878,1,7,3,good,1.96,0.13,645,bad
+<built-in function id>,Data Analyst,28723712,24509142,7918823,0,3,1,good,1.17,0.28,685,fair
+<built-in function id>,Accountant,23597020,20913335,10255897,2,9,0,poor,1.13,0.43,530,bad
+<built-in function id>,Nurse,11845306,5998205,13006962,2,7,1,fair,1.97,1.1,415,bad
+<built-in function id>,Freelancer,11762747,11047835,6977522,2,10,0,good,1.06,0.59,610,bad
+<built-in function id>,Teacher,10724397,7205120,1425050,0,12,1,poor,1.49,0.13,715,fair
+<built-in function id>,Teacher,8930773,7295730,1612485,0,13,2,poor,1.22,0.18,700,fair
+<built-in function id>,Mechanic,11761402,6907384,2867845,1,2,0,poor,1.7,0.24,620,bad
+<built-in function id>,Data Analyst,27461840,17934973,1347583,1,10,0,poor,1.53,0.05,690,fair
+<built-in function id>,IT Engineer,20316852,15740813,16283573,2,8,0,poor,1.29,0.8,410,bad
+<built-in function id>,Freelancer,6219810,2817429,24115,0,8,0,poor,2.21,0.0,690,fair
+<built-in function id>,Mechanic,7425599,4222701,1730693,1,9,2,poor,1.76,0.23,620,bad
+<built-in function id>,Designer,19861168,15135659,15145824,4,3,0,fair,1.31,0.76,320,bad
+<built-in function id>,Mechanic,8554558,4074800,7758372,0,6,2,fair,2.1,0.91,480,bad
+<built-in function id>,Mechanic,13914320,7178731,2508613,1,6,3,poor,1.94,0.18,605,bad
+<built-in function id>,Accountant,13767429,12571147,15460436,3,10,2,poor,1.1,1.12,380,bad
+<built-in function id>,IT Engineer,21908298,15226785,25644358,1,5,3,poor,1.44,1.17,405,bad
+<built-in function id>,IT Engineer,28334877,14421689,20270109,3,1,2,fair,1.96,0.72,330,bad
+<built-in function id>,IT Engineer,19594534,18591337,5088271,0,7,1,good,1.05,0.26,715,fair
+<built-in function id>,Mechanic,10062435,4901260,1156091,1,12,1,fair,2.05,0.11,695,fair
+<built-in function id>,Mechanic,11347483,6145192,976236,0,5,1,good,1.85,0.09,715,fair
+<built-in function id>,Designer,13824584,7294609,11907542,3,11,1,fair,1.9,0.86,415,bad
+<built-in function id>,Data Analyst,22112871,17576792,7032387,2,4,3,good,1.26,0.32,495,bad
+<built-in function id>,Freelancer,9122808,6558888,1736592,1,7,2,fair,1.39,0.19,640,bad
+<built-in function id>,Salesperson,14609636,10149996,15559392,2,12,3,fair,1.44,1.07,425,bad
+<built-in function id>,Designer,29147040,17026631,13818819,3,7,2,good,1.71,0.47,500,bad
+<built-in function id>,Mechanic,8859168,5566105,327125,0,9,3,good,1.59,0.04,685,fair
+<built-in function id>,Designer,19752778,14961245,18388451,2,3,2,fair,1.32,0.93,370,bad
+<built-in function id>,Freelancer,6937202,4527582,1524475,0,6,2,poor,1.53,0.22,660,fair
+<built-in function id>,Designer,19301133,17142272,4507889,1,6,3,poor,1.13,0.23,605,bad
+<built-in function id>,Accountant,16732583,8593825,12933119,4,2,1,fair,1.95,0.77,305,bad
+<built-in function id>,Freelancer,11240563,9984538,9182772,0,2,1,good,1.13,0.82,485,bad
+<built-in function id>,Teacher,11627433,7238376,7101982,1,5,2,good,1.61,0.61,460,bad
+<built-in function id>,Student,4977361,4478839,1088328,1,0,3,poor,1.11,0.22,575,bad
+<built-in function id>,Data Analyst,24378665,16466919,25966136,3,6,3,poor,1.48,1.07,325,bad
+<built-in function id>,Data Analyst,14249870,12112199,373263,0,13,0,fair,1.18,0.03,750,good
+<built-in function id>,Salesperson,6396971,4096603,1585018,1,10,1,good,1.56,0.25,715,fair
+<built-in function id>,Teacher,13674117,8303618,16290384,4,8,3,good,1.65,1.19,325,bad
+<built-in function id>,Salesperson,8278781,7637946,4151906,1,1,1,poor,1.08,0.5,525,bad
+<built-in function id>,Data Analyst,13200370,10855170,13007810,4,14,2,good,1.22,0.99,380,bad
+<built-in function id>,IT Engineer,27153178,25129337,4118530,2,5,0,poor,1.08,0.15,610,bad
+<built-in function id>,Nurse,7464667,6448069,2332938,1,12,2,good,1.16,0.31,620,bad
+<built-in function id>,Salesperson,10168234,7684530,7220719,1,12,3,poor,1.32,0.71,445,bad
+<built-in function id>,Student,11444264,7231018,12034369,2,0,0,poor,1.58,1.05,380,bad
+<built-in function id>,Student,7858191,3658079,1401199,1,2,3,poor,2.15,0.18,575,bad
+<built-in function id>,Student,8431353,6663549,9759250,1,1,2,fair,1.27,1.16,410,bad
+<built-in function id>,Data Analyst,14324894,7828766,15035539,1,11,1,good,1.83,1.05,515,bad
+<built-in function id>,Data Analyst,25883480,21458441,3176194,2,14,1,fair,1.21,0.12,655,fair
+<built-in function id>,Teacher,9551480,6219861,2679339,0,2,0,fair,1.54,0.28,680,fair
+<built-in function id>,Freelancer,3651636,2410687,670351,1,2,2,fair,1.51,0.18,610,bad
+<built-in function id>,Nurse,12515995,7529961,739348,0,2,3,poor,1.66,0.06,615,bad
+<built-in function id>,Accountant,12860317,9242425,5738340,2,5,3,poor,1.39,0.45,485,bad
+<built-in function id>,IT Engineer,12242133,5510551,7895159,2,1,2,good,2.22,0.64,390,bad
+<built-in function id>,Accountant,25667129,17562114,2556766,0,9,0,poor,1.46,0.1,690,fair
+<built-in function id>,Nurse,9959210,8913986,67280,0,10,1,good,1.12,0.01,755,good
+<built-in function id>,Data Analyst,17237881,10354059,2387734,1,1,3,poor,1.66,0.14,575,bad
+<built-in function id>,Freelancer,7384393,4732843,1078475,1,14,3,fair,1.56,0.15,665,fair
+<built-in function id>,Salesperson,8367415,5028699,1174835,1,8,0,poor,1.66,0.14,650,fair
+<built-in function id>,Nurse,14900254,10751108,13938631,3,6,2,good,1.39,0.94,380,bad
+<built-in function id>,IT Engineer,29832949,27559763,5491482,2,3,1,fair,1.08,0.18,585,bad
+<built-in function id>,Salesperson,9170501,5741299,920879,1,13,1,good,1.6,0.1,715,fair
+<built-in function id>,Nurse,13676813,11822387,15309683,4,2,0,poor,1.16,1.12,300,bad
+<built-in function id>,Accountant,16847199,11556204,15642727,2,5,3,good,1.46,0.93,405,bad
+<built-in function id>,Mechanic,13290796,9635178,2027681,0,4,2,poor,1.38,0.15,630,bad
+<built-in function id>,Salesperson,8897378,5673444,6064935,2,13,1,good,1.57,0.68,475,bad
+<built-in function id>,Salesperson,7220739,5842937,1687477,0,4,3,good,1.24,0.23,655,fair
+<built-in function id>,Student,9528169,6850365,6498221,1,0,2,fair,1.39,0.68,410,bad
+<built-in function id>,IT Engineer,21544408,18565277,13625514,1,6,2,fair,1.16,0.63,440,bad
+<built-in function id>,IT Engineer,18380720,13178778,708958,0,12,2,good,1.39,0.04,740,fair
+<built-in function id>,Data Analyst,19016182,16150528,21333268,3,4,3,fair,1.18,1.12,315,bad
+<built-in function id>,Teacher,14651043,10077172,12979989,3,1,0,good,1.45,0.89,380,bad
+<built-in function id>,Student,8472035,5520003,324104,1,2,2,poor,1.53,0.04,590,bad
+<built-in function id>,Teacher,12101575,8710317,1419973,1,7,1,poor,1.39,0.12,635,bad
+<built-in function id>,Nurse,13740348,7618025,2193408,1,5,2,fair,1.8,0.16,640,bad
+<built-in function id>,Designer,12956598,9070136,2362939,1,1,0,fair,1.43,0.18,640,bad
+<built-in function id>,Nurse,9008949,7057833,2827622,1,4,2,fair,1.28,0.31,530,bad
+<built-in function id>,IT Engineer,19636976,10591203,20543872,2,6,3,fair,1.85,1.05,385,bad
+<built-in function id>,Student,5426586,2655886,1500575,0,2,3,good,2.04,0.28,655,fair
+<built-in function id>,Salesperson,10461081,6730008,920068,1,6,3,fair,1.55,0.09,625,bad
+<built-in function id>,IT Engineer,27078098,24864462,807317,0,11,3,good,1.09,0.03,725,fair
+<built-in function id>,Accountant,22899423,16279152,9068012,0,2,1,good,1.41,0.4,605,bad
+<built-in function id>,Student,11259357,9354370,2209101,0,2,3,poor,1.2,0.2,615,bad
+<built-in function id>,Teacher,13177465,7776302,6275893,2,7,3,fair,1.69,0.48,505,bad
+<built-in function id>,Freelancer,5494361,2657541,1383203,0,11,3,poor,2.07,0.25,685,fair
+<built-in function id>,Accountant,14231600,6516298,5297681,0,6,1,poor,2.18,0.37,595,bad
+<built-in function id>,Accountant,26904753,15329383,577009,0,6,1,poor,1.76,0.02,675,fair
+<built-in function id>,Mechanic,12352886,6013372,8450792,2,9,2,good,2.05,0.68,420,bad
+<built-in function id>,IT Engineer,23164137,21953964,18708368,1,5,0,good,1.06,0.81,490,bad
+<built-in function id>,Accountant,18053936,11606414,5405081,1,9,0,good,1.56,0.3,690,fair
+<built-in function id>,Accountant,14285177,10311766,1288614,1,11,2,poor,1.39,0.09,660,fair
+<built-in function id>,Designer,13010317,7205904,6699505,2,5,3,poor,1.81,0.51,485,bad
+<built-in function id>,Nurse,11468083,9905943,11497867,1,13,0,poor,1.16,1.0,490,bad
+<built-in function id>,Designer,23419259,15687827,16437829,2,1,3,fair,1.49,0.7,355,bad
+<built-in function id>,Accountant,24217558,16357425,8094331,1,2,2,poor,1.48,0.33,510,bad
+<built-in function id>,Student,3848282,2471355,4202174,0,0,2,good,1.56,1.09,470,bad
+<built-in function id>,Student,4917716,4250357,207382,0,2,1,poor,1.16,0.04,645,bad
+<built-in function id>,Student,8657908,4187601,4652897,2,2,0,fair,2.07,0.54,520,bad
+<built-in function id>,Designer,19760557,18593836,4602661,0,6,3,fair,1.06,0.23,665,fair
+<built-in function id>,Mechanic,9324258,5343400,296209,0,12,2,fair,1.75,0.03,720,fair
+<built-in function id>,Salesperson,6004274,2861599,755964,0,10,0,good,2.1,0.13,770,good
+<built-in function id>,Data Analyst,20004930,14510023,3432145,1,2,2,fair,1.38,0.17,610,bad
+<built-in function id>,Freelancer,8947032,7537978,5209533,1,12,3,good,1.19,0.58,605,bad
+<built-in function id>,Nurse,10102351,5723797,3845752,2,14,3,fair,1.76,0.38,545,bad
+<built-in function id>,Accountant,20691336,10975324,11501396,1,12,0,good,1.89,0.56,650,fair
+<built-in function id>,Nurse,9148583,5540380,2637691,1,2,2,fair,1.65,0.29,610,bad
+<built-in function id>,Data Analyst,17322752,8983378,13538130,4,6,2,good,1.93,0.78,340,bad
+<built-in function id>,Accountant,25762683,21654957,27073462,2,13,0,good,1.19,1.05,490,bad
+<built-in function id>,Freelancer,7288497,3430224,646409,0,8,3,fair,2.12,0.09,665,fair
+<built-in function id>,Designer,22622325,14284150,3793045,1,2,0,good,1.58,0.17,660,fair
+<built-in function id>,Salesperson,7873564,3880649,872564,0,4,2,fair,2.03,0.11,650,fair
+<built-in function id>,Accountant,24884844,18115389,22239849,3,13,1,fair,1.37,0.89,415,bad
+<built-in function id>,IT Engineer,18225181,14492505,1610379,0,10,2,fair,1.26,0.09,720,fair
+<built-in function id>,Teacher,6582133,6081764,677312,1,1,1,good,1.08,0.1,645,bad
+<built-in function id>,Student,4590786,2300661,1297778,1,0,1,fair,2.0,0.28,625,bad
+<built-in function id>,Designer,29525262,18287679,21946359,2,6,1,good,1.61,0.74,435,bad
+<built-in function id>,Salesperson,10061147,6274629,10734858,2,7,2,fair,1.6,1.07,400,bad
+<built-in function id>,Salesperson,9084239,5602141,927017,1,12,2,poor,1.62,0.1,660,fair
+<built-in function id>,Freelancer,8697565,4537674,1885648,1,6,2,fair,1.92,0.22,640,bad
+<built-in function id>,Freelancer,5196535,3945013,901778,1,1,0,poor,1.32,0.17,620,bad
+<built-in function id>,IT Engineer,17632616,12247705,1953073,1,2,1,good,1.44,0.11,645,bad
+<built-in function id>,Designer,13904302,12779788,46239,0,6,2,poor,1.09,0.0,660,fair
+<built-in function id>,Student,8103556,5529401,8029009,0,2,0,fair,1.47,0.99,480,bad
+<built-in function id>,IT Engineer,23552101,10839845,17303417,4,11,0,poor,2.17,0.73,370,bad
+<built-in function id>,Accountant,15747789,7984933,564776,0,11,0,good,1.97,0.04,770,good
+<built-in function id>,Teacher,9281092,6290802,1716120,0,1,0,fair,1.48,0.18,680,fair
+<built-in function id>,Designer,18462206,11669462,3935623,0,14,0,poor,1.58,0.21,730,fair
+<built-in function id>,Salesperson,13709886,11786211,240199,1,8,0,fair,1.16,0.02,670,fair
+<built-in function id>,Freelancer,11376600,6690938,2057039,0,14,3,good,1.7,0.18,725,fair
+<built-in function id>,Student,8399536,5543862,658764,0,1,3,poor,1.52,0.08,615,bad
+<built-in function id>,Freelancer,9728013,7927975,877342,0,10,0,good,1.23,0.09,770,good
+<built-in function id>,Freelancer,6493916,4404003,6732066,2,2,2,good,1.47,1.04,390,bad
+<built-in function id>,IT Engineer,24519775,14548484,18490900,4,11,3,good,1.69,0.75,365,bad
+<built-in function id>,Teacher,8376536,6325122,519130,1,10,1,good,1.32,0.06,715,fair
+<built-in function id>,Designer,17139313,14444277,4537120,0,7,1,poor,1.19,0.26,675,fair
+<built-in function id>,Accountant,21652381,12430714,10724265,4,1,1,good,1.74,0.5,445,bad
+<built-in function id>,Salesperson,8111145,6747479,5938375,0,9,2,fair,1.2,0.73,480,bad
+<built-in function id>,Student,5764722,2999039,4398676,0,0,3,good,1.92,0.76,455,bad
+<built-in function id>,Designer,26408421,19646622,2928791,0,3,3,poor,1.34,0.11,615,bad
+<built-in function id>,Mechanic,6634822,4995820,2123585,0,9,2,fair,1.33,0.32,600,bad
+<built-in function id>,Nurse,12527206,10262275,11484366,1,6,3,poor,1.22,0.92,405,bad
+<built-in function id>,Freelancer,7001295,4339578,7507278,1,12,3,good,1.61,1.07,485,bad
+<built-in function id>,Nurse,8443362,5053053,2304813,1,14,0,good,1.67,0.27,730,fair
+<built-in function id>,Freelancer,8495509,3918193,3499243,1,5,2,fair,2.17,0.41,560,bad
+<built-in function id>,Student,11885126,10474408,5260500,2,2,3,good,1.13,0.44,495,bad
+<built-in function id>,IT Engineer,14794448,8049855,5685381,2,14,1,good,1.84,0.38,595,bad
+<built-in function id>,IT Engineer,20249954,9910026,4077231,2,6,1,good,2.04,0.2,635,bad
+<built-in function id>,Student,3012437,1621788,631423,0,2,2,poor,1.86,0.21,630,bad
+<built-in function id>,Mechanic,8884116,4859040,2463641,1,7,0,poor,1.83,0.28,650,fair
+<built-in function id>,Mechanic,9422487,6066348,2092057,1,3,0,good,1.55,0.22,660,fair
+<built-in function id>,IT Engineer,23444065,18692908,3175255,1,10,1,fair,1.25,0.14,695,fair
+<built-in function id>,Teacher,9156674,8097237,377052,1,8,3,fair,1.13,0.04,625,bad
+<built-in function id>,Accountant,25807496,19576227,7260283,1,11,2,good,1.32,0.28,700,fair
+<built-in function id>,Nurse,7362632,4528857,1991082,0,3,0,good,1.63,0.27,700,fair
+<built-in function id>,Teacher,9417585,6713673,1317530,1,12,1,fair,1.4,0.14,695,fair
+<built-in function id>,Accountant,23832013,20759598,4300000,2,1,0,poor,1.15,0.18,580,bad
+<built-in function id>,Salesperson,9554152,7255904,11264333,3,6,1,good,1.32,1.18,395,bad
+<built-in function id>,Teacher,14143403,10287627,4711114,0,14,3,poor,1.37,0.33,605,bad
+<built-in function id>,Nurse,10348528,5020934,6994773,0,8,2,poor,2.06,0.68,460,bad
+<built-in function id>,Freelancer,11182724,6675399,6201521,1,12,2,good,1.68,0.55,620,bad
+<built-in function id>,Accountant,14133896,12527051,16443735,1,12,0,fair,1.13,1.16,510,bad
+<built-in function id>,Freelancer,9983756,7844707,1145911,0,14,0,fair,1.27,0.11,750,good
+<built-in function id>,Mechanic,11227679,10104314,7065641,1,2,2,fair,1.11,0.63,410,bad
+<built-in function id>,Student,5474546,2541224,2744370,1,0,0,fair,2.15,0.5,560,bad
+<built-in function id>,Designer,24226976,15431439,3803913,1,7,0,fair,1.57,0.16,670,fair
+<built-in function id>,Accountant,19457464,15564631,13014601,4,14,1,fair,1.25,0.67,375,bad
+<built-in function id>,Nurse,9828622,8502251,86895,1,11,0,fair,1.16,0.01,710,fair
+<built-in function id>,Freelancer,10541212,7408960,1179986,0,12,1,poor,1.42,0.11,715,fair
+<built-in function id>,Freelancer,11213008,5108270,197023,0,13,2,poor,2.2,0.02,700,fair
+<built-in function id>,Accountant,22690666,17239463,8069879,1,11,1,good,1.32,0.36,635,bad
+<built-in function id>,IT Engineer,23170166,19397608,23337480,3,10,1,poor,1.19,1.01,395,bad
+<built-in function id>,Nurse,7417076,3655840,3615725,0,12,1,fair,2.03,0.49,655,fair
+<built-in function id>,Student,7227493,5237138,5538726,1,2,1,fair,1.38,0.77,425,bad
+<built-in function id>,Salesperson,7226587,3485232,7945166,2,4,2,good,2.07,1.1,390,bad
+<built-in function id>,IT Engineer,21805739,10829921,1408721,1,8,3,poor,2.01,0.06,605,bad
+<built-in function id>,Student,3148204,2685313,2707407,1,0,2,fair,1.17,0.86,410,bad
+<built-in function id>,Data Analyst,18007179,12532995,2274290,0,11,3,poor,1.44,0.13,685,fair
+<built-in function id>,Teacher,12085848,11255145,8365713,1,3,3,poor,1.07,0.69,375,bad
+<built-in function id>,Designer,22493627,15811120,6052209,0,13,3,poor,1.42,0.27,685,fair
+<built-in function id>,Freelancer,6744862,4418093,350499,0,5,0,fair,1.53,0.05,710,fair
+<built-in function id>,Accountant,21826364,16194248,6390130,1,4,2,poor,1.35,0.29,590,bad
+<built-in function id>,Mechanic,6315264,5461284,6195090,2,3,0,poor,1.16,0.98,380,bad
+<built-in function id>,Teacher,14933382,8958969,940638,1,9,2,fair,1.67,0.06,640,bad
+<built-in function id>,Teacher,8915085,8275658,4055409,2,12,3,good,1.08,0.45,565,bad
+<built-in function id>,Designer,25140587,15490647,4754180,2,2,1,fair,1.62,0.19,585,bad
+<built-in function id>,Data Analyst,19557949,10043237,5145684,0,5,0,fair,1.95,0.26,710,fair
+<built-in function id>,Salesperson,6233751,2896171,2299275,1,2,1,poor,2.15,0.37,525,bad
+<built-in function id>,Designer,13523799,12507695,2507779,0,12,3,good,1.08,0.19,725,fair
+<built-in function id>,Salesperson,13873648,7522134,2012483,0,10,1,good,1.84,0.15,755,good
+<built-in function id>,Mechanic,14267943,11978892,3668674,2,8,1,fair,1.19,0.26,615,bad
+<built-in function id>,IT Engineer,26937879,18415054,14274832,1,6,0,fair,1.46,0.53,590,bad
+<built-in function id>,Mechanic,12478232,11079496,552932,0,12,1,good,1.13,0.04,755,good
+<built-in function id>,Accountant,14135046,12708881,2610915,0,9,1,poor,1.11,0.18,675,fair
+<built-in function id>,Teacher,12279888,5947764,10291760,3,14,2,poor,2.06,0.84,380,bad
+<built-in function id>,Student,8890676,7036845,4435108,0,1,0,fair,1.26,0.5,600,bad
+<built-in function id>,Data Analyst,29286514,16365113,3263803,2,14,0,fair,1.79,0.11,670,fair
+<built-in function id>,Student,3999968,1948443,3295811,0,0,0,good,2.05,0.82,500,bad
+<built-in function id>,IT Engineer,27157362,14891690,622633,0,7,1,fair,1.82,0.02,695,fair
+<built-in function id>,Freelancer,3961026,3458151,2847362,0,3,3,fair,1.15,0.72,435,bad
+<built-in function id>,Designer,18096438,9554105,1194431,1,13,2,fair,1.89,0.07,680,fair
+<built-in function id>,Nurse,9812254,6265495,5864429,1,3,1,good,1.57,0.6,565,bad
+<built-in function id>,Designer,12153586,11056072,1812765,1,10,3,fair,1.1,0.15,665,fair
+<built-in function id>,Salesperson,11618607,6888090,6236739,2,4,2,good,1.69,0.54,510,bad
+<built-in function id>,Teacher,14069302,10690599,12012553,2,12,0,good,1.32,0.85,490,bad
+<built-in function id>,Salesperson,9191189,5660567,9814827,0,3,1,fair,1.62,1.07,465,bad
+<built-in function id>,Nurse,10431909,7820859,4500405,2,10,2,fair,1.33,0.43,560,bad
+<built-in function id>,IT Engineer,12637204,9590884,2891081,0,2,2,good,1.32,0.23,670,fair
+<built-in function id>,Teacher,6412944,4742464,1388095,1,12,0,poor,1.35,0.22,690,fair
+<built-in function id>,Freelancer,11500064,9581314,3136278,2,5,2,poor,1.2,0.27,580,bad
+<built-in function id>,Freelancer,7516364,7074529,402481,1,9,0,good,1.06,0.05,690,fair
+<built-in function id>,Student,10016743,5240196,10007415,1,1,1,good,1.91,1.0,445,bad
+<built-in function id>,Salesperson,12110941,6669310,2961501,1,12,0,fair,1.82,0.24,710,fair
+<built-in function id>,Salesperson,9175616,6838170,4785321,1,8,1,fair,1.34,0.52,575,bad
+<built-in function id>,Data Analyst,15677028,8179363,2913511,0,11,0,fair,1.92,0.19,750,good
+<built-in function id>,Teacher,14017792,8978429,13852529,1,3,1,fair,1.56,0.99,425,bad
+<built-in function id>,Data Analyst,17752450,13233485,543168,1,5,2,poor,1.34,0.03,620,bad
+<built-in function id>,Nurse,11620997,5529815,13281799,4,4,3,poor,2.1,1.14,300,bad
+<built-in function id>,Salesperson,10040543,5911120,2750214,1,6,1,fair,1.7,0.27,655,fair
+<built-in function id>,Nurse,13226952,7847578,14626544,4,6,2,good,1.69,1.11,340,bad
+<built-in function id>,Data Analyst,12285183,7089424,2431858,0,7,0,good,1.73,0.2,730,fair
+<built-in function id>,Freelancer,11500738,7567283,127333,1,4,0,poor,1.52,0.01,620,bad
+<built-in function id>,Freelancer,11121564,5787086,2732556,0,13,1,poor,1.92,0.25,715,fair
+<built-in function id>,Data Analyst,25414916,18450222,26583249,1,10,3,good,1.38,1.05,485,bad
+<built-in function id>,Freelancer,8612274,6884362,1308489,1,7,1,good,1.25,0.15,675,fair
+<built-in function id>,Data Analyst,21466672,11301648,11919009,4,3,0,good,1.9,0.56,460,bad
+<built-in function id>,Salesperson,13261862,12082979,446005,0,13,0,good,1.1,0.03,770,good
+<built-in function id>,Salesperson,13405003,7327256,12848670,2,12,1,poor,1.83,0.96,435,bad
+<built-in function id>,Nurse,9696541,5594094,2451594,1,12,2,fair,1.73,0.25,680,fair
+<built-in function id>,Data Analyst,14955905,7675471,1199622,0,2,3,fair,1.95,0.08,635,bad
+<built-in function id>,Freelancer,5731766,4615039,1827768,1,12,2,good,1.24,0.32,620,bad
+<built-in function id>,Student,9676565,6894602,6891718,0,1,1,fair,1.4,0.71,465,bad
+<built-in function id>,Student,8871320,6646937,803265,0,2,1,good,1.33,0.09,685,fair
+<built-in function id>,Data Analyst,18404986,12926184,2149531,0,1,1,poor,1.42,0.12,645,bad
+<built-in function id>,Designer,12007967,7356189,3595811,0,14,2,poor,1.63,0.3,700,fair
+<built-in function id>,Nurse,7716666,4854649,7085912,1,14,2,good,1.59,0.92,500,bad
+<built-in function id>,Student,9327635,8132562,7258510,2,1,3,fair,1.15,0.78,355,bad
+<built-in function id>,Teacher,14255133,7627737,3703575,2,5,0,good,1.87,0.26,650,fair
+<built-in function id>,Student,6513531,6134178,6927822,0,2,1,good,1.06,1.06,485,bad
+<built-in function id>,Salesperson,11139506,5346501,11617800,2,14,3,good,2.08,1.04,445,bad
+<built-in function id>,IT Engineer,26287338,24240157,30840119,3,10,1,poor,1.08,1.17,395,bad
+<built-in function id>,Data Analyst,13024609,8571047,10842758,2,12,0,poor,1.52,0.83,450,bad
+<built-in function id>,Freelancer,3553027,1900181,1722832,0,12,0,good,1.87,0.48,690,fair
+<built-in function id>,Designer,23425520,17658939,5104240,1,1,2,fair,1.33,0.22,610,bad
+<built-in function id>,Mechanic,6711558,4023203,6579119,1,1,3,good,1.67,0.98,415,bad
+<built-in function id>,Nurse,9912097,6434167,4331961,0,9,0,poor,1.54,0.44,610,bad
+<built-in function id>,Freelancer,5832883,4655325,5261753,0,2,1,good,1.25,0.9,485,bad
+<built-in function id>,Salesperson,11059666,7091429,1545263,0,1,1,poor,1.56,0.14,645,bad
+<built-in function id>,Teacher,12063721,11194624,808717,0,14,1,poor,1.08,0.07,715,fair
+<built-in function id>,Teacher,9659373,6885036,11450127,4,8,2,good,1.4,1.19,340,bad
+<built-in function id>,Accountant,22024172,13637708,14182467,3,12,1,good,1.61,0.64,435,bad
+<built-in function id>,Accountant,24306918,12069938,17961330,3,9,0,fair,2.01,0.74,390,bad
+<built-in function id>,Freelancer,7756724,5680854,8369571,2,2,1,poor,1.37,1.08,365,bad
+<built-in function id>,Teacher,12459668,7021589,13116366,3,10,0,fair,1.77,1.05,430,bad
+<built-in function id>,Student,3328766,1727059,3130575,1,0,2,good,1.93,0.94,430,bad
+<built-in function id>,Teacher,12801215,11640400,6902489,2,13,0,good,1.1,0.54,610,bad
+<built-in function id>,IT Engineer,18716090,14786230,3951605,2,10,3,good,1.27,0.21,645,bad
+<built-in function id>,Designer,14720271,13017031,5160079,2,12,2,good,1.13,0.35,580,bad
+<built-in function id>,Salesperson,11554771,10850050,183584,1,11,1,fair,1.06,0.02,695,fair
+<built-in function id>,Freelancer,10436574,8892326,3460045,1,12,1,poor,1.17,0.33,595,bad
+<built-in function id>,Nurse,6970066,4324618,2594513,1,11,3,fair,1.61,0.37,585,bad
+<built-in function id>,Accountant,22812622,20721050,8910332,0,11,3,good,1.1,0.39,645,bad
+<built-in function id>,Freelancer,6970515,4168098,5669433,1,11,0,good,1.67,0.81,530,bad
+<built-in function id>,Designer,16489950,11573632,2475851,0,5,3,good,1.42,0.15,685,fair
+<built-in function id>,Mechanic,14964786,10162677,7066839,1,7,2,good,1.47,0.47,580,bad
+<built-in function id>,Student,11040243,10250011,4682255,0,0,3,fair,1.08,0.42,555,bad
+<built-in function id>,Mechanic,12863895,8767382,3513578,0,14,0,fair,1.47,0.27,750,good
+<built-in function id>,IT Engineer,21340328,14535515,17403324,3,11,1,fair,1.47,0.82,415,bad
+<built-in function id>,Data Analyst,29874430,24295802,34973344,2,2,3,poor,1.23,1.17,335,bad
+<built-in function id>,Designer,15400910,10408376,1955023,1,9,3,good,1.48,0.13,645,bad
+<built-in function id>,Salesperson,7733449,5379793,7475402,1,9,2,fair,1.44,0.97,440,bad
+<built-in function id>,Data Analyst,13114165,11378830,9330021,0,8,0,poor,1.15,0.71,490,bad
+<built-in function id>,Data Analyst,20240066,18258272,1039869,1,13,3,poor,1.11,0.05,645,bad
+<built-in function id>,Data Analyst,26877852,14553027,6707254,2,1,2,fair,1.85,0.25,570,bad
+<built-in function id>,Nurse,11872444,6033989,172609,1,6,0,fair,1.97,0.01,670,fair
+<built-in function id>,Nurse,14453750,7532401,9409948,2,7,3,good,1.92,0.65,405,bad
+<built-in function id>,IT Engineer,15149008,9733690,679506,0,13,1,good,1.56,0.04,755,good
+<built-in function id>,Teacher,8124925,5148346,146594,0,6,1,poor,1.58,0.02,675,fair
+<built-in function id>,Teacher,7245261,6202185,1259359,1,2,2,good,1.17,0.17,630,bad
+<built-in function id>,Salesperson,12547488,11896370,15037593,2,9,2,poor,1.05,1.2,380,bad
+<built-in function id>,Salesperson,8697491,5059395,8722162,1,3,1,fair,1.72,1.0,425,bad
+<built-in function id>,Nurse,12246172,11552705,9969891,2,12,2,poor,1.06,0.81,420,bad
+<built-in function id>,IT Engineer,19702187,17885984,4535275,1,2,0,poor,1.1,0.23,620,bad
+<built-in function id>,Freelancer,7557610,3505391,799948,0,7,1,poor,2.16,0.11,675,fair
+<built-in function id>,Designer,27404957,14475231,5545510,0,9,1,good,1.89,0.2,715,fair
+<built-in function id>,IT Engineer,17642235,8853998,1968730,0,9,0,good,1.99,0.11,730,fair
+<built-in function id>,Designer,25562624,18139834,9902221,2,9,3,good,1.41,0.39,525,bad
+<built-in function id>,Teacher,6947359,4278984,4801909,1,13,3,good,1.62,0.69,485,bad
+<built-in function id>,Nurse,11011496,8855325,866313,0,3,1,good,1.24,0.08,685,fair
+<built-in function id>,Freelancer,8179859,4773305,2371052,0,9,2,good,1.71,0.29,700,fair
+<built-in function id>,Mechanic,12123243,5660147,13729380,2,2,2,fair,2.14,1.13,370,bad
+<built-in function id>,Salesperson,11327652,7875806,1926981,1,5,3,fair,1.44,0.17,625,bad
+<built-in function id>,Student,10994688,7899823,12714012,1,2,1,poor,1.39,1.16,405,bad
+<built-in function id>,Teacher,9140448,5496038,750473,1,9,3,poor,1.66,0.08,605,bad
+<built-in function id>,Mechanic,7136735,3331727,3612105,2,4,0,poor,2.14,0.51,500,bad
+<built-in function id>,Student,5031825,4535026,4586045,0,1,1,poor,1.11,0.91,445,bad
+<built-in function id>,Freelancer,4143251,2456505,3997575,1,7,2,poor,1.69,0.96,420,bad
+<built-in function id>,Accountant,12078500,10182960,6232929,1,13,1,fair,1.19,0.52,615,bad
+<built-in function id>,IT Engineer,18987642,13424001,2178235,1,12,3,good,1.41,0.11,685,fair
+<built-in function id>,Teacher,13809575,7073131,2735551,1,4,1,fair,1.95,0.2,625,bad
+<built-in function id>,Teacher,8297103,6471344,429969,0,1,2,good,1.28,0.05,670,fair
+<built-in function id>,Nurse,12547326,11204018,2679607,0,5,2,poor,1.12,0.21,660,fair
+<built-in function id>,Student,9363868,7249794,2728003,1,0,0,poor,1.29,0.29,620,bad
+<built-in function id>,Salesperson,6115491,3577384,3866974,1,1,3,good,1.71,0.63,415,bad
+<built-in function id>,Salesperson,12583247,6378755,3665862,2,13,1,fair,1.97,0.29,655,fair
+<built-in function id>,Mechanic,10298170,8917793,1692144,0,2,2,fair,1.15,0.16,650,fair
+<built-in function id>,Mechanic,14861757,8269211,10705300,1,5,2,fair,1.8,0.72,440,bad
+<built-in function id>,IT Engineer,17951841,11694065,21484290,3,6,2,fair,1.54,1.2,360,bad
+<built-in function id>,Designer,22335035,19919743,5752837,0,3,1,fair,1.12,0.26,665,fair
+<built-in function id>,Student,3748961,2737129,173217,1,0,0,poor,1.37,0.05,620,bad
+<built-in function id>,Salesperson,8508414,4778238,3245385,2,11,1,good,1.78,0.38,595,bad
+<built-in function id>,Mechanic,7816823,6631993,2015731,1,14,3,fair,1.18,0.26,665,fair
+<built-in function id>,Accountant,20935456,17575671,122296,1,6,1,good,1.19,0.01,675,fair
+<built-in function id>,Freelancer,4533443,2861081,864461,0,4,3,poor,1.58,0.19,615,bad
+<built-in function id>,IT Engineer,25928812,23748881,2538380,1,8,0,good,1.09,0.1,690,fair
+<built-in function id>,Designer,16294552,11881777,14771766,3,1,2,good,1.37,0.91,350,bad
+<built-in function id>,Accountant,18775954,11394238,11344130,3,14,0,good,1.65,0.6,450,bad
+<built-in function id>,Freelancer,4224196,2969055,4880666,1,11,1,poor,1.42,1.16,475,bad
+<built-in function id>,Freelancer,9123681,5796653,9232091,2,3,3,fair,1.57,1.01,355,bad
+<built-in function id>,Mechanic,6741197,5424442,5283298,0,8,3,good,1.24,0.78,485,bad
+<built-in function id>,Student,3572832,2915394,269565,0,2,3,fair,1.23,0.08,635,bad
+<built-in function id>,Accountant,21110734,13777689,16140811,2,12,3,good,1.53,0.76,445,bad
+<built-in function id>,Mechanic,8537979,5334474,1594204,0,5,0,fair,1.6,0.19,710,fair
+<built-in function id>,Freelancer,3987847,2271227,234106,1,3,3,poor,1.76,0.06,575,bad
+<built-in function id>,Mechanic,7442492,3932367,8609143,1,4,3,poor,1.89,1.16,375,bad
+<built-in function id>,Teacher,6901350,3637730,2036966,0,12,0,good,1.9,0.3,770,good
+<built-in function id>,Designer,28076289,19579194,892166,1,8,3,good,1.43,0.03,645,bad
+<built-in function id>,Salesperson,8073280,5884719,5315305,1,10,2,fair,1.37,0.66,480,bad
+<built-in function id>,Nurse,7207781,3950667,219848,1,7,1,good,1.82,0.03,675,fair
+<built-in function id>,IT Engineer,17591077,8386694,19981179,2,6,0,good,2.1,1.14,450,bad
+<built-in function id>,Salesperson,7779189,6874519,1650944,1,10,0,good,1.13,0.21,730,fair
+<built-in function id>,Designer,13486272,9518568,3853561,2,9,2,good,1.42,0.29,620,bad
+<built-in function id>,Accountant,26234210,20170954,10814978,2,8,3,fair,1.3,0.41,505,bad
+<built-in function id>,Mechanic,9485805,5644756,152607,1,5,3,good,1.68,0.02,645,bad
+<built-in function id>,Designer,26286254,15818865,4261668,2,9,2,good,1.66,0.16,620,bad
+<built-in function id>,Freelancer,9460148,7602322,10730403,4,4,2,fair,1.24,1.13,300,bad
+<built-in function id>,Mechanic,12737551,10828184,2399248,1,12,3,poor,1.18,0.19,645,bad
+<built-in function id>,Student,11988032,5480659,6421260,0,0,0,good,2.19,0.54,620,bad
+<built-in function id>,Designer,15669393,11108339,11699327,3,3,1,good,1.41,0.75,365,bad
+<built-in function id>,Data Analyst,27652803,21187631,21033503,2,7,3,good,1.31,0.76,405,bad
+<built-in function id>,Nurse,7920424,5363311,8122655,2,6,1,good,1.48,1.03,435,bad
+<built-in function id>,Designer,17733662,11100540,12326275,2,10,1,good,1.6,0.7,475,bad
+<built-in function id>,Student,11104386,7367233,4822606,2,1,2,poor,1.51,0.43,470,bad
+<built-in function id>,Designer,13288458,10142809,2573148,1,13,0,fair,1.31,0.19,710,fair
+<built-in function id>,Teacher,7284523,5726154,1548477,0,10,3,poor,1.27,0.21,685,fair
+<built-in function id>,Student,4216546,2858627,3419210,0,2,3,poor,1.48,0.81,415,bad
+<built-in function id>,Data Analyst,15757480,8251063,5522847,0,11,1,poor,1.91,0.35,635,bad
+<built-in function id>,Mechanic,14491183,10560862,537177,0,11,0,poor,1.37,0.04,730,fair
+<built-in function id>,IT Engineer,17969240,15041417,1377428,0,2,1,good,1.19,0.08,685,fair
+<built-in function id>,Student,6227857,3253073,301965,1,0,2,good,1.91,0.05,630,bad
+<built-in function id>,Designer,13471189,8361014,2583525,0,10,1,good,1.61,0.19,755,good
+<built-in function id>,Teacher,10874834,8692523,2602001,1,9,2,good,1.25,0.24,660,fair
