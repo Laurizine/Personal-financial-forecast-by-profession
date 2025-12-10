@@ -70,13 +70,16 @@ class CreditController:
         final_class = self.resolve_final_class(rule_conclusions, bayes_output)
 
         # (5) Sinh giải thích bằng LLM
-        explanation = generate_explanation(
-            facts=facts,
-            rule_conclusions=rule_conclusions,
-            bayes_output=bayes_output,
-            fired_rules=fired_rules,
-            final_class=final_class
-        )
+        try:
+            explanation = generate_explanation(
+                facts=facts,
+                rule_conclusions=rule_conclusions,
+                bayes_output=bayes_output,
+                fired_rules=fired_rules,
+                final_class=final_class
+            )
+        except Exception as e:
+            explanation = f"Lỗi Gemini: {str(e)}"
 
         # (6) Trả về kết quả cho UI
         return {

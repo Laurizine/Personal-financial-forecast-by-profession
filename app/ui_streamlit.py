@@ -63,8 +63,30 @@ if submitted:
         "credit_mix": mix,
     }
 
-    # Gọi controller
-    result = controller.process(user_input)
+    # --- Cache & Throttle ---
+    payload_key = json.dumps(user_input, sort_keys=True, ensure_ascii=False)
+    min_interval = float(os.environ.get("LLM_MIN_INTERVAL_SEC", "5"))
+
+    last_key = st.session_state.get("last_key")
+    last_result = st.session_state.get("last_result")
+    last_call = st.session_state.get("last_call_at")
+    now = time.time()
+
+    if last_key == payload_key and last_result is not None:
+        result = last_result
+    else:
+        if last_call and (now - last_call < min_interval):
+            wait_time = min_interval - (now - last_call)
+            st.warning(f"Vui lòng đợi {round(wait_time, 1)} giây trước khi gọi lại.")
+            if last_result is not None:
+                result = last_result
+            else:
+                st.stop()
+        else:
+            result = controller.process(user_input)
+            st.session_state["last_key"] = payload_key
+            st.session_state["last_result"] = result
+            st.session_state["last_call_at"] = now
 
     # =============================
     # HIỂN THỊ KẾT QUẢ

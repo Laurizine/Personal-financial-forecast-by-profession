@@ -21,33 +21,34 @@ except Exception:
 # HÀM XÂY DỰNG PROMPT CHO LLM
 # ================================================
 def build_prompt(facts, rule_conclusions, bayes_output, fired_rules, final_class):
-    facts_json = json.dumps(facts, indent=2, ensure_ascii=False)
+    compressed_facts = "; ".join([
+        f"job={facts.get('job')}",
+        f"income_monthly={facts.get('income_monthly')}",
+        f"expense_monthly={facts.get('expense_monthly')}",
+        f"debt_amount={facts.get('debt_amount')}",
+        f"income_expense_ratio={facts.get('income_expense_ratio')}",
+        f"debt_ratio={facts.get('debt_ratio')}",
+        f"late_payments_12m={facts.get('late_payments_12m')}",
+        f"credit_history_length_years={facts.get('credit_history_length_years')}",
+        f"new_credit_accounts={facts.get('new_credit_accounts')}",
+        f"credit_mix={facts.get('credit_mix')}"
+    ])
 
     prompt = f"""
-Bạn là chuyên gia phân tích tín dụng. Hãy mô tả và đánh giá hồ sơ tín dụng của người dùng dựa trên dữ liệu sau:
+Hãy viết báo cáo theo đúng 7 đoạn, mỗi đoạn 3–4 câu: 
 
-{facts_json}
+1) Mô tả nghề nghiệp, thu nhập, chi tiêu và ý nghĩa income_expense_ratio. 
+2) Phân tích khoản nợ (debt_amount, debt_ratio) và mức rủi ro. 
+3) Đánh giá hành vi tín dụng: trả chậm 12 tháng, số năm lịch sử tín dụng, số tài khoản mới. 
+4) Phân tích chất lượng credit_mix và yếu tố cải thiện/suy giảm hồ sơ. 
+5) Tổng hợp các yếu tố ảnh hưởng đến năng lực tín dụng và mức an toàn tài chính. 
+6) Đưa ra quyết định xếp loại tín dụng (good / fair / bad) và lý do chính. 
+7) Đề xuất các hướng cải thiện hành vi tài chính hoặc điểm tín dụng. 
 
-Yêu cầu trình bày kết quả theo đúng 7 đoạn sau:
+Yêu cầu văn phong rõ ràng, chuyên nghiệp, lập luận tài chính mạch lạc. 
+Không viết tắt, không lặp lại thông tin không cần thiết. 
 
-1) Mô tả nghề nghiệp, thu nhập, chi tiêu và giải thích ý nghĩa của chỉ số income_expense_ratio đối với khả năng tài chính.
-
-2) Phân tích khoản nợ hiện tại, tính chất của debt_amount và đánh giá mức độ rủi ro dựa trên debt_ratio (tích cực hay tiêu cực).
-
-3) Đánh giá hành vi tín dụng gồm: số lần trả chậm trong 12 tháng, số năm lịch sử tín dụng và số tài khoản tín dụng mới. Giải thích rủi ro tương ứng.
-
-4) Phân tích chất lượng credit_mix và nêu rõ các yếu tố nào đang cải thiện hoặc làm suy giảm chất lượng hồ sơ tín dụng.
-
-5) Tổng hợp toàn bộ các yếu tố quan trọng ảnh hưởng đến năng lực tín dụng và đánh giá mức độ an toàn tài chính hiện tại.
-
-6) Đưa ra quyết định xếp loại tín dụng cuối cùng (good / fair / bad) dựa trên nội dung phân tích.
-
-7) Đề xuất các gợi ý cải thiện điểm tín dụng hoặc hành vi tài chính phù hợp với tình trạng hiện tại.
-
-Yêu cầu văn phong:
-- Rõ ràng, chuyên nghiệp, có tính giải thích.
-- Thể hiện lập luận tài chính mạch lạc.
-- Trình bày đầy đủ, không viết tắt, không bỏ sót thông tin.
+Dữ liệu đầu vào: {compressed_facts}
 """
 
     return prompt
