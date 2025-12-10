@@ -95,6 +95,9 @@ celerybeat.pid
 .env
 .venv
 env/
+!env/
+!env/set_gemini.ps1
+!env/clear_env.ps1
 venv/
 ENV/
 env.bak/
