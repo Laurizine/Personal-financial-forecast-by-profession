@@ -148,7 +148,13 @@ class CreditController:
         
         # (7) Log vào DB
         duration = time.time() - start_time
-        self.db.log_prediction(facts, result_dict, duration)
+        
+        # Thêm cache_key vào facts để log nếu cần
+        facts["cache_key"] = key
+        
+        pred_id = self.db.log_prediction(facts, result_dict, duration)
+        if pred_id:
+            self.db.log_fired_rules(pred_id, fired_rules)
         
         return result_dict
 
