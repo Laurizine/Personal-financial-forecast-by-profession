@@ -4,23 +4,40 @@ Dự án kết hợp tập luật (forward-chaining), mô hình Bayesian (Gaussi
 
 ## Công nghệ & phương pháp
 - UI: `streamlit`
-- API: `fastapi` + `uvicorn`
+- API: `fastapi` (không dùng uvicorn theo yêu cầu)
 - ML: `scikit-learn` với `StandardScaler`, `OneHotEncoder`, `GaussianNB`, `Pipeline`
 - LLM: `google-generativeai` với model `gemini-2.5-flash` (chỉ dùng model này khi gọi API)
 - Suy luận: Rule Engine forward-chaining (`knowledge/rule_engine.py`)
 - Prompt LLM: 7 đoạn tiếng Việt, nén facts dạng `key=value` để giảm token
 
 ## Cấu trúc dự án
-- `app/controller.py`: gom lý luận, gọi Rule Engine + Bayesian + LLM
-- `app/ui_streamlit.py`: UI người dùng (có cache theo input và throttle 5s)
-- `app/api.py`: REST API `/explain`
-- `knowledge/rules.py`, `knowledge/rule_engine.py`: tập luật và máy suy diễn forward-chaining
-- `inference/bayesian_model.py`: pipeline huấn luyện/dự đoán (GaussianNB), lưu tại `inference/model.pkl`
-- `llm/explanation_service.py`: xây dựng prompt và gọi Gemini (không dùng fallback)
-- `config/settings.py`: đường dẫn dataset/model
-- `env/set_gemini.ps1`: script thiết lập API key và model
-- `Dataset/simulated_data.csv`: dữ liệu mẫu
-- `tests/`: kiểm thử đơn vị
+- `app/`
+  - `ui_streamlit.py`: Giao diện người dùng, cache theo input và throttle 5s
+  - `controller.py`: Trung tâm xử lý, chuẩn hóa facts, gọi Rules + Bayesian + LLM
+  - `api.py`: Định nghĩa FastAPI cho tích hợp nội bộ (không chạy uvicorn)
+- `knowledge/`
+  - `rules.py`: Tập luật nghiệp vụ (if-then), gồm các nhóm năng lực tài chính, rủi ro nợ, hành vi thanh toán, chất lượng lịch sử, tín dụng mới, mix tín dụng, tổng hợp rủi ro và gợi ý lớp tín dụng
+  - `rule_engine.py`: Máy suy diễn tiến, áp dụng luật lặp cho đến khi ổn định
+- `inference/`
+  - `bayesian_model.py`: Pipeline GaussianNB (preprocess + model), train/predict, lưu `model.pkl`
+  - `model.pkl`: Mô hình đã huấn luyện
+- `llm/`
+  - `explanation_service.py`: Tạo prompt 7 đoạn, nén facts, gọi Gemini; chỉ Gemini, không fallback
+- `config/`
+  - `settings.py`: Đường dẫn dataset/model và cấu hình chung
+- `Dataset/`
+  - `simulated_data.csv`: Dữ liệu mẫu để train
+- `env/`
+  - `set_gemini.ps1`: Thiết lập `GOOGLE_API_KEY`, `GEMINI_MODEL` (mặc định `gemini-2.5-flash`)
+- `tests/`
+  - `test_end_to_end.py`: Kiểm thử luồng end-to-end qua `CreditController`
+  - `test_edge_cases.py`: Biên/ngoại lệ (0, cực lớn, thiếu trường)
+  - `test_rule_coverage.py`: Phủ nhánh rule, tránh ghi đè sai giữa R19/R20
+  - `test_bayesian.py`, `test_bayesian_stability.py`: Kiểm thử huấn luyện/dự đoán và độ ổn định
+  - `test_fact_normalization.py`: Kiểm thử chuẩn hóa facts
+  - `test_llm_fallback.py`: Kiểm thử khi Gemini lỗi (mock) trả về thông báo ngắn gọn
+- `visualization/`: Công cụ vẽ biểu đồ đánh giá/nhân quả
+- File gốc: `run.py`, `requirements.txt`, `README.md`
 
 ## Yêu cầu hệ thống
 - Python 3.10 trở lên (Windows)
@@ -49,7 +66,7 @@ Dự án kết hợp tập luật (forward-chaining), mô hình Bayesian (Gaussi
 
 5) (Tuỳ chọn) REST API
 - Dự án có định nghĩa FastAPI trong `app/api.py` để tích hợp nội bộ.
-- Không cung cấp hướng dẫn chạy bằng uvicorn theo yêu cầu; tập trung dùng Streamlit.
+- Không dùng uvicorn theo yêu cầu; ưu tiên Streamlit.
 
 6) (Tuỳ chọn) CLI nhanh
 - `python run.py predict --input "{...}"`
@@ -71,4 +88,7 @@ Dự án kết hợp tập luật (forward-chaining), mô hình Bayesian (Gaussi
 - Lỗi 429 rate-limit: đợi 30–60 giây rồi thử lại; tránh bấm liên tục
 
 ## Kiểm thử
-- `python -m unittest discover -s tests`
+- Cài đặt pytest: `pip install pytest`
+- Chạy toàn bộ: `python -m pytest tests`
+- Phạm vi bao phủ:
+  - End-to-end controller, biên/ngoại lệ, phủ nhánh rule (đã xử lý xung đột R19/R20), ổn định Bayesian, chuẩn hóa facts, và fallback LLM khi lỗi.
