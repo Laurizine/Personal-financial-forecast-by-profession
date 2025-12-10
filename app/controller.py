@@ -3,6 +3,7 @@ import os
 import time
 import hashlib
 import json
+import logging
 from knowledge.rule_engine import RuleEngine
 from inference.bayesian_model import BayesianModel
 from llm.explanation_service import generate_explanation
@@ -18,6 +19,7 @@ class CreditController:
         self._explain_cache = {}
         self._ttl_seconds = 1800
         self._max_entries = 512
+        self.logger = logging.getLogger(__name__)
 
     # ---------------------------------------
     #  TÍNH TỶ LỆ AN TOÀN
@@ -100,9 +102,17 @@ class CreditController:
     def process(self, payload):
         # (1) Chuẩn hóa input → facts
         facts = self.build_facts(payload)
+        try:
+            self.logger.debug(f"facts summary: job={facts.get('job')}, income={facts.get('income_monthly')}, expense={facts.get('expense_monthly')}, debt={facts.get('debt_amount')}")
+        except Exception:
+            pass
 
         # (2) Chạy Rule Engine
         rule_conclusions, fired_rules = self.rule_engine.infer(facts)
+        try:
+            self.logger.debug(f"rules fired: count={len(fired_rules)}")
+        except Exception:
+            pass
 
         # Gom tri thức vào một dictionary
         reasoning_info = {
@@ -113,9 +123,17 @@ class CreditController:
 
         # (3) Chạy Bayesian Model
         bayes_output = self.bayes_model.predict(facts)
+        try:
+            self.logger.debug(f"bayes: class={bayes_output.get('bayes_class')}, score={bayes_output.get('bayes_score')}, conf={bayes_output.get('confidence')}")
+        except Exception:
+            pass
 
         # (4) Tổng hợp kết quả cuối
         final_class = self.resolve_final_class(rule_conclusions, bayes_output)
+        try:
+            self.logger.info(f"final_class={final_class}")
+        except Exception:
+            pass
 
         key = self._make_cache_key(facts)
         cached = self._get_cached_explanation(key)

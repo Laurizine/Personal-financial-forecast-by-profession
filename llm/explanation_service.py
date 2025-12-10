@@ -3,6 +3,7 @@ import textwrap
 import os
 import time
 import re
+import logging
 try:
     import google.generativeai as genai
 except Exception:
@@ -13,6 +14,7 @@ except Exception:
     gex = None
 MODEL_CACHE = {}
 CONFIGURED_KEY = None
+logger = logging.getLogger(__name__)
  
 
 
@@ -71,6 +73,10 @@ def _get_model():
     use_name = model_name
     if not use_name.startswith("models/") and use_name.startswith("gemini-"):
         use_name = f"models/{use_name}"
+    try:
+        logger.debug(f"gemini model name={use_name}")
+    except Exception:
+        pass
     cache_key = (key, model_name)
     model = MODEL_CACHE.get(cache_key)
     if model is None:
@@ -78,10 +84,12 @@ def _get_model():
         model = genai.GenerativeModel(use_name)
         MODEL_CACHE[cache_key] = model
         CONFIGURED_KEY = key
+        logger.info(f"Gemini model initialized: {use_name}")
         return model
     if CONFIGURED_KEY != key:
         genai.configure(api_key=key)
         CONFIGURED_KEY = key
+        logger.info("Gemini client reconfigured with new API key")
     return model
 
 def call_gemini(prompt: str):
@@ -95,11 +103,23 @@ def call_gemini(prompt: str):
             text = getattr(result, "text", "")
             if not text:
                 raise RuntimeError("No output from Gemini")
+            try:
+                logger.info(f"Gemini generate_content success: prompt_len={len(prompt)}, output_len={len(text)}")
+            except Exception:
+                pass
             return text
         except Exception as e:
             if gex and isinstance(e, gex.ResourceExhausted):
+                try:
+                    logger.warning("Gemini rate-limit exceeded")
+                except Exception:
+                    pass
                 raise RuntimeError("Gemini rate-limit exceeded")
             if "429" in str(e):
+                try:
+                    logger.warning("Gemini rate-limit exceeded")
+                except Exception:
+                    pass
                 raise RuntimeError("Gemini rate-limit exceeded")
 
             is_network = False
@@ -110,6 +130,10 @@ def call_gemini(prompt: str):
 
             if is_network and attempt < max_retries:
                 wait_time = base_wait * (2 ** attempt)
+                try:
+                    logger.debug(f"Gemini retry attempt={attempt+1}, wait={wait_time}s")
+                except Exception:
+                    pass
                 time.sleep(wait_time)
                 continue
             raise RuntimeError(str(e))

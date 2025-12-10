@@ -7,6 +7,9 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.pipeline import Pipeline
 import os
 from config.settings import MODEL_PATH
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class BayesianModel:
@@ -18,12 +21,12 @@ class BayesianModel:
         if os.path.exists(self.model_path) and os.path.getsize(self.model_path) > 0:
             try:
                 self.load_model()
-                print("[LOAD] Model loaded successfully.")
+                logger.info(f"BayesianModel loaded: path={self.model_path}")
             except Exception as e:
-                print("[ERROR] Failed to load model:", e)
-                print("[INFO] Please retrain the model.")
+                logger.error(f"BayesianModel load failed: {e}")
+                logger.info("Please retrain the model.")
         else:
-            print("[INFO] No existing model found. Train first to generate model.pkl.")
+            logger.info("No existing model found. Train first to generate model.pkl.")
 
 
     # =====================================================
@@ -79,8 +82,8 @@ class BayesianModel:
         # Load pipeline in RAM
         self.pipeline = pipeline
 
-        print("[TRAIN] Training completed and model saved!")
-        print("[LOAD] Model loaded into memory after training.")
+        logger.info("BayesianModel training completed and model saved")
+        logger.info("BayesianModel pipeline loaded into memory after training")
 
 
     # =====================================================
@@ -89,6 +92,7 @@ class BayesianModel:
     def load_model(self):
         with open(self.model_path, "rb") as f:
             self.pipeline = pickle.load(f)
+        logger.info(f"BayesianModel loaded from file: path={self.model_path}")
 
 
     # =====================================================

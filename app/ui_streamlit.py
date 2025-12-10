@@ -3,7 +3,44 @@ ROOT = os.path.dirname(os.path.dirname(__file__))
 if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
 import streamlit as st
+import logging
+from logging import Formatter
+from logging.handlers import RotatingFileHandler
 from app.controller import CreditController
+level_name = os.environ.get("LOG_LEVEL", "INFO").upper()
+level = getattr(logging, level_name, logging.INFO)
+formatter = Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s")
+stream_handler = logging.StreamHandler(sys.stdout)
+stream_handler.setFormatter(formatter)
+file_handler = RotatingFileHandler("app.log", maxBytes=5_000_000, backupCount=3, encoding="utf-8")
+file_handler.setFormatter(formatter)
+class RateLimitFilter(logging.Filter):
+    def __init__(self, window_seconds=5.0, max_records=3):
+        super().__init__()
+        self.window = float(window_seconds)
+        self.max_records = int(max_records)
+        self.bucket = {}
+    def filter(self, record):
+        key = (record.name, record.msg)
+        now = time.time()
+        ts = self.bucket.get(key, [])
+        ts = [t for t in ts if now - t <= self.window]
+        if len(ts) < self.max_records:
+            ts.append(now)
+            self.bucket[key] = ts
+            return True
+        self.bucket[key] = ts
+        return False
+rate_window = float(os.environ.get("LOG_RATE_WINDOW", "5"))
+rate_max = int(os.environ.get("LOG_RATE_MAX", "3"))
+rate_filter = RateLimitFilter(window_seconds=rate_window, max_records=rate_max)
+stream_handler.addFilter(rate_filter)
+file_handler.addFilter(rate_filter)
+root_logger = logging.getLogger()
+root_logger.handlers = []
+root_logger.setLevel(level)
+root_logger.addHandler(stream_handler)
+root_logger.addHandler(file_handler)
 
 # Khởi tạo controller
 @st.cache_resource
