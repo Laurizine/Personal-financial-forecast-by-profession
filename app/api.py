@@ -1,8 +1,16 @@
 from fastapi import FastAPI
+import os, sys
+ROOT = os.path.dirname(os.path.dirname(__file__))
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)
 from app.controller import CreditController
 
 app = FastAPI()
 controller = CreditController()
+
+@app.get("/")
+def root():
+    return {"message": "API is running"}
 
 @app.post("/explain")
 def explain(payload: dict):
@@ -15,3 +23,6 @@ def explain(payload: dict):
         "facts": result["facts"],
         "explanation": result["llm_explanation"],
     }
+
+if __name__ == "__main__":
+    print("FastAPI app is defined as 'app'. Vui lòng chạy bằng môi trường tích hợp hoặc bỏ qua nếu không dùng API.")

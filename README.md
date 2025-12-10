@@ -47,10 +47,9 @@ Dự án kết hợp tập luật (forward-chaining), mô hình Bayesian (Gaussi
   - Nhập các trường: `job`, `income_monthly`, `expense_monthly`, `debt_amount`, `late_payments_12m`, `credit_history_length_years`, `new_credit_accounts`, `credit_mix`
   - UI hiển thị: kết luận cuối (`final_class`), dự đoán Bayesian (`bayesian`), kết luận luật (`rule_conclusions`), các luật kích hoạt (`fired_rules`), giải thích LLM (`llm_explanation`)
 
-5) (Tuỳ chọn) Chạy REST API
-- `uvicorn app.api:app --reload`
-- Ví dụ gọi:
-  - `curl -X POST http://127.0.0.1:8000/explain -H "Content-Type: application/json" -d "{...}"`
+5) (Tuỳ chọn) REST API
+- Dự án có định nghĩa FastAPI trong `app/api.py` để tích hợp nội bộ.
+- Không cung cấp hướng dẫn chạy bằng uvicorn theo yêu cầu; tập trung dùng Streamlit.
 
 6) (Tuỳ chọn) CLI nhanh
 - `python run.py predict --input "{...}"`
