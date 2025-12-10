@@ -94,12 +94,11 @@ celerybeat.pid
 # Environments
 .env
 .venv
-env/
-!env/
-!env/set_gemini.ps1
-!env/clear_env.ps1
+env/                 # ignore toàn bộ thư mục env
+!env/                # nhưng vẫn cho phép Git đọc thư mục env
+!env/set_gemini.ps1  # cho phép commit file này
+!env/clear_env.ps1   # cho phép commit file này
 venv/
-ENV/
 env.bak/
 venv.bak/
 
@@ -127,5 +126,6 @@ dmypy.json
 *.swp
 *.swo
 *~
+
 # file
 .trae/
