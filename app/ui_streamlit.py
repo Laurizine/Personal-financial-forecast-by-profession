@@ -6,7 +6,15 @@ import streamlit as st
 from app.controller import CreditController
 
 # Khởi tạo controller
-controller = CreditController()
+@st.cache_resource
+def get_controller():
+    return CreditController()
+
+controller = get_controller()
+
+@st.cache_data(ttl=1800, max_entries=512)
+def compute_result(payload):
+    return controller.process(payload)
 
 # =============================
 #  GIAO DIỆN CHÍNH
@@ -154,7 +162,7 @@ if submitted:
             else:
                 st.stop()
         else:
-            result = controller.process(user_input)
+            result = compute_result(user_input)
             st.session_state["last_key"] = payload_key
             st.session_state["last_result"] = result
             st.session_state["last_call_at"] = now
@@ -188,4 +196,3 @@ if submitted:
     st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("<p style='text-align:center;color:#fff;margin-top:24px'>Made with ❤️ during Christmas Season</p>", unsafe_allow_html=True)
- 

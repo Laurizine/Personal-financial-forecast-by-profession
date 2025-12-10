@@ -13,6 +13,7 @@ if ($OldKey) {
 }
 
 # Cap nhat ENV (User Scope)
+$MODEL = ($MODEL.Trim().Trim('"').Trim("'")) -replace '\s+', ''
 [Environment]::SetEnvironmentVariable("GOOGLE_API_KEY", $API_KEY, "User")
 [Environment]::SetEnvironmentVariable("GEMINI_MODEL", $MODEL, "User")
 

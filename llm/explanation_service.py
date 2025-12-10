@@ -11,7 +11,8 @@ try:
     from google.api_core import exceptions as gex
 except Exception:
     gex = None
-
+MODEL_CACHE = {}
+CONFIGURED_KEY = None
  
 
 
@@ -55,7 +56,8 @@ Dữ liệu đầu vào: {compressed_facts}
 # ================================================
 # HÀM GỌI GEMINI (CÓ THỂ OFFLINE NẾU KO CÓ KEY)
 # ================================================
-def call_gemini(prompt: str):
+def _get_model():
+    global CONFIGURED_KEY
     key = os.environ.get("GOOGLE_API_KEY")
     model_name = os.environ.get("GEMINI_MODEL")
     if not genai:
@@ -64,20 +66,53 @@ def call_gemini(prompt: str):
         raise RuntimeError("GOOGLE_API_KEY missing")
     if not model_name:
         raise RuntimeError("GEMINI_MODEL missing")
+    model_name = model_name.strip().strip('"').strip("'")
+    model_name = re.sub(r"\s+", "", model_name)
+    use_name = model_name
+    if not use_name.startswith("models/") and use_name.startswith("gemini-"):
+        use_name = f"models/{use_name}"
+    cache_key = (key, model_name)
+    model = MODEL_CACHE.get(cache_key)
+    if model is None:
+        genai.configure(api_key=key)
+        model = genai.GenerativeModel(use_name)
+        MODEL_CACHE[cache_key] = model
+        CONFIGURED_KEY = key
+        return model
+    if CONFIGURED_KEY != key:
+        genai.configure(api_key=key)
+        CONFIGURED_KEY = key
+    return model
 
-    genai.configure(api_key=key)
-    print(f"Gemini model: {model_name}")
-    model = genai.GenerativeModel(model_name)
-    try:
-        result = model.generate_content(prompt)
-    except Exception as e:
-        if gex and isinstance(e, gex.ResourceExhausted):
-            raise RuntimeError("Gemini rate-limit exceeded")
-        raise RuntimeError(str(e))
-    text = getattr(result, "text", "")
-    if not text:
-        raise RuntimeError("No output from Gemini")
-    return text
+def call_gemini(prompt: str):
+    model = _get_model()
+    max_retries = 3
+    base_wait = 2
+
+    for attempt in range(max_retries + 1):
+        try:
+            result = model.generate_content(prompt)
+            text = getattr(result, "text", "")
+            if not text:
+                raise RuntimeError("No output from Gemini")
+            return text
+        except Exception as e:
+            if gex and isinstance(e, gex.ResourceExhausted):
+                raise RuntimeError("Gemini rate-limit exceeded")
+            if "429" in str(e):
+                raise RuntimeError("Gemini rate-limit exceeded")
+
+            is_network = False
+            if gex and isinstance(e, (getattr(gex, "ServiceUnavailable", Exception), getattr(gex, "DeadlineExceeded", Exception), getattr(gex, "Aborted", Exception), getattr(gex, "Unknown", Exception))):
+                is_network = True
+            if any(s in str(e).lower() for s in ["connection", "timed out", "socket", "temporarily unavailable", "transport"]):
+                is_network = True
+
+            if is_network and attempt < max_retries:
+                wait_time = base_wait * (2 ** attempt)
+                time.sleep(wait_time)
+                continue
+            raise RuntimeError(str(e))
 
 # ================================================
 # HÀM SINH GIẢI THÍCH (HÀM DÙNG TRONG CONTROLLER)

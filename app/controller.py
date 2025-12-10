@@ -1,4 +1,8 @@
 import math
+import os
+import time
+import hashlib
+import json
 from knowledge.rule_engine import RuleEngine
 from inference.bayesian_model import BayesianModel
 from llm.explanation_service import generate_explanation
@@ -11,6 +15,9 @@ class CreditController:
     def __init__(self):
         self.rule_engine = RuleEngine()
         self.bayes_model = BayesianModel()
+        self._explain_cache = {}
+        self._ttl_seconds = 1800
+        self._max_entries = 512
 
     # ---------------------------------------
     #  TÍNH TỶ LỆ AN TOÀN
@@ -46,6 +53,47 @@ class CreditController:
 
         return facts
 
+    def _make_cache_key(self, facts):
+        model_name = os.environ.get("GEMINI_MODEL", "")
+        fields = {
+            "job": facts.get("job"),
+            "income_monthly": facts.get("income_monthly"),
+            "expense_monthly": facts.get("expense_monthly"),
+            "debt_amount": facts.get("debt_amount"),
+            "income_expense_ratio": facts.get("income_expense_ratio"),
+            "debt_ratio": facts.get("debt_ratio"),
+            "late_payments_12m": facts.get("late_payments_12m"),
+            "credit_history_length_years": facts.get("credit_history_length_years"),
+            "new_credit_accounts": facts.get("new_credit_accounts"),
+            "credit_mix": facts.get("credit_mix"),
+            "model": model_name,
+        }
+        s = json.dumps(fields, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+        h = hashlib.sha256(s.encode("utf-8")).hexdigest()
+        return h
+
+    def _get_cached_explanation(self, key):
+        item = self._explain_cache.get(key)
+        if not item:
+            return None
+        value, ts = item
+        if time.time() - ts > self._ttl_seconds:
+            try:
+                del self._explain_cache[key]
+            except KeyError:
+                pass
+            return None
+        return value
+
+    def _set_cached_explanation(self, key, value):
+        if len(self._explain_cache) >= self._max_entries:
+            try:
+                oldest_key = next(iter(self._explain_cache))
+                del self._explain_cache[oldest_key]
+            except Exception:
+                self._explain_cache.clear()
+        self._explain_cache[key] = (value, time.time())
+
     # ---------------------------------------
     #  HÀM XỬ LÝ CHÍNH
     #----------------------------------------
@@ -69,17 +117,22 @@ class CreditController:
         # (4) Tổng hợp kết quả cuối
         final_class = self.resolve_final_class(rule_conclusions, bayes_output)
 
-        # (5) Sinh giải thích bằng LLM
-        try:
-            explanation = generate_explanation(
-                facts=facts,
-                rule_conclusions=rule_conclusions,
-                bayes_output=bayes_output,
-                fired_rules=fired_rules,
-                final_class=final_class
-            )
-        except Exception as e:
-            explanation = f"Lỗi Gemini: {str(e)}"
+        key = self._make_cache_key(facts)
+        cached = self._get_cached_explanation(key)
+        if cached is not None:
+            explanation = cached
+        else:
+            try:
+                explanation = generate_explanation(
+                    facts=facts,
+                    rule_conclusions=rule_conclusions,
+                    bayes_output=bayes_output,
+                    fired_rules=fired_rules,
+                    final_class=final_class
+                )
+                self._set_cached_explanation(key, explanation)
+            except Exception as e:
+                explanation = f"Lỗi Gemini: {str(e)}"
 
         # (6) Trả về kết quả cho UI
         return {
