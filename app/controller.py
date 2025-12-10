@@ -7,6 +7,7 @@ import logging
 from knowledge.rule_engine import RuleEngine
 from inference.bayesian_model import BayesianModel
 from llm.explanation_service import generate_explanation
+from app.database import DatabaseManager
 
 
 # ================================
@@ -16,9 +17,7 @@ class CreditController:
     def __init__(self):
         self.rule_engine = RuleEngine()
         self.bayes_model = BayesianModel()
-        self._explain_cache = {}
-        self._ttl_seconds = 1800
-        self._max_entries = 512
+        self.db = DatabaseManager()
         self.logger = logging.getLogger(__name__)
 
     # ---------------------------------------
@@ -75,31 +74,16 @@ class CreditController:
         return h
 
     def _get_cached_explanation(self, key):
-        item = self._explain_cache.get(key)
-        if not item:
-            return None
-        value, ts = item
-        if time.time() - ts > self._ttl_seconds:
-            try:
-                del self._explain_cache[key]
-            except KeyError:
-                pass
-            return None
-        return value
+        return self.db.get_cached_explanation(key)
 
     def _set_cached_explanation(self, key, value):
-        if len(self._explain_cache) >= self._max_entries:
-            try:
-                oldest_key = next(iter(self._explain_cache))
-                del self._explain_cache[oldest_key]
-            except Exception:
-                self._explain_cache.clear()
-        self._explain_cache[key] = (value, time.time())
+        self.db.save_cached_explanation(key, value)
 
     # ---------------------------------------
     #  HÀM XỬ LÝ CHÍNH
     #----------------------------------------
     def process(self, payload):
+        start_time = time.time()
         # (1) Chuẩn hóa input → facts
         facts = self.build_facts(payload)
         try:
@@ -153,7 +137,7 @@ class CreditController:
                 explanation = f"Lỗi Gemini: {str(e)}"
 
         # (6) Trả về kết quả cho UI
-        return {
+        result_dict = {
             "facts": facts,
             "rule_conclusions": rule_conclusions,
             "fired_rules": fired_rules,
@@ -161,6 +145,12 @@ class CreditController:
             "final_class": final_class,
             "llm_explanation": explanation
         }
+        
+        # (7) Log vào DB
+        duration = time.time() - start_time
+        self.db.log_prediction(facts, result_dict, duration)
+        
+        return result_dict
 
     # ---------------------------------------
     # GHÉP KẾT QUẢ RULE + BAYES

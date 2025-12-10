@@ -51,6 +51,7 @@ controller = get_controller()
 
 @st.cache_data(ttl=1800, max_entries=512)
 def compute_result(payload):
+    # Chỉ trả về kết quả tính toán thuần túy, việc log DB sẽ tách ra ngoài
     return controller.process(payload)
 
 # =============================
@@ -190,6 +191,21 @@ if submitted:
 
     if last_key == payload_key and last_result is not None:
         result = last_result
+        # Log vào DB ngay cả khi dùng cache UI (đánh dấu là cache hit UI nếu cần, hoặc cứ log bình thường)
+        # Tuy nhiên, để tránh duplicate log do Streamlit rerun mỗi khi tương tác widget,
+        # ta chỉ log khi thực sự bấm nút Submit (biến submitted=True ở trên đã cover việc này).
+        # Nhưng ở đây logic cache đang nằm trong khối 'if submitted'.
+        # Vấn đề là: controller.process đã log bên trong nó.
+        # Nếu st.cache_data trả về result cũ, controller.process KHÔNG chạy -> KHÔNG log.
+        # Vậy ta phải gọi log thủ công ở đây nếu muốn tracking mọi click.
+        
+        # Để đơn giản và chính xác: Ta sẽ bỏ log trong controller.process? 
+        # KHÔNG, controller nên tự túc.
+        # Ở đây ta sẽ gọi hàm log riêng của DB manager nếu lấy từ cache.
+        
+        # Cách tốt nhất: Gọi controller.db.log_prediction() thủ công với duration=0 (vì cache siêu nhanh)
+        controller.db.log_prediction(user_input, result, duration=0.0)
+        
     else:
         if last_call and (now - last_call < min_interval):
             wait_time = min_interval - (now - last_call)
@@ -199,6 +215,7 @@ if submitted:
             else:
                 st.stop()
         else:
+            # Khi gọi compute_result lần đầu (hoặc hết TTL), nó sẽ chạy controller.process -> Đã log DB bên trong đó.
             result = compute_result(user_input)
             st.session_state["last_key"] = payload_key
             st.session_state["last_result"] = result
