@@ -4,33 +4,62 @@ Hệ thống lai (Hybrid AI) kết hợp **Luật chuyên gia (Rule-based)**, **
 
 ## 🚀 Công nghệ & Phương pháp
 
-*   **Giao diện (UI):** `Streamlit` (Tương tác trực quan, cache thông minh)
-*   **API Service:** `FastAPI` (Cung cấp RESTful API hiệu năng cao)
-*   **Machine Learning:** `Scikit-learn` (Gaussian Naive Bayes, Pipeline chuẩn hóa)
-*   **LLM:** `Google Gemini` (Tạo giải thích tự nhiên, hỗ trợ `gemini-2.0-flash-lite` và `gemini-2.5-flash`)
-*   **Suy diễn:** Forward-chaining Rule Engine (Máy suy diễn tiến)
+- **Giao diện (UI):** `Streamlit` (tương tác trực quan, cache thông minh, throttle)
+- **API Service:** `FastAPI` (cung cấp RESTful API hiệu năng cao)
+- **Machine Learning:** `Scikit-learn` (Gaussian Naive Bayes, Pipeline chuẩn hóa)
+- **LLM:** `Google Gemini` (tạo giải thích tự nhiên, khuyên dùng `gemini-2.0-flash-lite`, có thể dùng `gemini-2.5-flash`)
+- **Suy diễn:** Forward-chaining Rule Engine (máy suy diễn tiến)
 
 ## 📂 Cấu trúc Dự án
 
 ```text
+├── .streamlit/
+│   └── config.toml              # Tắt auto-rerun, ổn định UI
 ├── app/
-│   ├── ui_streamlit.py      # Giao diện Web (Streamlit)
-│   ├── api.py               # REST API (FastAPI)
-│   └── controller.py        # Bộ điều khiển trung tâm (Logic chính)
+│   ├── ui_streamlit.py          # Giao diện Web (Streamlit)
+│   ├── api.py                   # REST API (FastAPI)
+│   ├── controller.py            # Bộ điều khiển trung tâm (Logic chính)
+│   └── utils.py                 # Tiện ích dùng chung (nếu cần)
+├── config/
+│   └── settings.py              # Đường dẫn dữ liệu/mô hình
 ├── knowledge/
-│   ├── rules.py             # Tập luật nghiệp vụ (Business Rules)
-│   └── rule_engine.py       # Máy suy diễn (Inference Engine)
+│   ├── rules.py                 # Tập luật nghiệp vụ (Business Rules)
+│   ├── rule_engine.py           # Máy suy diễn (Inference Engine)
+│   └── model_structure.md       # Mô tả cấu trúc mô hình/tri thức
 ├── inference/
-│   ├── bayesian_model.py    # Mô hình học máy (GaussianNB)
-│   └── model.pkl            # File mô hình đã huấn luyện
+│   ├── bayesian_model.py        # Mô hình học máy (GaussianNB)
+│   ├── model.pkl                # File mô hình đã huấn luyện
+│   └── reasoning_manager.py     # (Dự phòng/khung quản lý suy luận)
 ├── llm/
-│   └── explanation_service.py # Tích hợp Google Gemini (Prompting & Validation)
+│   └── explanation_service.py   # Tích hợp Gemini (Prompting, gọi API, cache)
 ├── env/
-│   └── set_gemini.ps1       # Script cấu hình môi trường (API Key & Model)
-├── Dataset/                 # Dữ liệu huấn luyện
-├── tests/                   # Bộ kiểm thử (Unit & Integration Tests)
-├── run.py                   # CLI Tools (Train/Predict)
-└── requirements.txt         # Các thư viện phụ thuộc
+│   ├── set_gemini.ps1           # Thiết lập API Key và Model
+│   └── clear_env.ps1            # Xóa biến môi trường Gemini
+├── tests/                       # Bộ kiểm thử (Unit & Integration Tests)
+│   ├── test_api.py
+│   ├── test_bayesian.py
+│   ├── test_bayesian_stability.py
+│   ├── test_edge_cases.py
+│   ├── test_end_to_end.py
+│   ├── test_fact_normalization.py
+│   ├── test_forward_chaining.py
+│   ├── test_llm_cache.py        # Kiểm tra cache lời giải thích LLM
+│   ├── test_llm_fallback.py     # Kiểm tra fallback khi LLM lỗi
+│   ├── test_rule_coverage.py
+│   └── test_rules.py
+├── visualization/
+│   ├── causal_graph.py          # Quan hệ nhân quả
+│   └── evaluation_plots.py      # Biểu đồ đánh giá
+├── reports/
+│   ├── krr_description.md
+│   ├── rule_documentation.md
+│   └── technical_report.md
+├── Dataset/
+│   ├── simulated_data.csv
+│   └── simulated_data.ipynb
+├── run.py                       # CLI Tools (Train/Predict)
+├── requirements.txt             # Thư viện phụ thuộc
+└── README.md                    # Tài liệu dự án
 ```
 
 ## 🛠️ Cài đặt & Cấu hình
@@ -42,41 +71,45 @@ pip install -r requirements.txt
 ```
 
 ### 2. Cấu hình Gemini (Quan trọng)
-Sử dụng script PowerShell để thiết lập API Key và Model.
-*   **Mặc định:** Model là `gemini-2.0-flash-lite` (nhanh, tiết kiệm).
-*   **Tùy chọn:** Có thể chuyển sang `gemini-2.5-flash`.
-
+Thiết lập API Key và Model bằng PowerShell:
 ```powershell
 # Cho phép chạy script (nếu chưa mở)
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 # Cấu hình mặc định (gemini-2.0-flash-lite)
-.\env\set_gemini.ps1 -API_KEY "YOUR_GOOGLE_API_KEY"
+./env/set_gemini.ps1 -API_KEY "YOUR_GOOGLE_API_KEY"
 
 # Hoặc chỉ định model khác
-.\env\set_gemini.ps1 -API_KEY "YOUR_GOOGLE_API_KEY" -MODEL "gemini-2.5-flash"
+./env/set_gemini.ps1 -API_KEY "YOUR_GOOGLE_API_KEY" -MODEL "gemini-2.5-flash"
+
+# Xóa biến môi trường Gemini (nếu cần)
+./env/clear_env.ps1
 ```
-> **Lưu ý:** Hệ thống chỉ chấp nhận các model trong whitelist (`gemini-2.0-flash-lite`, `gemini-2.5-flash`).
+
+### 3. Cấu hình Streamlit chống auto-rerun (Khuyến nghị)
+Đã cấu hình sẵn tại `.streamlit/config.toml`:
+```toml
+[server]
+fileWatcherType = "none"
+runOnSave = false
+```
 
 ## ▶️ Hướng dẫn Chạy Hệ thống
 
 ### Cách 1: Giao diện Web (Khuyên dùng)
-Chạy ứng dụng Streamlit với giao diện Giáng sinh thân thiện:
 ```bash
 streamlit run app/ui_streamlit.py
 ```
-*   Truy cập: `http://localhost:8501`
+- Truy cập: `http://localhost:8501`
 
 ### Cách 2: REST API (FastAPI)
-Khởi chạy server backend để tích hợp với các hệ thống khác:
 ```bash
 uvicorn app.api:app --reload --port 8000
 ```
-*   **Docs (Swagger UI):** `http://localhost:8000/docs`
-*   **Endpoint chính:** `POST /explain`
+- Docs (Swagger UI): `http://localhost:8000/docs`
+- Endpoint chính: `POST /explain`
 
 ### Cách 3: Command Line (CLI)
-Huấn luyện lại mô hình hoặc dự đoán nhanh:
 ```bash
 # Huấn luyện mô hình Bayesian
 python run.py train
@@ -85,13 +118,38 @@ python run.py train
 python run.py predict --input '{"income_monthly": 20000000, "debt_amount": 5000000, ...}'
 ```
 
+## 🔒 Chính sách gọi LLM & Chống spam
+
+- Retry hợp lý: chỉ thử lại khi lỗi mạng (ví dụ: mất kết nối). Không thử lại với lỗi rate-limit 429/ResourceExhausted.
+- Cache nhiều tầng:
+  - UI: `st.cache_data` cho kết quả tính toán theo input.
+  - Controller: cache nội bộ `_explain_cache` cho lời giải thích LLM.
+  - LLM: cache instance `GenerativeModel` theo cặp `GOOGLE_API_KEY` + `GEMINI_MODEL`.
+- Throttle UI: kiểm soát tần suất gọi qua biến `LLM_MIN_INTERVAL_SEC` để tránh spam liên tiếp.
+
+## 🌱 Biến môi trường
+
+- `GOOGLE_API_KEY`: API key của Google Gemini.
+- `GEMINI_MODEL`: Tên model Gemini (khuyên dùng `gemini-2.0-flash-lite`, có thể `gemini-2.5-flash`).
+- `LLM_MIN_INTERVAL_SEC`: Khoảng cách tối thiểu (giây) giữa 2 lần gọi UI (mặc định: `5`).
+
 ## 🧪 Kiểm thử (Testing)
-Chạy bộ test suite để đảm bảo hệ thống hoạt động ổn định:
+
+Chạy bộ test:
 ```bash
 python -m pytest tests
 ```
-Bao gồm các test case:
-*   End-to-End Controller
-*   Bayesian Stability
-*   Rule Logic & Coverage
-*   Input Normalization
+Nhóm test tiêu biểu:
+- End-to-End Controller
+- Bayesian Stability
+- Rule Logic & Coverage
+- Forward Chaining
+- Fact Normalization
+- API
+- LLM Cache/Retry/Fallback
+
+## ⚡ Gợi ý hiệu năng & Khắc phục sự cố
+
+- Khuyến nghị dùng `st.cache_resource` cho instance `CreditController` để tránh tải lại mô hình và giữ cache nội bộ khi UI rerun.
+- Không commit API key; dùng script `env/set_gemini.ps1` và `env/clear_env.ps1` để quản lý key.
+- Nếu gặp lỗi mạng, thử lại sau vài giây; nếu gặp rate-limit 429, chờ tăng quota hoặc giảm tần suất gọi.
