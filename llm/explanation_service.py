@@ -12,9 +12,7 @@ try:
 except Exception:
     gex = None
 
-# Nếu bạn muốn gọi Gemini thật:
-# from google.generativeai import GenerativeModel
-# model = GenerativeModel("gemini-pro")
+ 
 
 
 # ================================================
@@ -59,12 +57,16 @@ Dữ liệu đầu vào: {compressed_facts}
 # ================================================
 def call_gemini(prompt: str):
     key = os.environ.get("GOOGLE_API_KEY")
-    model_name = os.environ.get("GEMINI_MODEL", "gemini-pro")
+    model_name = os.environ.get("GEMINI_MODEL")
     if not genai:
         raise RuntimeError("google-generativeai not installed")
     if not key:
         raise RuntimeError("GOOGLE_API_KEY missing")
+    if not model_name:
+        raise RuntimeError("GEMINI_MODEL missing")
+
     genai.configure(api_key=key)
+    print(f"Gemini model: {model_name}")
     model = genai.GenerativeModel(model_name)
     try:
         result = model.generate_content(prompt)
@@ -76,7 +78,6 @@ def call_gemini(prompt: str):
     if not text:
         raise RuntimeError("No output from Gemini")
     return text
-
 
 # ================================================
 # HÀM SINH GIẢI THÍCH (HÀM DÙNG TRONG CONTROLLER)

@@ -11,17 +11,87 @@ controller = CreditController()
 # =============================
 #  GIAO DIỆN CHÍNH
 # =============================
-st.set_page_config(page_title="Credit Scoring Expert System", layout="centered")
+st.set_page_config(page_title="Merry Christmas Credit Analyzer", page_icon="🎄", layout="wide")
 
-st.title("🔍 Hệ thống chuyên gia dự đoán điểm tín dụng")
-st.write("Nhập thông tin tài chính để hệ thống suy luận theo tập luật + mô hình Bayesian.")
+st.markdown(
+    """
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Poppins:wght@300;400;600&display=swap');
+    html, body, [class*="css"]  {
+      font-family: 'Poppins', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1601047668511-77486e0f9b06?auto=format&fit=crop&w=2067&q=80');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    .xmas-title {
+      font-family: 'Mountains of Christmas', cursive;
+      font-size: 64px;
+      color: #FFFFFF;
+      text-align: center;
+      text-shadow: 0 0 4px #FFD54F, 0 0 10px #FFD54F, 2px 2px 0 #D32F2F;
+      margin-top: 10px;
+    }
+    .xmas-subtitle {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      color: #FFFFFF;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .gold-border {
+      border: 2px solid #FFD54F;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      background: rgba(255,255,255,0.85);
+      padding: 24px;
+    }
+    .card {
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      background: rgba(255,255,255,0.9);
+      padding: 24px;
+      backdrop-filter: blur(3px);
+    }
+    .stButton > button {
+      background: linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%);
+      color: #fff;
+      border: 2px solid #FFD54F;
+      border-radius: 14px;
+      padding: 10px 20px;
+      font-weight: 600;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+    .stButton > button:hover {
+      background: linear-gradient(135deg, #C62828 0%, #8E0000 100%);
+      transform: translateY(-1px);
+    }
+    .snow {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      background-image: radial-gradient(white 1px, transparent 1px);
+      background-size: 3px 3px;
+      animation: snowfall 15s linear infinite;
+      opacity: 0.6;
+    }
+    @keyframes snowfall {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 1000px; }
+    }
+    </style>
+    <div class="snow"></div>
+    """,
+    unsafe_allow_html=True,
+)
 
-st.divider()
+st.markdown("<div class='xmas-title'>🎄 Merry Christmas Credit Analyzer 🎁</div>", unsafe_allow_html=True)
+st.markdown("<div class='xmas-subtitle'>✨ Phân tích tín dụng với Rules + Bayesian + Gemini ✨</div>", unsafe_allow_html=True)
 
 # =============================
 # FORM NHẬP LIỆU
 # =============================
-st.header("📌 Nhập thông tin của bạn")
+st.markdown("<div class='gold-border card'><h3 style='margin-top:0'>📌 Nhập thông tin của bạn</h3>", unsafe_allow_html=True)
 
 with st.form("credit_form"):
     col1, col2 = st.columns(2)
@@ -44,13 +114,14 @@ with st.form("credit_form"):
         new_acc = st.number_input("Số tài khoản tín dụng mới:", min_value=0, max_value=10)
         mix = st.selectbox("Credit Mix:", ["good", "fair", "poor"])
 
-    submitted = st.form_submit_button("🔮 Dự báo điểm tín dụng")
+    submitted = st.form_submit_button("🎅 Dự báo điểm tín dụng")
 
 # =============================
 # XỬ LÝ KHI SUBMIT FORM
 # =============================
 if submitted:
-    st.subheader("📊 Kết quả phân tích")
+    st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("<div class='gold-border card'><h3 style='margin-top:0'>📊 Kết quả phân tích</h3>", unsafe_allow_html=True)
 
     user_input = {
         "job": job,
@@ -91,11 +162,8 @@ if submitted:
     # =============================
     # HIỂN THỊ KẾT QUẢ
     # =============================
-    st.markdown("### 🎯 **Kết luận cuối cùng:**")
-    st.markdown(
-        f"<h2 style='color:#0099ff'> {result['final_class'].upper()} </h2>",
-        unsafe_allow_html=True
-    )
+    st.markdown("<h4>🎯 Kết luận cuối cùng:</h4>", unsafe_allow_html=True)
+    st.markdown(f"<div style='font-size:36px;color:#1B5E20;font-weight:700;text-shadow:0 0 6px #FFD54F, 2px 2px 0 #D32F2F'>{result['final_class'].upper()}</div>", unsafe_allow_html=True)
 
     # Bayesian
     st.subheader("📈 Dự đoán từ Bayesian Model:")
@@ -117,4 +185,7 @@ if submitted:
     # Raw facts processing
     with st.expander("📂 Dữ liệu đã xử lý (Facts):"):
         st.json(result["facts"])
+    st.markdown("</div>", unsafe_allow_html=True)
+
+st.markdown("<p style='text-align:center;color:#fff;margin-top:24px'>Made with ❤️ during Christmas Season</p>", unsafe_allow_html=True)
  
