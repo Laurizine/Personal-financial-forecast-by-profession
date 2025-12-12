@@ -1,0 +1,53 @@
+Luồng xử lý yêu cầu từ giao diện Streamlit
+
+1) Nhập liệu và Submit
+- Người dùng nhập các trường: nghề nghiệp, thu nhập, chi tiêu, nợ, trả chậm, lịch sử tín dụng, tài khoản mới, credit mix.
+- Nhấn nút Submit tại app/ui_streamlit.py:129–151.
+
+2) Tạo payload và kiểm tra cache/throttle
+- Tạo dictionary `user_input` từ form tại app/ui_streamlit.py:159–168.
+- Tạo khóa cache UI `payload_key` (JSON đã sắp xếp khóa) tại app/ui_streamlit.py:170–172.
+- Kiểm tra cache trong phiên (`last_key`, `last_result`) và khoảng cách gọi tối thiểu `min_interval` tại app/ui_streamlit.py:174–203.
+- Nếu payload trùng và có cache UI, lấy lại `result`; đồng thời ghi DB cho cache hit UI tại app/ui_streamlit.py:179–195.
+
+3) Tính toán kết quả (đã cache `st.cache_data`)
+- Hàm `compute_result(payload)` gọi thẳng `controller.process(payload)` tại app/ui_streamlit.py:39–43, 205–209.
+- `compute_result` được cache bằng `st.cache_data(ttl=1800, max_entries=512)` để giảm chi phí tính toán khi payload lặp lại.
+
+4) Pipeline trong Controller
+- Chuẩn hóa dữ liệu đầu vào thành `facts` và tính các tỷ lệ an toàn tại app/controller.py:35–55.
+- Suy diễn tiến (forward-chaining) bằng Rule Engine:
+  • Gọi `self.rule_engine.infer(facts)` để sinh `rule_conclusions` và `fired_rules` tại app/controller.py:96–108.
+  • Cơ chế lặp–cập nhật working memory ở knowledge/rule_engine.py:15–48.
+  • Bộ luật và ngưỡng miền ở knowledge/rules.py:1–29.
+- Dự đoán Bayesian:
+  • Gọi `self.bayes_model.predict(facts)` để lấy `bayes_class`, `confidence`, `bayes_score` tại app/controller.py:110–115.
+  • Dự đoán lớp (Naive Bayes) + điểm liên tục (BayesianRidge) ở inference/bayesian_model.py:141–159, 149–153.
+- Hợp nhất quyết định cuối:
+  • `resolve_final_class` ưu tiên `rule_credit_class` nếu có; nếu không, dùng `bayes_class` tại app/controller.py:166–172.
+- Giải thích bằng LLM (có cache DB):
+  • Tạo khóa cache LLM có cả `final_class` tại app/controller.py:59–76 và dùng ở app/controller.py:124.
+  • Lấy cache: `_get_cached_explanation(key)`; nếu không có, gọi `generate_explanation(...)` và lưu cache DB tại app/controller.py:124–139.
+  • Prompt buộc LLM giữ nguyên quyết định hệ thống (không tự đổi lớp) tại llm/explanation_service.py:38–54.
+  • Gọi Gemini và retry/rate-limit tại llm/explanation_service.py:95–140.
+- Trả kết quả cho UI:
+  • Đóng gói `facts`, `rule_conclusions`, `fired_rules`, `bayesian`, `final_class`, `llm_explanation` thành `result_dict` tại app/controller.py:141–149.
+- Ghi log Database:
+  • Tính `duration`, gắn `cache_key` vào `facts` và ghi `predictions` + `fired_rules` tại app/controller.py:151–160.
+  • Lưu vào SQLite (WAL + busy_timeout + timeout) để giảm lock tại app/database.py:16–30; ghi bản ghi tại app/database.py:80–139.
+
+5) Hiển thị kết quả trên UI
+- Kết luận cuối cùng (`final_class`) tại app/ui_streamlit.py:214–216.
+- Dự đoán từ Bayesian (`bayes_class`, `bayes_score`, `confidence`) tại app/ui_streamlit.py:218–221.
+- Kết luận từ tập luật (`rule_conclusions`) tại app/ui_streamlit.py:224–226.
+- Các luật kích hoạt (`fired_rules`) tại app/ui_streamlit.py:227–228.
+- Giải thích LLM (`llm_explanation`) tại app/ui_streamlit.py:231–233.
+- Facts sau tiền xử lý tại app/ui_streamlit.py:235–237.
+
+6) Ghi chú về cache và đồng bộ
+- Cache UI (`st.cache_data`) giúp tránh tính lại khi payload trùng, nhưng không chạy lại `controller.process` → cần ghi DB thủ công cho cache hits UI (đã thực hiện tại app/ui_streamlit.py:194).
+- Cache LLM ở DB (`llm_cache`) dùng khóa có chứa `final_class` để tránh dùng sai giải thích khi cùng facts nhưng quyết định cuối khác.
+
+7) Logging và kiểm soát tần suất
+- Logging chung xuất ra console và file `app.log` với xoay vòng tại app/ui_streamlit.py:12–30.
+- Filter chống spam log theo cửa sổ thời gian (RateLimitFilter) tại app/utils.py:4–30.
