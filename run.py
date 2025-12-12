@@ -1,10 +1,12 @@
 import argparse
 import json
+import logging
 from config.settings import DATASET_PATH
 from inference.bayesian_model import BayesianModel
 from knowledge.rules import infer_from_user_input
 
 def main():
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
     parser = argparse.ArgumentParser()
     parser.add_argument("command", choices=["train", "predict"])
     parser.add_argument("--input", dest="input", help="JSON string or path to JSON file", default=None)
@@ -13,6 +15,7 @@ def main():
     if args.command == "train":
         m = BayesianModel()
         m.train(DATASET_PATH)
+        print("Đã huấn luyện mô hình xong và lưu vào model.pkl")
         return
 
     if args.command == "predict":

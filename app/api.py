@@ -4,26 +4,8 @@ ROOT = os.path.dirname(os.path.dirname(__file__))
 if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
 from app.controller import CreditController
+from app.utils import RateLimitFilter
 import logging
-
-class RateLimitFilter(logging.Filter):
-    def __init__(self, window_seconds=5.0, max_records=3):
-        super().__init__()
-        self.window = float(window_seconds)
-        self.max_records = int(max_records)
-        self.bucket = {}
-
-    def filter(self, record):
-        key = (record.name, record.msg)
-        now = time.time()
-        ts = self.bucket.get(key, [])
-        ts = [t for t in ts if now - t <= self.window]
-        if len(ts) < self.max_records:
-            ts.append(now)
-            self.bucket[key] = ts
-            return True
-        self.bucket[key] = ts
-        return False
 
 level_name = os.environ.get("LOG_LEVEL", "INFO").upper()
 level = getattr(logging, level_name, logging.INFO)

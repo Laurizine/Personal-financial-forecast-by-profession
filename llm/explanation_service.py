@@ -36,18 +36,18 @@ def build_prompt(facts, rule_conclusions, bayes_output, fired_rules, final_class
     ])
 
     prompt = f"""
-Hãy viết báo cáo theo đúng 7 đoạn, mỗi đoạn 3–4 câu: 
+Hãy viết báo cáo theo đúng 7 đoạn, mỗi đoạn 3–4 câu:
 
-1) Mô tả nghề nghiệp, thu nhập, chi tiêu và ý nghĩa income_expense_ratio. 
-2) Phân tích khoản nợ (debt_amount, debt_ratio) và mức rủi ro. 
-3) Đánh giá hành vi tín dụng: trả chậm 12 tháng, số năm lịch sử tín dụng, số tài khoản mới. 
-4) Phân tích chất lượng credit_mix và yếu tố cải thiện/suy giảm hồ sơ. 
-5) Tổng hợp các yếu tố ảnh hưởng đến năng lực tín dụng và mức an toàn tài chính. 
-6) Đưa ra quyết định xếp loại tín dụng (good / fair / bad) và lý do chính. 
-7) Đề xuất các hướng cải thiện hành vi tài chính hoặc điểm tín dụng. 
+1) Mô tả nghề nghiệp, thu nhập, chi tiêu và ý nghĩa income_expense_ratio.
+2) Phân tích khoản nợ (debt_amount, debt_ratio) và mức rủi ro.
+3) Đánh giá hành vi tín dụng: trả chậm 12 tháng, số năm lịch sử tín dụng, số tài khoản mới.
+4) Phân tích chất lượng credit_mix và yếu tố cải thiện/suy giảm hồ sơ.
+5) Tổng hợp các yếu tố ảnh hưởng đến năng lực tín dụng và mức an toàn tài chính.
+6) GIỮ NGUYÊN quyết định xếp loại tín dụng do hệ thống đưa ra: {final_class} (good / fair / bad). Chỉ giải thích lý do và không tự thay đổi xếp loại.
+7) Đề xuất các hướng cải thiện hành vi tài chính hoặc điểm tín dụng.
 
-Yêu cầu văn phong rõ ràng, chuyên nghiệp, lập luận tài chính mạch lạc. 
-Không viết tắt, không lặp lại thông tin không cần thiết. 
+Yêu cầu văn phong rõ ràng, chuyên nghiệp, lập luận tài chính mạch lạc.
+Không viết tắt, không lặp lại thông tin không cần thiết.
 
 Dữ liệu đầu vào: {compressed_facts}
 """

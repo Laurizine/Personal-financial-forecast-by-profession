@@ -7,6 +7,8 @@ import logging
 from logging import Formatter
 from logging.handlers import RotatingFileHandler
 from app.controller import CreditController
+from app.utils import RateLimitFilter
+
 level_name = os.environ.get("LOG_LEVEL", "INFO").upper()
 level = getattr(logging, level_name, logging.INFO)
 formatter = Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s")
@@ -14,23 +16,8 @@ stream_handler = logging.StreamHandler(sys.stdout)
 stream_handler.setFormatter(formatter)
 file_handler = RotatingFileHandler("app.log", maxBytes=5_000_000, backupCount=3, encoding="utf-8")
 file_handler.setFormatter(formatter)
-class RateLimitFilter(logging.Filter):
-    def __init__(self, window_seconds=5.0, max_records=3):
-        super().__init__()
-        self.window = float(window_seconds)
-        self.max_records = int(max_records)
-        self.bucket = {}
-    def filter(self, record):
-        key = (record.name, record.msg)
-        now = time.time()
-        ts = self.bucket.get(key, [])
-        ts = [t for t in ts if now - t <= self.window]
-        if len(ts) < self.max_records:
-            ts.append(now)
-            self.bucket[key] = ts
-            return True
-        self.bucket[key] = ts
-        return False
+
+# RateLimitFilter đã được import từ app.utils
 rate_window = float(os.environ.get("LOG_RATE_WINDOW", "5"))
 rate_max = int(os.environ.get("LOG_RATE_MAX", "3"))
 rate_filter = RateLimitFilter(window_seconds=rate_window, max_records=rate_max)

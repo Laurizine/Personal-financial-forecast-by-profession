@@ -4,6 +4,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.naive_bayes import GaussianNB
+from sklearn.linear_model import BayesianRidge
 from sklearn.pipeline import Pipeline
 import os
 from config.settings import MODEL_PATH
@@ -16,6 +17,8 @@ class BayesianModel:
     def __init__(self, model_path=None):
         self.model_path = model_path or MODEL_PATH
         self.pipeline = None
+        self.pipeline_cls = None
+        self.pipeline_reg = None
 
         # Chỉ load nếu file model đã tồn tại
         if os.path.exists(self.model_path) and os.path.getsize(self.model_path) > 0:
@@ -49,7 +52,8 @@ class BayesianModel:
         ]
 
         X = df[feature_cols]
-        y = df["credit_score_class"]
+        y_cls = df["credit_score_class"]
+        y_reg = df["credit_score"].astype(float)
 
         # Categorical + numerical columns
         cat_cols = ["credit_mix"]
@@ -64,23 +68,30 @@ class BayesianModel:
         )
 
         # Model (Naive Bayes – interpretable)
-        model = GaussianNB()
+        model_cls = GaussianNB()
+        model_reg = BayesianRidge()
 
         # Final pipeline
-        pipeline = Pipeline(steps=[
+        pipeline_cls = Pipeline(steps=[
             ("preprocessor", preprocessor),
-            ("classifier", model)
+            ("classifier", model_cls)
+        ])
+        pipeline_reg = Pipeline(steps=[
+            ("preprocessor", preprocessor),
+            ("regressor", model_reg)
         ])
 
         # Train
-        pipeline.fit(X, y)
+        pipeline_cls.fit(X, y_cls)
+        pipeline_reg.fit(X, y_reg)
 
         # Save pipeline to file
         with open(self.model_path, "wb") as f:
-            pickle.dump(pipeline, f)
+            pickle.dump({"classifier": pipeline_cls, "regressor": pipeline_reg}, f)
 
         # Load pipeline in RAM
-        self.pipeline = pipeline
+        self.pipeline_cls = pipeline_cls
+        self.pipeline_reg = pipeline_reg
 
         logger.info("BayesianModel training completed and model saved")
         logger.info("BayesianModel pipeline loaded into memory after training")
@@ -91,7 +102,13 @@ class BayesianModel:
     # =====================================================
     def load_model(self):
         with open(self.model_path, "rb") as f:
-            self.pipeline = pickle.load(f)
+            obj = pickle.load(f)
+        if isinstance(obj, dict) and "classifier" in obj and "regressor" in obj:
+            self.pipeline_cls = obj["classifier"]
+            self.pipeline_reg = obj["regressor"]
+        else:
+            self.pipeline_cls = obj
+            self.pipeline_reg = None
         logger.info(f"BayesianModel loaded from file: path={self.model_path}")
 
 
@@ -99,8 +116,7 @@ class BayesianModel:
     # PREDICT FUNCTION
     # =====================================================
     def predict(self, facts):
-
-        if self.pipeline is None:
+        if self.pipeline_cls is None:
             raise Exception("Model not loaded or trained!")
 
         income = facts.get("income_monthly", 0)
@@ -123,15 +139,18 @@ class BayesianModel:
         }])
 
         # Predict class
-        credit_class = self.pipeline.predict(input_df)[0]
+        credit_class = self.pipeline_cls.predict(input_df)[0]
 
         # Predict probability
-        probs = self.pipeline.predict_proba(input_df)[0]
-        class_idx = list(self.pipeline.classes_).index(credit_class)
+        probs = self.pipeline_cls.predict_proba(input_df)[0]
+        class_idx = list(self.pipeline_cls.classes_).index(credit_class)
         confidence = probs[class_idx]
 
-        # Convert to FICO-like score
-        score = self.estimate_score(credit_class, confidence)
+        # Convert to FICO-like score từ regressor
+        if self.pipeline_reg is None:
+            raise Exception("Score regressor not available. Please retrain the model.")
+        pred_score = float(self.pipeline_reg.predict(input_df)[0])
+        score = int(max(300, min(900, pred_score)))
 
         return {
             "bayes_class": str(credit_class),
@@ -140,16 +159,7 @@ class BayesianModel:
         }
 
 
-    # =====================================================
-    # SCORE CONVERSION
-    # =====================================================
-    def estimate_score(self, cls, conf):
-        if cls == "good":
-            return int(700 + conf * 70)
-        elif cls == "fair":
-            return int(640 + conf * 50)
-        else:
-            return int(500 + conf * 130)
+    # (removed interpolation fallback)
 
 
 # =====================================================

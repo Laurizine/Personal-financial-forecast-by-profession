@@ -25,7 +25,9 @@ class CreditController:
     # ---------------------------------------
     def _safe_ratio(self, a, b):
         try:
-            return a / b if b and b > 0 else 0.0
+            # Nếu mẫu số <= 0, coi như là 1 để tránh chia cho 0,
+            # giúp giữ nguyên tử số (tương tự logic trong knowledge/rules.py)
+            return a / (b if b and b > 0 else 1.0)
         except:
             return 0.0
 
@@ -54,7 +56,7 @@ class CreditController:
 
         return facts
 
-    def _make_cache_key(self, facts):
+    def _make_cache_key(self, facts, final_class):
         model_name = os.environ.get("GEMINI_MODEL", "")
         fields = {
             "job": facts.get("job"),
@@ -68,6 +70,7 @@ class CreditController:
             "new_credit_accounts": facts.get("new_credit_accounts"),
             "credit_mix": facts.get("credit_mix"),
             "model": model_name,
+            "final_class": final_class,
         }
         s = json.dumps(fields, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
         h = hashlib.sha256(s.encode("utf-8")).hexdigest()
@@ -119,7 +122,7 @@ class CreditController:
         except Exception:
             pass
 
-        key = self._make_cache_key(facts)
+        key = self._make_cache_key(facts, final_class)
         cached = self._get_cached_explanation(key)
         if cached is not None:
             explanation = cached
