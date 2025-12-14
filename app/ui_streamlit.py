@@ -118,7 +118,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown("<div class='xmas-title'>🎄 Merry Christmas Credit Analyzer 🎁</div>", unsafe_allow_html=True)
+st.markdown("<div class='xmas-title'>🎄 Dự báo khả năng tài chính theo ngành nghề 🎁</div>", unsafe_allow_html=True)
 st.markdown("<div class='xmas-subtitle'>✨ Phân tích tín dụng với Rules + Bayesian + Gemini ✨</div>", unsafe_allow_html=True)
 
 # =============================
@@ -130,16 +130,36 @@ with st.form("credit_form"):
     col1, col2 = st.columns(2)
 
     with col1:
-        job = st.selectbox(
-            "Nghề nghiệp:",
-            [
-                "IT Engineer", "Data Analyst", "Teacher", "Nurse", "Accountant",
-                "Salesperson", "Freelancer", "Designer", "Mechanic", "Student"
-            ],
-        )
-        income = st.number_input("Thu nhập hàng tháng (VND):", min_value=0)
-        expense = st.number_input("Chi tiêu hàng tháng (VND):", min_value=0)
-        debt = st.number_input("Tổng nợ hiện tại (VND):", min_value=0)
+        JOB_OPTIONS = [
+            "Công nghệ thông tin (IT)",
+            "Phân tích dữ liệu (Data Analyst)",
+            "Kỹ sư",
+            "Giáo viên / Giảng viên",
+            "Y tá / Điều dưỡng",
+            "Bác sĩ",
+            "Kế toán",
+            "Nhân viên văn phòng",
+            "Nhân viên kinh doanh / Sales",
+            "Marketing / Truyền thông",
+            "Thiết kế đồ họa / Designer",
+            "Freelancer / Làm việc tự do",
+            "Thợ cơ khí / Kỹ thuật viên",
+            "Công nhân",
+            "Sinh viên",
+            "Hộ kinh doanh cá thể",
+            "Quản lý / Trưởng nhóm",
+            "Khác"
+        ]
+        job = st.selectbox("Nghề nghiệp:", JOB_OPTIONS)
+        income = st.number_input("Thu nhập hàng tháng (VND):", min_value=0, step=1_000_000, format="%d", key="income_input")
+        if st.session_state.get("income_input", 0) < 10000:
+            st.caption("Gợi ý: Nếu nhập theo 'triệu' (ví dụ 1), hệ thống sẽ tự nhân 1,000,000 khi bấm Submit.")
+        expense = st.number_input("Chi tiêu hàng tháng (VND):", min_value=0, step=1_000_000, format="%d", key="expense_input")
+        if st.session_state.get("expense_input", 0) < 10000:
+            st.caption("Gợi ý: Nếu nhập theo 'triệu' (ví dụ 1), hệ thống sẽ tự nhân 1,000,000 khi bấm Submit.")
+        debt = st.number_input("Tổng nợ hiện tại (VND):", min_value=0, step=1_000_000, format="%d", key="debt_input")
+        if st.session_state.get("debt_input", 0) < 10000:
+            st.caption("Gợi ý: Nếu nhập theo 'triệu' (ví dụ 1), hệ thống sẽ tự nhân 1,000,000 khi bấm Submit.")
 
     with col2:
         late = st.number_input("Số lần trả chậm (12 tháng):", min_value=0, max_value=20)
@@ -156,11 +176,19 @@ if submitted:
     st.markdown("</div>", unsafe_allow_html=True)
     st.markdown("<div class='gold-border card'><h3 style='margin-top:0'>📊 Kết quả phân tích</h3>", unsafe_allow_html=True)
 
+    # Áp dụng auto-scale 1e6 khi người dùng nhập số rất nhỏ (giả định đơn vị 'triệu')
+    _income_raw = st.session_state.get("income_input", 0)
+    _expense_raw = st.session_state.get("expense_input", 0)
+    _debt_raw = st.session_state.get("debt_input", 0)
+    income_val = int(_income_raw * 1_000_000) if 0 < _income_raw < 10000 else int(_income_raw)
+    expense_val = int(_expense_raw * 1_000_000) if 0 < _expense_raw < 10000 else int(_expense_raw)
+    debt_val = int(_debt_raw * 1_000_000) if 0 < _debt_raw < 10000 else int(_debt_raw)
+
     user_input = {
         "job": job,
-        "income_monthly": income,
-        "expense_monthly": expense,
-        "debt_amount": debt,
+        "income_monthly": income_val,
+        "expense_monthly": expense_val,
+        "debt_amount": debt_val,
         "late_payments_12m": late,
         "credit_history_length_years": history,
         "new_credit_accounts": new_acc,
@@ -236,4 +264,4 @@ if submitted:
         st.json(result["facts"])
     st.markdown("</div>", unsafe_allow_html=True)
 
-st.markdown("<p style='text-align:center;color:#fff;margin-top:24px'>Made with ❤️ during Christmas Season</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center;color:#fff;margin-top:24px'>Made with ❤️💥🐥😒🐥🤣🐥 during Christmas Season</p>", unsafe_allow_html=True)
