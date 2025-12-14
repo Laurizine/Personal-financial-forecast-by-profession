@@ -8,6 +8,7 @@ from logging import Formatter
 from logging.handlers import RotatingFileHandler
 from app.controller import CreditController
 from app.utils import RateLimitFilter
+from visualization.causal_graph import build_causal_dot
 
 level_name = os.environ.get("LOG_LEVEL", "INFO").upper()
 level = getattr(logging, level_name, logging.INFO)
@@ -258,6 +259,13 @@ if submitted:
     # Explanation
     st.subheader("💬 Giải thích (LLM):")
     st.write(result["llm_explanation"])
+
+    st.subheader("🧭 Biểu đồ nhân quả (Forward-Chaining)")
+    try:
+        dot = build_causal_dot(result)
+        st.graphviz_chart(dot, use_container_width=True)
+    except Exception:
+        st.warning("Không thể hiển thị biểu đồ nhân quả.")
 
     # Raw facts processing
     with st.expander("📂 Dữ liệu đã xử lý (Facts):"):
